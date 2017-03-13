@@ -187,7 +187,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo环境、部署、基本操作/">hexo环境、部署、基本操作</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo环境、部署、基本操作/">hexo环境、部署、基本操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/头像设置/">头像设置</a></li></ul>
                     </div>
                 </section>
                 
@@ -265,6 +265,87 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo-yelee主题头像设置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/13/hexo-yelee主题头像设置/" class="article-date">
+      <time datetime="2017-03-13T06:36:34.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  最近自己在设置hexo博客主题的时候,关于头像遇到了问题,关于网上的给予的解答并不能够使我的问题解决</p>
+<h3 id="主题头像链接设置失败"><a href="#主题头像链接设置失败" class="headerlink" title="主题头像链接设置失败"></a>主题头像链接设置失败</h3><pre><code>我在themes--&gt;yelee--&gt;_config.yml文件中,设置了
+
+`avatar: https://github.com/AriaVV/img_user/blob/master/my_avatar.png`
+</code></pre><p>当然结果是失败了,一直显示为:</p>
+<p><img src="./img/articleImg/avater_error.png"></p>
+<pre><code>我在网上搜索资料,试了好几种解决方式
+
+第一种:(失败)
+直接修改layout/_partial/left-col.ejs的第六行和第八行为：
+&lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot;&gt;
+&lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot; style=&quot;width: 100%;height: 100%;opacity: 1;&quot;&gt;
+
+第二种:(失败)
+把头像图片放在themes--&gt;yelee--&gt;source--&gt;img文件夹下,然后在
+themes--&gt;yelee--&gt;_config.yml文件中,设置`avatar: /source/img/my_avatar.png`
+</code></pre><p>最后发现,上传到github的文件的img文件夹是不在source文件夹下的,所以直接在 themes–&gt;yelee–&gt;_config.yml文件中,配置<br>    <code>avatar: /img/my_avatar.png</code>就可以完美的显示头像了!!!</p>
+<p>【end】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/头像设置/">头像设置</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hexo博客部署" class="article article-type-post" itemscope itemprop="blogPost">
   
