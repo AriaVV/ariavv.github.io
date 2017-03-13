@@ -15,18 +15,15 @@
 
 
 
-<meta name="description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo yelee主题头像设置">
-<meta property="og:url" content="http://yoursite.com/2017/03/13/hexo-yelee主题头像设置/index.html">
+<meta name="description" content="花自己的钱，买自己的包包，装自己的故事">
+<meta property="og:type" content="website">
+<meta property="og:title" content="xiaoLv">
+<meta property="og:url" content="http://yoursite.com/tags/准备工作/index.html">
 <meta property="og:site_name" content="xiaoLv">
-<meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:image" content="http://yoursite.com/img/articleImg/avater_error.png">
-<meta property="og:updated_time" content="2017-03-13T07:54:45.690Z">
+<meta property="og:description" content="花自己的钱，买自己的包包，装自己的故事">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo yelee主题头像设置">
-<meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
-<meta name="twitter:image" content="http://yoursite.com/img/articleImg/avater_error.png">
+<meta name="twitter:title" content="xiaoLv">
+<meta name="twitter:description" content="花自己的钱，买自己的包包，装自己的故事">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>hexo yelee主题头像设置 | xiaoLv</title>
+<title>Tag: 准备工作 | xiaoLv</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -68,9 +65,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -258,168 +255,60 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-hexo-yelee主题头像设置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/03/13/hexo-yelee主题头像设置/" class="article-date">
-      <time datetime="2017-03-13T06:36:34.000Z" itemprop="datePublished">2017-03-13</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/03/13/微信小程序开发准备工作及项目构建/" class="archive-article-date">
+      <time datetime="2017-03-13T09:15:56.000Z" itemprop="datePublished">03-13</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      hexo yelee主题头像设置
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/头像设置/">头像设置</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  最近自己在设置hexo博客主题的时候,关于头像遇到了问题,关于网上的给予的解答并不能够使我的问题解决</p>
-<h3 id="主题头像链接设置失败"><a href="#主题头像链接设置失败" class="headerlink" title="主题头像链接设置失败"></a>主题头像链接设置失败</h3><pre><code>我在themes--&gt;yelee--&gt;_config.yml文件中,设置了
-
-`avatar: https://github.com/AriaVV/img_user/blob/master/my_avatar.png`
-</code></pre><p>当然结果是失败了,一直显示为:</p>
-<p><img src="/img/articleImg/avater_error.png"></p>
-<pre><code>我在网上搜索资料,试了好几种解决方式
-
-第一种:(失败)
-直接修改layout/_partial/left-col.ejs的第六行和第八行为：
-&lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot;&gt;
-&lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot; style=&quot;width: 100%;height: 100%;opacity: 1;&quot;&gt;
-
-第二种:(失败)
-把头像图片放在themes--&gt;yelee--&gt;source--&gt;img文件夹下,然后在
-themes--&gt;yelee--&gt;_config.yml文件中,设置`avatar: /source/img/my_avatar.png`
-</code></pre><p>最后发现,上传到github的文件的img文件夹是不在source文件夹下的,所以直接在 themes–&gt;yelee–&gt;_config.yml文件中,配置<br>    <code>avatar: /img/my_avatar.png</code>就可以完美的显示头像了!!!</p>
-<p>【end】</p>
-
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/微信小程序/">微信小程序</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/准备工作/">准备工作</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
-        <p><span>发布时间:</span>2017-03-13, 14:36:34</p>
-        <p><span>最后更新:</span>2017-03-13, 15:54:45</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/13/hexo-yelee主题头像设置/" title="hexo yelee主题头像设置">http://yoursite.com/2017/03/13/hexo-yelee主题头像设置/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/13/hexo-yelee主题头像设置/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/13/iframe标签使用总结/">
-                    iframe标签使用总结
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/13/hexo博客部署/">
-                    hexo博客部署
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题头像链接设置失败"><span class="toc-number">2.</span> <span class="toc-text">主题头像链接设置失败</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/03/13/iframe标签使用总结/" title="上一篇: iframe标签使用总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/03/13/hexo博客部署/" title="下一篇: hexo博客部署">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
