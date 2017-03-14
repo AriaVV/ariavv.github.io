@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="花自己的钱,买自己的包包,装自己的故事">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="人生没有彩排，每一天都是现场直播。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序开发基本配置和使用">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/微信小程序基本配置和使用/index.html">
 <meta property="og:site_name" content="xiaoLv">
-<meta property="og:description" content="花自己的钱,买自己的包包,装自己的故事">
-<meta property="og:updated_time" content="2017-03-13T06:22:43.139Z">
+<meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
+<meta property="og:updated_time" content="2017-03-14T06:37:59.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="花自己的钱,买自己的包包,装自己的故事">
+<meta name="twitter:title" content="微信小程序开发基本配置和使用">
+<meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>tags | xiaoLv</title>
+<title>微信小程序开发基本配置和使用 | xiaoLv</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,7 +66,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -256,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-微信小程序基本配置和使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-03-13T06:20:09.000Z" itemprop="datePublished">2017-03-13</time>
+      <a href="/2017/03/14/微信小程序基本配置和使用/" class="article-date">
+      <time datetime="2017-03-14T09:15:56.000Z" itemprop="datePublished">2017-03-14</time>
 </a>
 
 
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      微信小程序开发基本配置和使用
     </h1>
   
 
@@ -283,6 +283,10 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/微信小程序/">微信小程序</a>
+    </div>
+
 
         
         <div class="clearfix"></div>
@@ -292,97 +296,175 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h3 id="微信小程序的文件"><a href="#微信小程序的文件" class="headerlink" title="微信小程序的文件"></a>微信小程序的文件</h3><p>在微信小程序中,我们把所有的页面都放在一个统一的文件夹下,以单个文件夹存在,每个页面下又分别由三个页面组成,分别是 js、wxml、wxss</p>
+<pre><code>js、wxml、wxss 这三个文件就构成了一个完整的页面
+</code></pre><h3 id="三个文件的作用"><a href="#三个文件的作用" class="headerlink" title="三个文件的作用"></a>三个文件的作用</h3><p>js ：定义页面的逻辑</p>
+<pre><code>调用了一个page方法，是一个全局函数，用来创建页面对象
 
+onLoad方法页面加载时触发
+</code></pre><p>wxml ：定义页面的结构 语法是XML语法(Wei Xin Markup Language)</p>
+<p>wxss ：定义页面的样式 遵循是css语法(Wei Xin Style Sheet)</p>
+<h3 id="wxml标签"><a href="#wxml标签" class="headerlink" title="wxml标签"></a>wxml标签</h3><pre><code>view相当于html中的div
 
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iframe/">iframe</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序/">微信小程序</a><span class="category-list-count">7</span></li></ul>
+text标签定义文本
 
-<p class="count"></p>
+image图片标签
 
-<div class="tags">
-    <a href="/tags/hexo环境、部署、基本操作/" style="font-size: 16px; color: #808080">hexo环境、部署、基本操作</a> <a href="/tags/iframe小结/" style="font-size: 16px; color: #808080">iframe小结</a> <a href="/tags/准备工作/" style="font-size: 16px; color: #808080">准备工作</a> <a href="/tags/头像设置/" style="font-size: 16px; color: #808080">头像设置</a> <a href="/tags/开发环境/" style="font-size: 16px; color: #808080">开发环境</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
+block专门在做一些循环的时候,又不想在循环的时候在外层新加一些标签,block在循环完成后不会显示
+</code></pre><h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h3><p>在app.json文件中定义了一个pages的属性,这个属性定义了我们的应用程序可用的所有的页面(所以pages中的页面必须与app.json建立关联)</p>
+<pre><code>&quot;pages&quot;:[
+    &quot;pages/index/index&quot;,  //代表初始页面
+    &quot;pages/logs/logs&quot;
+  ]
+</code></pre><h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h3><p>有一个全局函数是 App,作用是用来指定生命周期</p>
+<pre><code>App({
+    onLaunch(){  //在App这个对象中定义了一个onLaunch方法
+        console.log(&apos;msg&apos;)    
+    },
+    foo(){   //定义一个额外方法
+        return &apos;bar&apos;
     }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
+})
+</code></pre><p>在页面的js文件中 引入 const app=getApp(),那么在页面中就可以调用app.js中定义的方法了</p>
+<pre><code>var app = getApp()
 
-<!-- Count tags and categories -->
-<p id="count">
-        已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-        共计<span><script>document.write($(".tags > a").length)</script></span>个标签
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
+Page({
+    onLoad(){
+        app.foo();  
+    }
+})
+</code></pre><h3 id="app-wsxx"><a href="#app-wsxx" class="headerlink" title="app.wsxx"></a>app.wsxx</h3><p>整个程序共享的样式(公共样式)</p>
+<h3 id="数据加载到页面"><a href="#数据加载到页面" class="headerlink" title="数据加载到页面"></a>数据加载到页面</h3><p>小程序提供了一个属性:page,这个属性可以是一个对象:这个对象中的所有的成员都可以在界面上直接被访问到</p>
+<pre><code>在index.js中
 
-          
-        <p>花自己的钱,买自己的包包,装自己的故事</p>
+Page({
+    data:{
+        message:&apos;hello world&apos;
+    },
+    onLoad(){
+        //页面加载就把数据呈现在页面
+        this.setData({
+            message:Date.now() //获取当前时间
+        })  
+    }
+})
+</code></pre><p>在页面上显示时</p>
+<pre><code>在index.wxml中
+&lt;text&gt;{{message}}&lt;text&gt;
+</code></pre><h3 id="访问网络资源"><a href="#访问网络资源" class="headerlink" title="访问网络资源"></a>访问网络资源</h3><p><strong> 微信开发者工具在更新到最新版的时候,发现请求时会报错</strong></p>
+<pre><code>错误信息:GET https://api.douban.com/v2/movie/in_theaters 400 (Bad Request)          asdebug.js:1 
 
+百度了一下解决方案 : 
+
+ header: {
+    // &apos;content-type&apos;: &apos;application/json&apos;
+    &apos;Content-Type&apos;: &apos;json&apos;
+}
+</code></pre><p>微信官方提供了API,不存在跨域的问题</p>
+<pre><code>wx.request({
+  url: &apos;test.php&apos;, //仅为示例，并非真实的接口地址
+  data: {
+     x: &apos;&apos; ,
+     y: &apos;&apos;
+  },
+  header: {
+      &apos;content-type&apos;: &apos;application/json&apos;
+  },
+  success: function(res) {
+    console.log(res.data)
+  }
+})
+</code></pre><p>把访问外部链接获取的数据放到list当中</p>
+<pre><code>Page({
+    data:{
+        message:&apos;hello world!&apos;,
+        list:[]
+    },
+    onLoad(){
+        const _this = this
+        //页面加载时候执行
+        wx.request({
+          url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+          data: {},
+          header: {
+              &apos;Content-Type&apos;:&apos;json&apos;
+          },
+          success: function(res) {
+              console.log(res.data)
+            _this.setData({
+                list: res.data.subjects
+            })
+          }
+        })
+    }
+})
+</code></pre><p>在页面上显示的时候</p>
+<pre><code>&lt;view&gt;
+  &lt;view class=&quot;item&quot; wx:for=&quot;{{ list }}&quot;&gt;
+    &lt;image src=&quot;{{ item.images.small }}&quot;&gt;&lt;/image&gt;
+    &lt;text&gt;{{ item.title }}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre>
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
+        <p><span>发布时间:</span>2017-03-14, 17:15:56</p>
+        <p><span>最后更新:</span>2017-03-14, 14:37:59</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/14/微信小程序基本配置和使用/" title="微信小程序开发基本配置和使用">http://yoursite.com/2017/03/14/微信小程序基本配置和使用/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/14/微信小程序基本配置和使用/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/13/微信小程序模板的使用/">
+                    微信小程序模板的使用
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#微信小程序的文件"><span class="toc-number">1.</span> <span class="toc-text">微信小程序的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三个文件的作用"><span class="toc-number">2.</span> <span class="toc-text">三个文件的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wxml标签"><span class="toc-number">3.</span> <span class="toc-text">wxml标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-json"><span class="toc-number">4.</span> <span class="toc-text">app.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-js"><span class="toc-number">5.</span> <span class="toc-text">app.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-wsxx"><span class="toc-number">6.</span> <span class="toc-text">app.wsxx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据加载到页面"><span class="toc-number">7.</span> <span class="toc-text">数据加载到页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问网络资源"><span class="toc-number">8.</span> <span class="toc-text">访问网络资源</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -390,6 +472,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/13/微信小程序模板的使用/" title="下一篇: 微信小程序模板的使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
 
 
 
