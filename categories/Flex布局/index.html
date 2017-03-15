@@ -15,16 +15,15 @@
 
 
 
-<meta name="description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iframe标签使用总结">
-<meta property="og:url" content="http://yoursite.com/2017/03/13/iframe标签使用总结/index.html">
+<meta name="description" content="花自己的钱，买自己的包包，装自己的故事">
+<meta property="og:type" content="website">
+<meta property="og:title" content="xiaoLv">
+<meta property="og:url" content="http://yoursite.com/categories/Flex布局/index.html">
 <meta property="og:site_name" content="xiaoLv">
-<meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:updated_time" content="2017-03-13T06:56:35.162Z">
+<meta property="og:description" content="花自己的钱，买自己的包包，装自己的故事">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iframe标签使用总结">
-<meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
+<meta name="twitter:title" content="xiaoLv">
+<meta name="twitter:description" content="花自己的钱，买自己的包包，装自己的故事">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>iframe标签使用总结 | xiaoLv</title>
+<title>Category: Flex布局 | xiaoLv</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,10 +65,10 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
-        isCategory: false,
+        isCategory: true,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: undefined
@@ -256,202 +255,60 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-iframe标签使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/03/13/iframe标签使用总结/" class="article-date">
-      <time datetime="2017-03-13T06:51:06.000Z" itemprop="datePublished">2017-03-13</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/03/15/Flex布局/" class="archive-article-date">
+      <time datetime="2017-03-15T05:31:36.000Z" itemprop="datePublished">03-15</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      iframe标签使用总结
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/03/15/Flex布局/">Flex布局</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iframe/">iframe</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iframe小结/">iframe小结</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>* 最近公司在做后台管理系统,需要实现单页面的跳转,不知是谁突发奇想要用iframe标签来进行实现
-
-* 在这过程中,遇到的问题，来分享一下
-</code></pre><hr>
-
-<h3 id="iframe的定义与用法"><a href="#iframe的定义与用法" class="headerlink" title="iframe的定义与用法"></a>iframe的定义与用法</h3><pre><code>* iframe 元素会创建包含另外一个文档的内联框架（即行内框架）。
-
-* 我自己在使用的时候是首先是创建一个整天的父级的页面，固定好上部和左侧，右侧定义一个iframe标签，整个标签的宽度、高度占右侧的100%
-
-* 在定义iframe时,给iframe的设置:
-
-`&lt;div class=&quot;right&quot;&gt;
-    &lt;div class=&quot;main&quot;&gt;
-        &lt;iframe id=&quot;main_frame&quot; name=&quot;open_frame&quot; border=&quot;0&quot; frameboder=&quot;0&quot; scrolling=&quot;auto&quot; width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;./mainContext.html&quot;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
-&lt;/div&gt;`
-
-* 当然了父页面的a链接必须带有 ` target=&quot;open_frame&quot;` 属性，这个 `target的值` 就是iframe中的 `name属性` 的值
-* 
-* .right这个盒子定义整个右侧这一块的位置；.main这个盒子定义样式,比如说右侧的padding等;
-* 
-* iframe标签中的name属性是为了给页面上要显示在这块区域的链接一个约定;其他的属性可以自己去查文档,都有很详细的解释
-</code></pre><hr>   
-
-<h3 id="iframe标签定义高度"><a href="#iframe标签定义高度" class="headerlink" title="iframe标签定义高度"></a>iframe标签定义高度</h3><pre><code>* 在iframe标签中设置了 &apos;height=100%&apos;,若页面内容不是很多,这个区域就撑不起来,所以需要我们使用JS来控制iframe的高度
-
-`var $height=$(window).height();`&lt;br/&gt;
-`$(&apos;iframe&apos;).css({&apos;height&apos;:$height-140});`  当然这是140是根据你的top的高度和 .main的pading、margin值来设置
-</code></pre><hr>
-
-<h3 id="在子页面、父页面互相获取元素"><a href="#在子页面、父页面互相获取元素" class="headerlink" title="在子页面、父页面互相获取元素"></a>在子页面、父页面互相获取元素</h3><p><strong> 必须开启服务器,在这里介绍几种开启服务器方法 </strong></p>
-<pre><code>* 如果你配置好了WampServer,那么你只需要把代码放在www文件夹中,通过localhost:端口号来进行访问
-
-* 你安装了node和npm,那么你需要配置一下anywhere就可以了,它是一静态服务器
-
-    配置方法:   `npm install anywhere -g` &lt;br/&gt;
-
-    使用方法: 在当前文件夹打开cmd命令行(shift+右键)，输入   anywhere 端口号  
-
-* 服务器开启起来了,你就可以跨域获取元素了
-</code></pre><hr>
-
-<h3 id="子页面获取iframe父页面元素的方法"><a href="#子页面获取iframe父页面元素的方法" class="headerlink" title="子页面获取iframe父页面元素的方法"></a>子页面获取iframe父页面元素的方法</h3><pre><code>* 方法一:
-`var $arrow = $(&quot;.triangle-right&quot;, window.parent.document);`
-
-* 方法二:
-`var $arrow = $(window.parent.document).find(&quot;.triangle-right&quot;);`
-</code></pre><p><hr></p>
-<h3 id="父级页面获取iframe子页面元素的方法"><a href="#父级页面获取iframe子页面元素的方法" class="headerlink" title="父级页面获取iframe子页面元素的方法"></a>父级页面获取iframe子页面元素的方法</h3><pre><code>** 在父级页面加载的时候,子级页面不一定是加载完成的,所以建议使用子页面获取父级元素的方式 **
-
-`var $mainCon = $(&quot;#mainCon&quot;,document.frames(&apos;iframename&apos;).document)`
-</code></pre><p><hr><br>【end】</p>
-
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Flex布局/">Flex布局</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex布局/">flex布局</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
-        <p><span>发布时间:</span>2017-03-13, 14:51:06</p>
-        <p><span>最后更新:</span>2017-03-13, 14:56:35</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/13/iframe标签使用总结/" title="iframe标签使用总结">http://yoursite.com/2017/03/13/iframe标签使用总结/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/13/iframe标签使用总结/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/13/Vue开发环境配置/">
-                    Vue开发环境配置
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/13/hexo-yelee主题头像设置/">
-                    hexo yelee主题头像设置
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iframe的定义与用法"><span class="toc-number">1.1.</span> <span class="toc-text">iframe的定义与用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iframe标签定义高度"><span class="toc-number">1.2.</span> <span class="toc-text">iframe标签定义高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在子页面、父页面互相获取元素"><span class="toc-number">1.3.</span> <span class="toc-text">在子页面、父页面互相获取元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子页面获取iframe父页面元素的方法"><span class="toc-number">1.4.</span> <span class="toc-text">子页面获取iframe父页面元素的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#父级页面获取iframe子页面元素的方法"><span class="toc-number">1.5.</span> <span class="toc-text">父级页面获取iframe子页面元素的方法</span></a></li></ol></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/03/13/Vue开发环境配置/" title="上一篇: Vue开发环境配置">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/03/13/hexo-yelee主题头像设置/" title="下一篇: hexo yelee主题头像设置">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Flex布局/">Flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
