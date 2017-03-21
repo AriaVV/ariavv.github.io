@@ -21,10 +21,13 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/index.html">
 <meta property="og:site_name" content="xiaoLv">
 <meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:updated_time" content="2017-03-17T06:56:06.821Z">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/fullpage01.png">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/fullpage02.png">
+<meta property="og:updated_time" content="2017-03-21T06:40:04.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery全屏滚动插件fullPage使用中出现的小问题总结">
 <meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
+<meta name="twitter:image" content="http://yoursite.com/img/articleImg/fullpage01.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -363,7 +366,57 @@
 &lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;第三屏
     &lt;a href=&quot;#part3&quot;&gt;跳到下一屏&lt;/a&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre><h3 id="每屏的导航器设置不同的颜色"><a href="#每屏的导航器设置不同的颜色" class="headerlink" title="每屏的导航器设置不同的颜色"></a>每屏的导航器设置不同的颜色</h3><p>在设置之前,导航器是有不同的颜色的,如下图:</p>
+<p><img src="/img/articleImg/fullpage01.png"></p>
+<p>现在设计图的要求是更改,如下图,并且第一屏和第三屏颜色一样,第二屏和第四屏颜色一样:<br><img src="/img/articleImg/fullpage02.png"></p>
+<h3 id="配置每个圆点的大小"><a href="#配置每个圆点的大小" class="headerlink" title="配置每个圆点的大小"></a>配置每个圆点的大小</h3><pre><code>#fp-nav span,
+.fp-slidesNavspan{width: 16px; height: 16px;}
+</code></pre><h3 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a>JS文件</h3><p>那么我们如果修改fullpage.css中的样式,那么每屏的颜色还是一样,所以我用JS来控制了他的颜色</p>
+<pre><code>$(&apos;#fullpage&apos;).fullpage({
+            resize: true,
+            verticalCentered: false,
+            scrollOverflow: false,
+            menu:true,
+            navigation: true,
+            anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+            afterLoad: function (anchorLink, index) {
+                $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                setTimeout(function () {
+                    $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                }, 0);
+                //如果是第一屏和第三瓶配置一种颜色
+                if(index == 1 || index == 3){
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#fff&apos;);
+                    })
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                        $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                    })
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;+background&apos;,&apos;url(../images/y1.jpg)&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;+background&apos;,&apos;url(../images/y2.jpg)&apos;);
+                //如果是第二屏和第四瓶配置一种颜色
+                }else if(index == 2 || index ==4){
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    })
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                        $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    })
+                }
+            },
+            afterRender: function(){
+                $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+            }
+        });
+</code></pre><p>这样就配置好了,真的好麻烦,但是我还没有找到简单的方法</p>
+<p>【end】</p>
+
       
     </div>
     
@@ -374,7 +427,7 @@
         <p><span>本文标题:</span><a href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">jQuery全屏滚动插件fullPage使用中出现的小问题总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
         <p><span>发布时间:</span>2017-03-17, 11:52:03</p>
-        <p><span>最后更新:</span>2017-03-17, 14:56:06</p>
+        <p><span>最后更新:</span>2017-03-21, 14:40:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/" title="jQuery全屏滚动插件fullPage使用中出现的小问题总结">http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -388,6 +441,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">
+                    fullPag在IE7中导航不显示圆解决方案-
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -404,7 +463,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fullPage的使用方法"><span class="toc-number">1.1.</span> <span class="toc-text">fullPage的使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#想要fullPage插件可以达到预期的效果-需要进行配置"><span class="toc-number">1.2.</span> <span class="toc-text">想要fullPage插件可以达到预期的效果,需要进行配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每一屏中点击按钮跳到下一屏"><span class="toc-number">1.3.</span> <span class="toc-text">每一屏中点击按钮跳到下一屏</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fullPage的使用方法"><span class="toc-number">1.1.</span> <span class="toc-text">fullPage的使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#想要fullPage插件可以达到预期的效果-需要进行配置"><span class="toc-number">1.2.</span> <span class="toc-text">想要fullPage插件可以达到预期的效果,需要进行配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每一屏中点击按钮跳到下一屏"><span class="toc-number">1.3.</span> <span class="toc-text">每一屏中点击按钮跳到下一屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每屏的导航器设置不同的颜色"><span class="toc-number">1.4.</span> <span class="toc-text">每屏的导航器设置不同的颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置每个圆点的大小"><span class="toc-number">1.5.</span> <span class="toc-text">配置每个圆点的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS文件"><span class="toc-number">1.6.</span> <span class="toc-text">JS文件</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -435,7 +494,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/" title="上一篇: fullPag在IE7中导航不显示圆解决方案-">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -447,7 +508,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">jQuery全屏滚动插件fullPage使用中出现的小问题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Flex布局/">Flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">fullPag在IE7中导航不显示圆解决方案-</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">jQuery全屏滚动插件fullPage使用中出现的小问题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Flex布局/">Flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
 
 
 
