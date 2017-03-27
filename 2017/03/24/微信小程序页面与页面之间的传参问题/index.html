@@ -17,13 +17,13 @@
 
 <meta name="description" content="人生没有彩排，每一天都是现场直播。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序事件">
-<meta property="og:url" content="http://yoursite.com/2017/03/13/微信小程序的事件/index.html">
+<meta property="og:title" content="微信小程序页面与页面之间的传参问题">
+<meta property="og:url" content="http://yoursite.com/2017/03/24/微信小程序页面与页面之间的传参问题/index.html">
 <meta property="og:site_name" content="xiaoLv">
 <meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:updated_time" content="2017-03-21T06:41:08.937Z">
+<meta property="og:updated_time" content="2017-03-24T08:53:58.498Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序事件">
+<meta name="twitter:title" content="微信小程序页面与页面之间的传参问题">
 <meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>微信小程序事件 | xiaoLv</title>
+<title>微信小程序页面与页面之间的传参问题 | xiaoLv</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-微信小程序的事件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-微信小程序页面与页面之间的传参问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/13/微信小程序的事件/" class="article-date">
-      <time datetime="2017-03-13T09:12:58.000Z" itemprop="datePublished">2017-03-13</time>
+      <a href="/2017/03/24/微信小程序页面与页面之间的传参问题/" class="article-date">
+      <time datetime="2017-03-24T08:44:24.000Z" itemprop="datePublished">2017-03-24</time>
 </a>
 
 
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序事件
+      微信小程序页面与页面之间的传参问题
     </h1>
   
 
@@ -296,24 +296,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="微信小程序事件"><a href="#微信小程序事件" class="headerlink" title="微信小程序事件"></a>微信小程序事件</h2><h3 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h3><pre><code>事件是用户的一种行为
-</code></pre><h3 id="事件的分类"><a href="#事件的分类" class="headerlink" title="事件的分类"></a>事件的分类</h3><p>事件分为冒泡事件和非冒泡事件：</p>
-<p>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。<br>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。</p>
-<pre><code>   类型                      触发条件
-   touchstart              手指触摸动作开始
-touchmove              手指触摸后移动
-touchcancel              手指触摸动作被打断，如来电提醒，弹窗
-touchend              手指触摸动作结束
-tap                      手指触摸后马上离开
-longtap                  手指触摸后，超过350ms再离开
-</code></pre><p>非冒泡事件：除上表之外的其他组件自定义事件如无特殊申明都是非冒泡事件，如<form>的submit事件，input标签的input事件，<scroll-view>的scroll事件，(详见各个组件)</scroll-view></form></p>
-<h3 id="bind和catch的分别"><a href="#bind和catch的分别" class="headerlink" title="bind和catch的分别"></a>bind和catch的分别</h3><p>catch绑定的事件会阻止冒泡</p>
-<p>bind绑定事件会进行冒泡</p>
-<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>currentTarget 绑定的这个组件</p>
-<p>target 触发事件源控件</p>
-<p>dataset 方便给view添加上我们自己的自定义属性  data-title=”hello”</p>
-<p>【end】</p>
-
+        <h3 id="页面的跳转"><a href="#页面的跳转" class="headerlink" title="页面的跳转"></a>页面的跳转</h3><pre><code>使用navigator标签
+&lt;navigator src=&quot;&quot;&gt;&lt;/navigator&gt;
+</code></pre><h3 id="页面与页面之间建立关联"><a href="#页面与页面之间建立关联" class="headerlink" title="页面与页面之间建立关联"></a>页面与页面之间建立关联</h3><p>我们在点击navigator的时候,需要确定你点的是什么,这个就是需要参数了</p>
+<pre><code>&lt;navigator url=&quot;../item/item?type=in_theaters&amp;name=正在热映&amp;id={{  item.id  }}&quot;&gt;  &lt;/navigator&gt;
+</code></pre><p>我们在把另一个页面跟他建立联系的时候,可以使用</p>
+<pre><code>在需要跳转到的页面设置js文件
+在onLoad中从params中获取到参数,这样navigator标签和这个页面就建立联系了 
+Page({
+    data: {
+        list: [],
+        loading: true,
+    },
+    onLoad (params) {
+    const apiUrl = &apos;https://api.douban.com/v2/movie/subject/&apos; + params.id
+    const _this = this
+    wx.request({
+        url: apiUrl,
+        data: {},
+        header: {
+            &apos;Content-Type&apos;: &apos;json&apos;
+        },
+        success: function (res) {
+            _this.setData({ list: res.data,loading: false})
+        }
+    })
+}
+})
+</code></pre>
       
     </div>
     
@@ -321,13 +331,13 @@ longtap                  手指触摸后，超过350ms再离开
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/24/微信小程序页面与页面之间的传参问题/">微信小程序页面与页面之间的传参问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
-        <p><span>发布时间:</span>2017-03-13, 17:12:58</p>
-        <p><span>最后更新:</span>2017-03-21, 14:41:08</p>
+        <p><span>发布时间:</span>2017-03-24, 16:44:24</p>
+        <p><span>最后更新:</span>2017-03-24, 16:53:58</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/13/微信小程序的事件/" title="微信小程序事件">http://yoursite.com/2017/03/13/微信小程序的事件/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/13/微信小程序的事件/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/24/微信小程序页面与页面之间的传参问题/" title="微信小程序页面与页面之间的传参问题">http://yoursite.com/2017/03/24/微信小程序页面与页面之间的传参问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/24/微信小程序页面与页面之间的传参问题/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -340,15 +350,15 @@ longtap                  手指触摸后，超过350ms再离开
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/13/微信小程序开发准备工作及项目构建/">
-                    微信小程序开发准备工作
+                <a href="/2017/03/24/微信小程序上拉加载和下拉刷新/">
+                    微信小程序上拉加载和下拉刷新
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/13/Vue开发环境配置/">
-                    Vue开发环境配置
+                <a href="/2017/03/23/jQuery插件zclip实现复制功能/">
+                    jQuery插件zclip实现复制功能
                 </a>
             </div>
         
@@ -360,7 +370,7 @@ longtap                  手指触摸后，超过350ms再离开
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#微信小程序事件"><span class="toc-number">1.</span> <span class="toc-text">微信小程序事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是事件"><span class="toc-number">1.1.</span> <span class="toc-text">什么是事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件的分类"><span class="toc-number">1.2.</span> <span class="toc-text">事件的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind和catch的分别"><span class="toc-number">1.3.</span> <span class="toc-text">bind和catch的分别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象"><span class="toc-number">1.4.</span> <span class="toc-text">事件对象</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#页面的跳转"><span class="toc-number">1.</span> <span class="toc-text">页面的跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面与页面之间建立关联"><span class="toc-number">2.</span> <span class="toc-text">页面与页面之间建立关联</span></a></li></ol>
         
     </div>
     <style>
@@ -391,7 +401,7 @@ longtap                  手指触摸后，超过350ms再离开
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/13/微信小程序开发准备工作及项目构建/" title="上一篇: 微信小程序开发准备工作">
+            <a href="/2017/03/24/微信小程序上拉加载和下拉刷新/" title="上一篇: 微信小程序上拉加载和下拉刷新">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -399,7 +409,7 @@ longtap                  手指触摸后，超过350ms再离开
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/13/Vue开发环境配置/" title="下一篇: Vue开发环境配置">
+            <a href="/2017/03/23/jQuery插件zclip实现复制功能/" title="下一篇: jQuery插件zclip实现复制功能">
                 <i class="fa fa-angle-right"></i>
             </a>
         
