@@ -17,14 +17,17 @@
 
 <meta name="description" content="人生没有彩排，每一天都是现场直播。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序模板的使用">
-<meta property="og:url" content="http://yoursite.com/2017/03/13/微信小程序模板的使用/index.html">
+<meta property="og:title" content="点击按钮加载更多数据">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/点击按钮加载更多数据/index.html">
 <meta property="og:site_name" content="xiaoLv">
 <meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:updated_time" content="2017-03-21T06:41:43.080Z">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/clickMore01.png">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/clickMore02.png">
+<meta property="og:updated_time" content="2017-03-29T06:26:08.379Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序模板的使用">
+<meta name="twitter:title" content="点击按钮加载更多数据">
 <meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
+<meta name="twitter:image" content="http://yoursite.com/img/articleImg/clickMore01.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>微信小程序模板的使用 | xiaoLv</title>
+<title>点击按钮加载更多数据 | xiaoLv</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +259,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-微信小程序模板的使用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-点击按钮加载更多数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/13/微信小程序模板的使用/" class="article-date">
-      <time datetime="2017-03-13T09:20:56.000Z" itemprop="datePublished">2017-03-13</time>
+      <a href="/2017/03/29/点击按钮加载更多数据/" class="article-date">
+      <time datetime="2017-03-29T05:48:37.000Z" itemprop="datePublished">2017-03-29</time>
 </a>
 
 
@@ -275,7 +278,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序模板的使用
+      点击按钮加载更多数据
     </h1>
   
 
@@ -284,7 +287,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/微信小程序/">微信小程序</a>
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
     </div>
 
 
@@ -296,25 +299,131 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们在应用程序开发的过程当中,很说时候会有一些共用的代码,我们不可能说每次使用的时候,都去复制粘贴一下</p>
-<p>这就需要模板来方便我们的开发 </p>
-<h3 id="模板的建立"><a href="#模板的建立" class="headerlink" title="模板的建立"></a>模板的建立</h3><p>你需要在Pages文件夹下新建一个名为template的文件夹作为模板的目录</p>
-<p>这是第一种方式:</p>
-<pre><code>在template文件夹下,新建一个header.wxml文件,文件内容是
-&lt;view&gt;这是头部&lt;/view&gt;
+        <h3 id="代码下载地址"><a href="#代码下载地址" class="headerlink" title="代码下载地址"></a>代码下载地址</h3><p><a href="https://github.com/AriaVV/clickToLoadMore.github.io" target="_blank" rel="external">点击下载代码</a></p>
+<h3 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h3><pre><code>jQuery
 
-然后在你使用到模板的页面下引入&lt;include src=&quot;../template/header&quot;/&gt;
-</code></pre><p>第二种方式我们在template文件夹下新建一个footer.wxml文件,文件内容为:</p>
-<pre><code>&lt;template name=&quot;footer&quot;&gt;这是底部内容&lt;/template&gt;
+artTemplate模板引擎
+</code></pre><h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/common.css&quot;&gt;    //这是样式的初始化
+&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/main.css&quot;&gt;      //这是css样式
 
-使用&lt;import src=&quot;../template/footer&quot;/&gt;方式导入要使用的文件
-在这里可能我们会定义了很多的模板,所以在引入时候我们要声明使用的是哪个模板
-&lt;template is=&quot;footer&quot;&gt; 这个is属性跟template的name属性一致
-</code></pre><p>我们也可以给第二种方式动态设置数据</p>
-<pre><code>&lt;template name=&quot;footer&quot;&gt;这是底部内容 {{text}} &lt;/template&gt;
+&lt;script src=&quot;./libs/jquery.js&quot;&gt;&lt;/script&gt;           //jQuery
+&lt;script src=&quot;./libs/template-native.js&quot;&gt;&lt;/script&gt;  //模板引擎
+&lt;script src=&quot;./js/main.js&quot;&gt;&lt;/script&gt;               //我们自己的逻辑代码 
+</code></pre><h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><p>在写页面的时候,可以先布置好页面的结构,把结构和css写好之后,在进行渲染,这样省的你老是调样式了</p>
+<pre><code>&lt;div class=&quot;movie clearfix&quot;&gt;
+    &lt;div class=&quot;com clearfix&quot;&gt;
+        &lt;div class=&quot;clsDetail&quot;&gt;
+            &lt;div class=&quot;tit&quot;&gt;正在热映...... &lt;a href=&quot;javascript:;&quot;&gt;(更多)&lt;/a&gt; &lt;/div&gt;
+            &lt;div class=&quot;listItem&quot; id=&quot;in_theaters&quot;&gt;
+                //这里我们利用模板引擎渲染数据
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>最终效果图<br> <img src="/img/articleImg/clickMore01.png"></p>
+<h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><p>css样式初始化</p>
+<pre><code>body,button,h2,h3,h4,h5,h6,input,li,p,ul{margin:0;padding:0}
+body,button,input,select,textarea{padding-left:5px;font:16px/1 &quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,&quot;Microsoft JhengHei&quot;,&quot;STHeiti,MingLiu&quot;;outline:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+li,ul{list-style:none}
+a{text-decoration:none;font-size:14px;color:#4677aa;}
+a:focus,a:hover{text-decoration:none;color:#4677aa;}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+html{overflow-y:scroll}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:&quot; &quot;;clear:both;height:0}
+.clearfix{display:inline-table}
+* html .clearfix{height:1%}
+.clearfix{display:block}
+i{font-style: normal;}
+.fl{float:left}
+.fr{float:right}
+body::-webkit-scrollbar{width:0;height:0}
+button{outline:0 none;border:none;cursor: pointer;}
+div,ul,li,p,img,a,input{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.com{width: 950px;height:100%;margin:0 auto;}
+</code></pre><p>index.html样式</p>
+<pre><code>.movie{padding-top:50px;padding-bottom:40px;width: 100%;background-color:#f7f7f7;}
+.movie .classify1{float:left;width: 120px;}
+.movie .title{font-size:18px;color:#0089af;font-weight:900;}
+.movie .con{margin-top:15px;}
+.movie .con li{height:30px;line-height:30px;}
+.movie .con li a{color:#2297cc;}
+.movie .clsDetail{float:left;width: 535px;}
+.clsDetail .tit,.classify2 .tit{height: 1px;line-height:1px;margin-bottom:20px;}
+.listItem{display:inline-block;width: 100%;padding-left:10px;}
+.listItem img{width: 100px;height: 145px;}
+.listItem .item{margin:20px 12px;display:inline-block;width: 100px;text-align:center;font-size:14px;}
+.listItem .name{margin-bottom:10px;margin-top:10px;color:#333;}
+.listItem .score{color:#ffac2d;}
+/*按钮的样式*/
+.in_more{display:block;margin:0 auto; width: 220px;height: 40px;line-height:40px;text-align:center;background-color:#1c8bd0;color:#fff;margin-top:30px;}
+.in_more i{vertical-align:middle;display: inline-block;margin-right:20px;width: 25px;height: 25px;background: url(../images/main/loading.gif) no-repeat;background-size:contain;}
+</code></pre><h3 id="JS业务逻辑"><a href="#JS业务逻辑" class="headerlink" title="JS业务逻辑"></a>JS业务逻辑</h3><pre><code>$(function(){
+    in_theaters();
+})
 
-&lt;template is=&quot;footer&quot; data=&quot; {{ text:"动态的数据" }}&quot;&gt; 
-</code></pre><p>【end】</p>
+//电影正在热映获取数据
+function in_theaters(){
+    var count = 8;       //规定初始的显示数据条数
+    var total =8;        //总共的数据条数
+    $.ajax({
+        url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,    //豆瓣api
+        type: &apos;GET&apos;,
+        dataType: &apos;jsonp&apos;,
+        data: {
+            count:count,
+            total:total
+        },
+        success:function(data){
+            //如果地址请求成功把数据渲染在页面上,这里使用artTemplate模板引擎
+            $(&apos;#in_theaters&apos;).html(template(&apos;template&apos;,{model:data.subjects}));
+            //在这里,如果把按钮直接放在页面上,那么如果数据渲染的很慢,那么按钮就会很明显,所以让它和数据一块渲染
+            $(&apos;.clsDetail&apos;).append(&apos;&lt;button class=&quot;in_more&quot;&gt;点击加载更多&lt;/button&gt;&apos;);
+        }
+    });
+    //在点击按钮的时候加载更多数据,因为按钮是动态渲染到页面的,所以需要用到**事件委托**
+    $(&apos;.clsDetail&apos;).on(&apos;click&apos;,&apos;.in_more&apos;,function(){
+        //在没有点击按钮之前我们已经渲染了8条数据了,这里让每次点击按钮的时候显示在页面的数据增加8条
+        count += 8;  
+        //点击按钮的时候禁用按钮,并且继续发起请求获取数据  
+        $(this).html(&apos;&lt;i&gt;&lt;/i&gt;正在努力的加载中...&apos;).attr(&apos;disabled&apos;,&apos;true&apos;).css(&apos;backgroundColor&apos;,&apos;#ccc&apos;);
+        $.ajax({
+            url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+            type: &apos;GET&apos;,
+            dataType: &apos;jsonp&apos;,
+            data: {
+                count:count,
+                total:total
+            },
+            success:function(data){
+                //获取到更多的数据之后继续在页面渲染数据
+                $(&apos;#in_theaters&apos;).html(template(&apos;template&apos;,{model:data.subjects}));
+                //并且启用按钮的点击功能
+                $(&apos;.in_more&apos;).html(&apos;点击加载更多&apos;).css(&apos;backgroundColor&apos;,&apos;#1c8bd0&apos;).removeAttr(&apos;disabled&apos;);
+                //这里的data.total是我们发起请求后获取到的数据的总条数
+                //如果count&gt;data.total,那么就说明没有更多的数据了,我们就给用户一个提示&quot;没有更多数据了&quot;,并且把按钮禁用掉
+                if(count&gt;data.total){
+                    $(&apos;.in_more&apos;).html(&apos;没有更多了&apos;).attr(&apos;disabled&apos;,&apos;true&apos;).css(&apos;backgroundColor&apos;,&apos;#ccc&apos;);
+                }
+            }
+        })
+    });
+}
+</code></pre><h3 id="html页面的模板使用"><a href="#html页面的模板使用" class="headerlink" title="html页面的模板使用"></a>html页面的模板使用</h3><p><strong>模板一定要放在jQuery和artTemplate引入包的前面,不然会报错</strong></p>
+<pre><code>这个id=&quot;template&quot;和JS文件中保持一致
+&lt;script type=&quot;text/html&quot; id=&quot;template&quot;&gt;
+    &lt;% for(var i = 0 ; i &lt; model.length ; i++) {  %&gt;
+        &lt;% var item = model[i]; %&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;img src=&quot;&lt;%=item.images.small %&gt;&quot; /&gt;
+            &lt;p class=&quot;name&quot;&gt;&lt;%=item.title%&gt;&lt;/p&gt;
+            &lt;p class=&quot;score&quot;&gt;&lt;%=item.rating.average%&gt;&lt;/p&gt;
+            &lt;a class=&quot;buyBtn&quot; href=&quot;javascript:;&quot;&gt;选座购票&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;%  }  %&gt;
+&lt;/script&gt;
+</code></pre><h3 id="完整的html结构"><a href="#完整的html结构" class="headerlink" title="完整的html结构"></a>完整的html结构</h3><p><img src="/img/articleImg/clickMore02.png"></p>
 
       
     </div>
@@ -323,13 +432,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/29/点击按钮加载更多数据/">点击按钮加载更多数据</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
-        <p><span>发布时间:</span>2017-03-13, 17:20:56</p>
-        <p><span>最后更新:</span>2017-03-21, 14:41:43</p>
+        <p><span>发布时间:</span>2017-03-29, 13:48:37</p>
+        <p><span>最后更新:</span>2017-03-29, 14:26:08</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/13/微信小程序模板的使用/" title="微信小程序模板的使用">http://yoursite.com/2017/03/13/微信小程序模板的使用/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/13/微信小程序模板的使用/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/29/点击按钮加载更多数据/" title="点击按钮加载更多数据">http://yoursite.com/2017/03/29/点击按钮加载更多数据/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/29/点击按钮加载更多数据/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -341,16 +450,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/14/微信小程序基本配置和使用/">
-                    微信小程序开发基本配置和使用
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/13/微信小程序swiper组件/">
-                    微信小程序swiper组件
+                <a href="/2017/03/24/微信小程序上拉加载和下拉刷新/">
+                    微信小程序上拉加载和下拉刷新
                 </a>
             </div>
         
@@ -362,7 +465,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板的建立"><span class="toc-number">1.1.</span> <span class="toc-text">模板的建立</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码下载地址"><span class="toc-number">1.</span> <span class="toc-text">代码下载地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用插件"><span class="toc-number">2.</span> <span class="toc-text">使用插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引包"><span class="toc-number">3.</span> <span class="toc-text">引包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML结构"><span class="toc-number">4.</span> <span class="toc-text">HTML结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css样式"><span class="toc-number">5.</span> <span class="toc-text">css样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS业务逻辑"><span class="toc-number">6.</span> <span class="toc-text">JS业务逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html页面的模板使用"><span class="toc-number">7.</span> <span class="toc-text">html页面的模板使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整的html结构"><span class="toc-number">8.</span> <span class="toc-text">完整的html结构</span></a></li></ol>
         
     </div>
     <style>
@@ -393,15 +496,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/14/微信小程序基本配置和使用/" title="上一篇: 微信小程序开发基本配置和使用">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/13/微信小程序swiper组件/" title="下一篇: 微信小程序swiper组件">
+            <a href="/2017/03/24/微信小程序上拉加载和下拉刷新/" title="下一篇: 微信小程序上拉加载和下拉刷新">
                 <i class="fa fa-angle-right"></i>
             </a>
         
