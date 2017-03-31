@@ -17,14 +17,19 @@
 
 <meta name="description" content="人生没有彩排，每一天都是现场直播。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序事件">
-<meta property="og:url" content="http://yoursite.com/2017/03/13/微信小程序的事件/index.html">
+<meta property="og:title" content="vue的基本使用">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/Vue的基本使用/index.html">
 <meta property="og:site_name" content="xiaoLv">
 <meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
-<meta property="og:updated_time" content="2017-03-21T06:41:08.937Z">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/vue01.png">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/vue02.png">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/vue03.png">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/vue04.png">
+<meta property="og:updated_time" content="2017-03-31T06:09:53.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序事件">
+<meta name="twitter:title" content="vue的基本使用">
 <meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
+<meta name="twitter:image" content="http://yoursite.com/img/articleImg/vue01.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>微信小程序事件 | xiaoLv</title>
+<title>vue的基本使用 | xiaoLv</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -260,11 +265,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-微信小程序的事件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Vue的基本使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/13/微信小程序的事件/" class="article-date">
-      <time datetime="2017-03-13T09:12:58.000Z" itemprop="datePublished">2017-03-13</time>
+      <a href="/2017/03/30/Vue的基本使用/" class="article-date">
+      <time datetime="2017-03-30T01:38:17.000Z" itemprop="datePublished">2017-03-30</time>
 </a>
 
 
@@ -279,7 +284,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序事件
+      vue的基本使用
     </h1>
   
 
@@ -288,7 +293,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/微信小程序/">微信小程序</a>
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>
     </div>
 
 
@@ -300,24 +305,303 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="微信小程序事件"><a href="#微信小程序事件" class="headerlink" title="微信小程序事件"></a>微信小程序事件</h2><h3 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h3><pre><code>事件是用户的一种行为
-</code></pre><h3 id="事件的分类"><a href="#事件的分类" class="headerlink" title="事件的分类"></a>事件的分类</h3><p>事件分为冒泡事件和非冒泡事件：</p>
-<p>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。<br>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。</p>
-<pre><code>   类型                      触发条件
-   touchstart              手指触摸动作开始
-touchmove              手指触摸后移动
-touchcancel              手指触摸动作被打断，如来电提醒，弹窗
-touchend              手指触摸动作结束
-tap                      手指触摸后马上离开
-longtap                  手指触摸后，超过350ms再离开
-</code></pre><p>非冒泡事件：除上表之外的其他组件自定义事件如无特殊申明都是非冒泡事件，如<form>的submit事件，input标签的input事件，<scroll-view>的scroll事件，(详见各个组件)</scroll-view></form></p>
-<h3 id="bind和catch的分别"><a href="#bind和catch的分别" class="headerlink" title="bind和catch的分别"></a>bind和catch的分别</h3><p>catch绑定的事件会阻止冒泡</p>
-<p>bind绑定事件会进行冒泡</p>
-<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>currentTarget 绑定的这个组件</p>
-<p>target 触发事件源控件</p>
-<p>dataset 方便给view添加上我们自己的自定义属性  data-title=”hello”</p>
-<p>【end】</p>
+        <p>Vue不兼容低版本的IE</p>
+<h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><p>使用vue的时候,首先需要进行引包</p>
+<p>我们可以使用npm下载  </p>
+<pre><code>`npm install vue`
+</code></pre><p>也可以直接链接</p>
+<pre><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>我们在使用的时候首先定义HTML</p>
+<pre><code>&lt;div id=&quot;box&quot;&gt; {{ msg }} &lt;/div&gt;   //在这里{{ }}是用来渲染数据的
+</code></pre><p>在进行声明式渲染</p>
+<pre><code>&lt;script&gt;
+    window.onload = function(){
+        var app = new Vue({        //定义一个vue实例,变量名字可以随便起
+          el: &apos;#box&apos;,              //这里是选择器(id选择器、标签、类名等),我们使用的是id选择器
+          data: {
+            msg: &apos;Hello Vue!&apos;，  //这里是数据（可以放String、Number、Boolean、数组、对象等等）
+            arr：[&apos;苹果&apos;,&apos;桃子&apos;,&apos;菠萝&apos;,&apos;香蕉&apos;]
+          }
+        })
+    }
+&lt;/script&gt;
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue01.png"></p>
+<h3 id="vue的常见指令"><a href="#vue的常见指令" class="headerlink" title="vue的常见指令"></a>vue的常见指令</h3><p><strong>指令:扩展了html标签的属性和功能</strong></p>
+<h5 id="v-model-一般用在表单元素上-用于双向数据绑定"><a href="#v-model-一般用在表单元素上-用于双向数据绑定" class="headerlink" title="v-model 一般用在表单元素上,用于双向数据绑定"></a>v-model 一般用在表单元素上,用于双向数据绑定</h5><pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;welcome vue&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
 
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h5 id="v-for-循环"><a href="#v-for-循环" class="headerlink" title="v-for 循环"></a>v-for 循环</h5><p>1、数组语法 (value, index) in arr</p>
+<pre><code>value是循环的每一项的值
+index是每一项的索引
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                arr:[&apos;苹果&apos;,&apos;桃子&apos;,&apos;菠萝&apos;,&apos;香蕉&apos;]
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,$index) in arr&quot;&gt;{{ item }}-{{ $index }}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue02.png"></p>
+<p>2、对象语法 (value, key, index) in object</p>
+<pre><code>value是循环的每一项的值
+key是每一项的键
+index是每一项的索引
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                obj:{a:&apos;苹果&apos;,b:&apos;桃子&apos;,c:&apos;菠萝&apos;,d:&apos;香蕉&apos;}
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,$key,$index) in obj&quot;&gt;{{ item }}-{{ $key }}-{{ $index }}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+在对象语法中可以直接使用{{ $key }}表示键,使用{{ $index }}表示索引 `&lt;li v-for=&quot;item in obj&quot;&gt;{{ $key }}-{{ $index }}&lt;/li&gt;`
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue03.png"></p>
+<h5 id="v-if-条件"><a href="#v-if-条件" class="headerlink" title="v-if  条件"></a>v-if  条件</h5><pre><code>&lt;script&gt;
+    window.onload = function(){
+        var app = new Vue({
+          el: &apos;#box&apos;,
+          data: {
+            msg: true
+          }
+        })
+    }
+&lt;/script&gt;
+
+&lt;div id=&quot;box&quot;&gt; 
+    &lt;div v-if=&quot;msg&quot;&gt;如果是true,就显示&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h5 id="v-show-”true-false”-显示隐藏切换"><a href="#v-show-”true-false”-显示隐藏切换" class="headerlink" title="v-show=”true/false”    显示隐藏切换"></a>v-show=”true/false”    显示隐藏切换</h5><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h5 id="v-on-click-”函数”-基础事件"><a href="#v-on-click-”函数”-基础事件" class="headerlink" title="v-on:click=”函数”    基础事件"></a>v-on:click=”函数”    基础事件</h5><pre><code>v-on可以简写成 @
+例如:v-on:click=&quot;函数&quot; ,可以写成@click=&quot;函数&quot;
+
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {        //data里面放着数据
+                msg: true
+              },
+              methods: {    //方法定义在这里
+                  click:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;input type=&quot;button&quot; value=&quot;点击&quot; v-on:click=&quot;click()&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="事件对象-event"><a href="#事件对象-event" class="headerlink" title="事件对象 $event"></a>事件对象 $event</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                //在html结构中点击事件传入 $event才可以使用事件对象,不然是没有效果的
+                  show:function(event){
+                      console.log(event)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;button @click=&quot;show($event)&quot; id=&quot;box&quot;&gt;    
+        点击按钮
+    &lt;/button&gt;
+&lt;/body&gt;
+</code></pre><p><img src="/img/articleImg/vue04.png"></p>
+<h3 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h3><p>1、event.cancelBubble = true</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(event){
+                      alert(1)
+                      event.cancelBubble = true    //阻止冒泡
+                  },
+                  show2:function(event){
+                      alert(2)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div @click=&quot;show2()&quot;  id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot;  @click=&quot;show($event)&quot;  value=&quot;点击按钮&quot;/&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>2、@click.stop=”show()”</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  },
+                  show2:function(){
+                      alert(2)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div @click=&quot;show2()&quot;  id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot;  @click.stop=&quot;show()&quot;  value=&quot;点击按钮&quot;/&gt;     //这里阻止冒泡
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h3><p>点击鼠标右键,弹出弹出框,并且鼠标右键的默认原有的功能给他禁用掉<br>1、 e.preventDefault();</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(e){
+                      alert(1)
+                      e.preventDefault();
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot;  @contextmenu=&quot;show($event)&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>2、 @contextmenu.prevent=”show()”</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot;  @contextmenu.prevent=&quot;show()&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><h3 id="keyCode的使用"><a href="#keyCode的使用" class="headerlink" title="keyCode的使用"></a>keyCode的使用</h3><p>在Vue中,我们可以直接使用键盘码来控制行为</p>
+<body><br><br>1、@keydown.13=”show()”<br>回车的键盘码是什么，按下回车键执行函数，这样我们就可以不用使用事件对象了<br>    <body><br>        <script><br>            window.onload = function(){<br><br>                var app = new Vue({<br>                  el: ‘#box’,<br>                  data: {<br>                    msg: ‘Hello Vue!’<br>                  },<br>                  methods:{<br>                      show:function(){<br>                          alert(1)<br>                      }<br>                  }<br>                })<br><br>            }<br>        </script><br><br>        <input type="text" @keydown.13="show()" id="box"><br>    </body>
+
+<p>2、@keydown.enter=”show()”<br>按下回车键执行函数</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot;  @keydown.enter =&quot;show()&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>@keydown.up=”show()”      按上键执行函数<br>@keydown.down=”show()”      按下键执行函数<br>@keydown.left=”show()”      按左键执行函数<br>@keydown.right=”show()”      按右键执行函数  等等,还有很多</p>
+<h3 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h3><p>在绑定属性的时候最好用v-bind<br>写法:<img v-bind:src="url" alt=""><br>简写:<img :src="url" alt=""></p>
+<p><strong> 除了class和style所有的属性都可以  :src=””  这种形式绑定</strong><br>class在使用时候,可以:class=”[red,blue]”  这里的red是data中定义的数据;<br>class还可以:class=”{red:true,blue:false}”,这种指的不是data的数据,直接指向类名;<br>class还可以:class=”json”,json可以在data中定义<br>style和class的使用方式基本一致</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                url: &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre></body>
       
     </div>
     
@@ -325,13 +609,13 @@ longtap                  手指触摸后，超过350ms再离开
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/30/Vue的基本使用/">vue的基本使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
-        <p><span>发布时间:</span>2017-03-13, 17:12:58</p>
-        <p><span>最后更新:</span>2017-03-21, 14:41:08</p>
+        <p><span>发布时间:</span>2017-03-30, 09:38:17</p>
+        <p><span>最后更新:</span>2017-03-31, 14:09:53</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/13/微信小程序的事件/" title="微信小程序事件">http://yoursite.com/2017/03/13/微信小程序的事件/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/13/微信小程序的事件/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/30/Vue的基本使用/" title="vue的基本使用">http://yoursite.com/2017/03/30/Vue的基本使用/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/30/Vue的基本使用/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -343,16 +627,10 @@ longtap                  手指触摸后，超过350ms再离开
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/13/微信小程序开发准备工作及项目构建/">
-                    微信小程序开发准备工作
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/13/Vue开发环境配置/">
-                    Vue开发环境配置
+                <a href="/2017/03/29/点击按钮加载更多数据/">
+                    点击按钮加载更多数据
                 </a>
             </div>
         
@@ -364,7 +642,7 @@ longtap                  手指触摸后，超过350ms再离开
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#微信小程序事件"><span class="toc-number">1.</span> <span class="toc-text">微信小程序事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是事件"><span class="toc-number">1.1.</span> <span class="toc-text">什么是事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件的分类"><span class="toc-number">1.2.</span> <span class="toc-text">事件的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind和catch的分别"><span class="toc-number">1.3.</span> <span class="toc-text">bind和catch的分别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象"><span class="toc-number">1.4.</span> <span class="toc-text">事件对象</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引包"><span class="toc-number">1.</span> <span class="toc-text">引包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue的常见指令"><span class="toc-number">3.</span> <span class="toc-text">vue的常见指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#v-model-一般用在表单元素上-用于双向数据绑定"><span class="toc-number">3.0.1.</span> <span class="toc-text">v-model 一般用在表单元素上,用于双向数据绑定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-for-循环"><span class="toc-number">3.0.2.</span> <span class="toc-text">v-for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-if-条件"><span class="toc-number">3.0.3.</span> <span class="toc-text">v-if  条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-show-”true-false”-显示隐藏切换"><span class="toc-number">3.0.4.</span> <span class="toc-text">v-show=”true/false”    显示隐藏切换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件"><span class="toc-number">4.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#v-on-click-”函数”-基础事件"><span class="toc-number">4.0.1.</span> <span class="toc-text">v-on:click=”函数”    基础事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象-event"><span class="toc-number">5.</span> <span class="toc-text">事件对象 $event</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻止事件冒泡"><span class="toc-number">6.</span> <span class="toc-text">阻止事件冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻止默认行为"><span class="toc-number">7.</span> <span class="toc-text">阻止默认行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keyCode的使用"><span class="toc-number">8.</span> <span class="toc-text">keyCode的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定属性"><span class="toc-number">9.</span> <span class="toc-text">绑定属性</span></a></li></ol>
         
     </div>
     <style>
@@ -400,7 +678,7 @@ longtap                  手指触摸后，超过350ms再离开
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"微信小程序事件　| xiaoLv　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"vue的基本使用　| xiaoLv　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -420,15 +698,13 @@ longtap                  手指触摸后，超过350ms再离开
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/13/微信小程序开发准备工作及项目构建/" title="上一篇: 微信小程序开发准备工作">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/13/Vue开发环境配置/" title="下一篇: Vue开发环境配置">
+            <a href="/2017/03/29/点击按钮加载更多数据/" title="下一篇: 点击按钮加载更多数据">
                 <i class="fa fa-angle-right"></i>
             </a>
         
