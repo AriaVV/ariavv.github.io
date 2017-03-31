@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xiaoLv">
 <meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
 <meta property="og:image" content="http://yoursite.com/img/articleImg/vue04.png">
-<meta property="og:updated_time" content="2017-03-31T06:16:18.962Z">
+<meta property="og:updated_time" content="2017-03-31T06:19:38.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue事件">
 <meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
@@ -450,9 +450,29 @@
     &lt;input type=&quot;button&quot;  @contextmenu.prevent=&quot;show()&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
 &lt;/body&gt;
 </code></pre><h3 id="keyCode的使用"><a href="#keyCode的使用" class="headerlink" title="keyCode的使用"></a>keyCode的使用</h3><p>在Vue中,我们可以直接使用键盘码来控制行为</p>
-<body><br><br>1、@keydown.13=”show()”<br>回车的键盘码是什么，按下回车键执行函数，这样我们就可以不用使用事件对象了<br><br>    <body><br>        <script><br>            window.onload = function(){<br><br>                var app = new Vue({<br>                  el: ‘#box’,<br>                  data: {<br>                    msg: ‘Hello Vue!’<br>                  },<br>                  methods:{<br>                      show:function(){<br>                          alert(1)<br>                      }<br>                  }<br>                })<br><br>            }<br>        </script><br><br>        <input type="text" @keydown.13="show()" id="box"><br>    </body>
+<p>1、@keydown.13=”show()”<br>回车的键盘码是什么，按下回车键执行函数，这样我们就可以不用使用事件对象了</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
 
-<p>2、@keydown.enter=”show()”<br>按下回车键执行函数</p>
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot;  @keydown.13=&quot;show()&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>2、@keydown.enter=”show()”<br>按下回车键执行函数</p>
 <pre><code>&lt;body&gt;    
     &lt;script&gt;
         window.onload = function(){
@@ -473,8 +493,10 @@
     &lt;input type=&quot;text&quot;  @keydown.enter =&quot;show()&quot; id=&quot;box&quot;/&gt;
 &lt;/body&gt;
 </code></pre><p>@keydown.up=”show()”      按上键执行函数<br>@keydown.down=”show()”      按下键执行函数<br>@keydown.left=”show()”      按左键执行函数<br>@keydown.right=”show()”      按右键执行函数  等等,还有很多</p>
-<h3 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h3><p>在绑定属性的时候最好用v-bind<br>写法:<img v-bind:src="url" alt=""><br>简写:<img :src="url" alt=""></p>
-<p><strong> 除了class和style所有的属性都可以  :src=””  这种形式绑定</strong><br>class在使用时候,可以:class=”[red,blue]”  这里的red是data中定义的数据;<br>class还可以:class=”{red:true,blue:false}”,这种指的不是data的数据,直接指向类名;<br>class还可以:class=”json”,json可以在data中定义<br>style和class的使用方式基本一致</p>
+<h3 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h3><pre><code>在绑定属性的时候最好用v-bind
+写法:&lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
+简写:&lt;img :src=&quot;url&quot; alt=&quot;&quot;&gt;
+</code></pre><p><strong> 除了class和style所有的属性都可以  :src=””  这种形式绑定</strong><br>class在使用时候,可以:class=”[red,blue]”  这里的red是data中定义的数据;<br>class还可以:class=”{red:true,blue:false}”,这种指的不是data的数据,直接指向类名;<br>class还可以:class=”json”,json可以在data中定义<br>style和class的使用方式基本一致</p>
 <pre><code>&lt;body&gt;    
     &lt;script&gt;
         window.onload = function(){
@@ -491,7 +513,7 @@
         &lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
     &lt;/div&gt;
 &lt;/body&gt;
-</code></pre></body>
+</code></pre>
       
     </div>
     
@@ -502,7 +524,7 @@
         <p><span>本文标题:</span><a href="/2017/03/31/Vue事件/">Vue事件</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
         <p><span>发布时间:</span>2017-03-31, 14:13:32</p>
-        <p><span>最后更新:</span>2017-03-31, 14:16:18</p>
+        <p><span>最后更新:</span>2017-03-31, 14:19:38</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/31/Vue事件/" title="Vue事件">http://yoursite.com/2017/03/31/Vue事件/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/31/Vue事件/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
