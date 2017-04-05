@@ -24,7 +24,8 @@
 <meta property="og:image" content="http://yoursite.com/img/articleImg/vue01.png">
 <meta property="og:image" content="http://yoursite.com/img/articleImg/vue02.png">
 <meta property="og:image" content="http://yoursite.com/img/articleImg/vue03.png">
-<meta property="og:updated_time" content="2017-03-31T06:13:09.897Z">
+<meta property="og:image" content="http://yoursite.com/img/articleImg/vue11.png">
+<meta property="og:updated_time" content="2017-04-05T03:34:01.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue的基本使用">
 <meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
@@ -363,7 +364,9 @@ index是每一项的索引
 &lt;/body&gt;
 </code></pre><p>效果图：</p>
 <p><img src="/img/articleImg/vue02.png"></p>
-<p>2、对象语法 (value, key, index) in object</p>
+<pre><code>如果有重复数据是添加不上的,我们可以通过track-by=&quot;$index&quot;添加:
+&lt;li v-for=&quot;(item,$index) in arr&quot; track-by=&quot;$index&quot;&gt;{{ item }}-{{ $index }}&lt;/li&gt;
+</code></pre><p>2、对象语法 (value, key, index) in object</p>
 <pre><code>value是循环的每一项的值
 key是每一项的键
 index是每一项的索引
@@ -403,7 +406,76 @@ index是每一项的索引
 &lt;div id=&quot;box&quot;&gt; 
     &lt;div v-if=&quot;msg&quot;&gt;如果是true,就显示&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><h5 id="v-show-”true-false”-显示隐藏切换"><a href="#v-show-”true-false”-显示隐藏切换" class="headerlink" title="v-show=”true/false”    显示隐藏切换"></a>v-show=”true/false”    显示隐藏切换</h5><p>【end】</p>
+</code></pre><h5 id="v-show-”true-false”-显示隐藏切换"><a href="#v-show-”true-false”-显示隐藏切换" class="headerlink" title="v-show=”true/false”    显示隐藏切换"></a>v-show=”true/false”    显示隐藏切换</h5><h3 id="防止闪烁"><a href="#防止闪烁" class="headerlink" title="防止闪烁"></a>防止闪烁</h3><p>v-text=””</p>
+<p>v-html=””</p>
+<p>v-cloak  然后在style中添加   [v-clock]{display:none;}</p>
+<h3 id="自定义指令-属性"><a href="#自定义指令-属性" class="headerlink" title="自定义指令(属性)"></a>自定义指令(属性)</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义指令
+    Vue.directive(&apos;red&apos;,function(color){
+        this.el.style.background=color;
+    });
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;,
+                a:&apos;red&apos;
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;span v-red=&quot;a&quot;&gt;11111111&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图:</p>
+<p><img src="/img/articleImg/vue11.png"></p>
+<h3 id="自定义元素指令-不推荐使用"><a href="#自定义元素指令-不推荐使用" class="headerlink" title="自定义元素指令(不推荐使用)"></a>自定义元素指令(不推荐使用)</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义元素指令
+    Vue.elementDirective(&apos;span-red&apos;,{
+        bind:function(){
+            this.el.style.backgroundColor=&apos;red&apos;;
+        }
+    });
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;,
+                a:&apos;red&apos;
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;span-red&gt;&lt;/span-red&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="自定义键盘信息"><a href="#自定义键盘信息" class="headerlink" title="自定义键盘信息"></a>自定义键盘信息</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义绑定ctrl键,ctrl的键盘码是17
+    Vue.directive(&apos;on&apos;).keyCodes.ctrl=17;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;
+            },
+            methods:{
+                show:function(){
+                    alert(1)
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;text&quot; @keyup.ctrl=&quot;show()&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>【end】</p>
 
       
     </div>
@@ -415,7 +487,7 @@ index是每一项的索引
         <p><span>本文标题:</span><a href="/2017/03/30/Vue的基本使用/">vue的基本使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
         <p><span>发布时间:</span>2017-03-30, 09:38:17</p>
-        <p><span>最后更新:</span>2017-03-31, 14:13:09</p>
+        <p><span>最后更新:</span>2017-04-05, 11:34:01</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/30/Vue的基本使用/" title="vue的基本使用">http://yoursite.com/2017/03/30/Vue的基本使用/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/30/Vue的基本使用/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -451,7 +523,7 @@ index是每一项的索引
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引包"><span class="toc-number">1.</span> <span class="toc-text">引包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue的常见指令"><span class="toc-number">3.</span> <span class="toc-text">vue的常见指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#v-model-一般用在表单元素上-用于双向数据绑定"><span class="toc-number">3.0.1.</span> <span class="toc-text">v-model 一般用在表单元素上,用于双向数据绑定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-for-循环"><span class="toc-number">3.0.2.</span> <span class="toc-text">v-for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-if-条件"><span class="toc-number">3.0.3.</span> <span class="toc-text">v-if  条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-show-”true-false”-显示隐藏切换"><span class="toc-number">3.0.4.</span> <span class="toc-text">v-show=”true/false”    显示隐藏切换</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引包"><span class="toc-number">1.</span> <span class="toc-text">引包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue的常见指令"><span class="toc-number">3.</span> <span class="toc-text">vue的常见指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#v-model-一般用在表单元素上-用于双向数据绑定"><span class="toc-number">3.0.1.</span> <span class="toc-text">v-model 一般用在表单元素上,用于双向数据绑定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-for-循环"><span class="toc-number">3.0.2.</span> <span class="toc-text">v-for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-if-条件"><span class="toc-number">3.0.3.</span> <span class="toc-text">v-if  条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-show-”true-false”-显示隐藏切换"><span class="toc-number">3.0.4.</span> <span class="toc-text">v-show=”true/false”    显示隐藏切换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止闪烁"><span class="toc-number">4.</span> <span class="toc-text">防止闪烁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义指令-属性"><span class="toc-number">5.</span> <span class="toc-text">自定义指令(属性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义元素指令-不推荐使用"><span class="toc-number">6.</span> <span class="toc-text">自定义元素指令(不推荐使用)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义键盘信息"><span class="toc-number">7.</span> <span class="toc-text">自定义键盘信息</span></a></li></ol>
         
     </div>
     <style>
@@ -496,7 +568,7 @@ index是每一项的索引
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue事件/">Vue事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/Vue的基本使用/">vue的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/29/点击按钮加载更多数据/">点击按钮加载更多数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/微信小程序上拉加载和下拉刷新/">微信小程序上拉加载和下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/微信小程序页面与页面之间的传参问题/">微信小程序页面与页面之间的传参问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/23/jQuery插件zclip实现复制功能/">jQuery插件zclip实现复制功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">fullPag在IE7中导航不显示圆解决方案-</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">jQuery全屏滚动插件fullPage使用中出现的小问题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Flex布局/">Flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Vue的生命周期/">Vue的生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue交互/">Vue交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue中常用的简单过滤器/">Vue中常用的简单过滤器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue模板的使用/">Vue模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue事件/">Vue事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/Vue的基本使用/">vue的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/29/点击按钮加载更多数据/">点击按钮加载更多数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/微信小程序上拉加载和下拉刷新/">微信小程序上拉加载和下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/微信小程序页面与页面之间的传参问题/">微信小程序页面与页面之间的传参问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/23/jQuery插件zclip实现复制功能/">jQuery插件zclip实现复制功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">fullPag在IE7中导航不显示圆解决方案-</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">jQuery全屏滚动插件fullPage使用中出现的小问题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Flex布局/">Flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
 
 
 
