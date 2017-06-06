@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="lvMan" />
+
+
+
+<meta name="description" content="人生没有彩排，每一天都是现场直播。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原生JS-数组的常用方法总结">
+<meta property="og:url" content="http://yoursite.com/2017/06/02/原生JS-数组方法/index.html">
+<meta property="og:site_name" content="xiaoLv">
+<meta property="og:description" content="人生没有彩排，每一天都是现场直播。">
+<meta property="og:updated_time" content="2017-06-02T01:24:24.802Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原生JS-数组的常用方法总结">
+<meta name="twitter:description" content="人生没有彩排，每一天都是现场直播。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="xiaoLv" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>原生JS-数组的常用方法总结 | xiaoLv</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">lvMan</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">记录学习的技能和遇到的问题</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/AriaVV/ariavv.github.io" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="https://github.com/AriaVV" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex布局/">flex布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo环境、部署、基本操作/">hexo环境、部署、基本操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iframe小结/">iframe小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/准备工作/">准备工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/复制数据/">复制数据</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/头像设置/">头像设置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发环境/">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/">首屏动画 点击箭头调到下一屏 fullPage</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">正在奋斗中的小前端...</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">lvMan</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">lvMan</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">记录学习的技能和遇到的问题</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/AriaVV/ariavv.github.io" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="https://github.com/AriaVV" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-原生JS-数组方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/02/原生JS-数组方法/" class="article-date">
+      <time datetime="2017-06-02T01:22:36.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原生JS-数组的常用方法总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="删除元素，并向数组添加新元素-slice"><a href="#删除元素，并向数组添加新元素-slice" class="headerlink" title="删除元素，并向数组添加新元素 slice()"></a>删除元素，并向数组添加新元素 slice()</h3><p>splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
+<p>注释：该方法会改变原始数组。</p>
+<pre><code>语法
+arrayObject.splice(index,howmany,item1,.....,itemX)
+
+index    必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+howmany    必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+item1, ..., itemX    可选。向数组添加的新项目。
+</code></pre><p>说明</p>
+<pre><code>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。
+
+如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。
+</code></pre><h3 id="连接两个或更多的数组，并返回结果-concat"><a href="#连接两个或更多的数组，并返回结果-concat" class="headerlink" title="连接两个或更多的数组，并返回结果 concat()"></a>连接两个或更多的数组，并返回结果 concat()</h3><p>concat() 方法用于连接两个或多个数组。</p>
+<p>该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。</p>
+<pre><code>语法
+arrayObject.concat(arrayX,arrayX,......,arrayX)
+
+arrayX    必需。该参数可以是具体的值，也可以是数组对象。可以是任意多个。
+</code></pre><p>返回值</p>
+<pre><code>返回一个新的数组。该数组是通过把所有 arrayX 参数添加到 arrayObject 中生成的。如果要进行 concat() 操作的参数是数组，那么添加的是数组中的元素，而不是数组。
+</code></pre><h3 id="把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔-join"><a href="#把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔-join" class="headerlink" title="把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔 join()"></a>把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔 join()</h3><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
+<p>元素是通过指定的分隔符进行分隔的。</p>
+<pre><code>语法
+arrayObject.join(separator)
+
+separator    可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。
+</code></pre><p>返回值</p>
+<pre><code>返回一个字符串。该字符串是通过把 arrayObject 的每个元素转换为字符串，然后把这些字符串连接起来，在两个元素之间插入 separator 字符串而生成的。
+</code></pre><h3 id="颠倒数组中元素的顺序-reverse"><a href="#颠倒数组中元素的顺序-reverse" class="headerlink" title="颠倒数组中元素的顺序 reverse()"></a>颠倒数组中元素的顺序 reverse()</h3><p>reverse() 方法用于颠倒数组中元素的顺序。</p>
+<pre><code>语法
+arrayObject.reverse()
+
+该方法会改变原来的数组，而不会创建新的数组。
+</code></pre><h3 id="向数组的末尾添加一个或更多元素，并返回新的长度-push"><a href="#向数组的末尾添加一个或更多元素，并返回新的长度-push" class="headerlink" title="向数组的末尾添加一个或更多元素，并返回新的长度 push()"></a>向数组的末尾添加一个或更多元素，并返回新的长度 push()</h3><p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
+<pre><code>语法
+arrayObject.push(newelement1,newelement2,....,newelementX)
+</code></pre><p>说明</p>
+<pre><code>push() 方法可把它的参数顺序添加到 arrayObject 的尾部。它直接修改 arrayObject，而不是创建一个新的数组。push() 方法和 pop() 方法使用数组提供的先进后出栈的功能。
+</code></pre><h3 id="向数组的开头添加一个或更多元素，并返回新的长度-unshift"><a href="#向数组的开头添加一个或更多元素，并返回新的长度-unshift" class="headerlink" title="向数组的开头添加一个或更多元素，并返回新的长度 unshift()"></a>向数组的开头添加一个或更多元素，并返回新的长度 unshift()</h3><p>unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。</p>
+<pre><code>语法
+arrayObject.unshift(newelement1,newelement2,....,newelementX)
+</code></pre><p>说明</p>
+<pre><code>unshift() 方法将把它的参数插入 arrayObject 的头部，并将已经存在的元素顺次地移到较高的下标处，以便留出空间。该方法的第一个参数将成为数组的新元素 0，如果还有第二个参数，它将成为新的元素 1，以此类推。
+
+请注意，unshift() 方法不创建新的创建，而是直接修改原有的数组。
+</code></pre><h3 id="删除并返回数组的最后一个元素-pop"><a href="#删除并返回数组的最后一个元素-pop" class="headerlink" title="删除并返回数组的最后一个元素 pop()"></a>删除并返回数组的最后一个元素 pop()</h3><p>pop() 方法用于删除并返回数组的最后一个元素。</p>
+<pre><code>语法
+arrayObject.pop()
+</code></pre><p>说明</p>
+<pre><code>pop() 方法将删除 arrayObject 的最后一个元素，把数组长度减 1，并且返回它删除的元素的值。如果数组已经为空，则 pop() 不改变数组，并返回 undefined 值。
+</code></pre><h3 id="删除并返回数组的第一个元素-shift"><a href="#删除并返回数组的第一个元素-shift" class="headerlink" title="删除并返回数组的第一个元素 shift()"></a>删除并返回数组的第一个元素 shift()</h3><p>shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。</p>
+<pre><code>语法
+arrayObject.shift()
+</code></pre><p>返回值</p>
+<pre><code>数组原来的第一个元素的值。
+</code></pre><p>说明</p>
+<pre><code>如果数组是空的，那么 shift() 方法将不进行任何操作，返回 undefined 值。请注意，该方法不创建新数组，而是直接修改原有的 arrayObject。
+</code></pre><h3 id="对数组的元素进行排序-sort"><a href="#对数组的元素进行排序-sort" class="headerlink" title="对数组的元素进行排序 sort()"></a>对数组的元素进行排序 sort()</h3><p>sort() 方法用于对数组的元素进行排序。</p>
+<pre><code>语法
+arrayObject.sort(sortby)
+
+sortby    可选。规定排序顺序。必须是函数。
+</code></pre><p>返回值</p>
+<pre><code>对数组的引用。请注意，数组在原数组上进行排序，不生成副本。
+</code></pre><p>说明</p>
+<pre><code>如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。
+
+如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
+
+若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+
+若 a 等于 b，则返回 0。
+
+若 a 大于 b，则返回一个大于 0 的值。
+</code></pre><p>例子</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function sortNumber(a,b){
+        return a - b
+    }
+
+    var arr = new Array(6)
+    arr[0] = &quot;10&quot;
+    arr[1] = &quot;5&quot;
+    arr[2] = &quot;40&quot;
+    arr[3] = &quot;25&quot;
+    arr[4] = &quot;1000&quot;
+    arr[5] = &quot;1&quot;
+    document.write(arr.sort(sortNumber))
+&lt;/script&gt;
+
+输出结果: 1,5,10,25,40,1000
+</code></pre><p>###　方法可把数组转换为字符串，并返回结果　toString()<br>toString() 方法可把数组转换为字符串，并返回结果。</p>
+<pre><code>语法
+arrayObject.toString() 
+</code></pre><p>返回值</p>
+<pre><code>arrayObject 的字符串表示。返回值与没有参数的 join() 方法返回的字符串相同。
+</code></pre><p>说明</p>
+<pre><code>当数组用于字符串环境时，JavaScript 会调用这一方法将数组自动转换成字符串。但是在某些情况下，需要显式地调用该方法。
+</code></pre><p>【end】
+　</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/06/02/原生JS-数组方法/">原生JS-数组的常用方法总结</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">lvMan</a></p>
+        <p><span>发布时间:</span>2017-06-02, 09:22:36</p>
+        <p><span>最后更新:</span>2017-06-02, 09:24:24</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/02/原生JS-数组方法/" title="原生JS-数组的常用方法总结">http://yoursite.com/2017/06/02/原生JS-数组方法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/06/02/原生JS-数组方法/　　作者: lvMan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/06/02/原生JS-字符串方法/">
+                    原生JS-字符串的常用方法总结
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/05/jQuery制作动态进度条/">
+                    jQuery制作动态进度条
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#删除元素，并向数组添加新元素-slice"><span class="toc-number">1.</span> <span class="toc-text">删除元素，并向数组添加新元素 slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接两个或更多的数组，并返回结果-concat"><span class="toc-number">2.</span> <span class="toc-text">连接两个或更多的数组，并返回结果 concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔-join"><span class="toc-number">3.</span> <span class="toc-text">把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔 join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#颠倒数组中元素的顺序-reverse"><span class="toc-number">4.</span> <span class="toc-text">颠倒数组中元素的顺序 reverse()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向数组的末尾添加一个或更多元素，并返回新的长度-push"><span class="toc-number">5.</span> <span class="toc-text">向数组的末尾添加一个或更多元素，并返回新的长度 push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向数组的开头添加一个或更多元素，并返回新的长度-unshift"><span class="toc-number">6.</span> <span class="toc-text">向数组的开头添加一个或更多元素，并返回新的长度 unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除并返回数组的最后一个元素-pop"><span class="toc-number">7.</span> <span class="toc-text">删除并返回数组的最后一个元素 pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除并返回数组的第一个元素-shift"><span class="toc-number">8.</span> <span class="toc-text">删除并返回数组的第一个元素 shift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数组的元素进行排序-sort"><span class="toc-number">9.</span> <span class="toc-text">对数组的元素进行排序 sort()</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/06/02/原生JS-字符串方法/" title="上一篇: 原生JS-字符串的常用方法总结">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/05/jQuery制作动态进度条/" title="下一篇: jQuery制作动态进度条">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/原生JS-字符串方法/">原生JS-字符串的常用方法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/原生JS-数组方法/">原生JS-数组的常用方法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/05/jQuery制作动态进度条/">jQuery制作动态进度条</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/20/jQuery-lazyload-js实现图片懒加载功能/">jQuery.lazyload.js实现图片懒加载功能(基本使用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/06/vue-loader/">vue-loader</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/05/Vue-中的router/">Vue 中的router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/05/Vue中的组件/">Vue中的组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/05/Vue中的动画/">Vue中的动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Vue的生命周期/">Vue的生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue交互/">Vue交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue中常用的简单过滤器/">Vue中常用的简单过滤器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue模板的使用/">Vue模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Vue事件/">Vue事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/Vue的基本使用/">vue的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/29/点击按钮加载更多数据/">点击按钮加载更多数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/微信小程序上拉加载和下拉刷新/">微信小程序上拉加载和下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/微信小程序页面与页面之间的传参问题/">微信小程序页面与页面之间的传参问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/23/jQuery插件zclip实现复制功能/">jQuery插件zclip实现复制功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">fullPag在IE7中导航不显示圆解决方案-</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">jQuery全屏滚动插件fullPage使用中出现的小问题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Flex布局/">Flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/微信小程序基本配置和使用/">微信小程序开发基本配置和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序模板的使用/">微信小程序模板的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序swiper组件/">微信小程序swiper组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序loading组件/">微信小程序loading组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序小技巧/">微信小程序小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序开发准备工作及项目构建/">微信小程序开发准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/微信小程序的事件/">微信小程序事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/Vue开发环境配置/">Vue开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/iframe标签使用总结/">iframe标签使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo-yelee主题头像设置/">hexo yelee主题头像设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/hexo博客部署/">hexo博客部署</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 lvMan
+            </div>
+            <div class="footer-right">
+                <a href="javascript:;" title="快速、简洁且高效的博客框架">lvman</a>  人生若只如初见  <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
