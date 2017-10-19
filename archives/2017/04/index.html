@@ -1,12 +1,716 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>文章归档: 2017/4 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/archives/2017/04/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/archives/2017/04/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/archives/2017/04/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/archives/2017/04/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章归档 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                文章归档
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery插件/">jQuery插件</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/20/jQuery-lazyload-js实现图片懒加载功能/">
+    		jQuery.lazyload.js实现图片懒加载功能(基本使用)
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-20T05:53:03.000Z">2017-04-20</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><p>jQuery.lazyload插件依赖于jQuery</p>
+<p>我们在使用的时候需要引入两个文件</p>
+<pre><code>&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery.lazyload.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><p>使用这个插件,必须给img标签添加统一的Class</p>
+<p>另外src属性是用来占位</p>
+<p>data-original属性才是图片的路径</p>
+<p>另外图片的高宽是一定要设置的,不然容易出现问题</p>
+<pre><code>&lt;img class=&quot;lazy&quot; alt=&quot;&quot; src=&quot;img/example.jpg&quot; data-original=&quot;img/example.jpg&quot; /&gt;
+</code></pre><h3 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a>JS文件</h3><pre><code>$(window).load(function () {
+    $(&quot;img.lazy&quot;).lazyload({
+        placeholder:&apos;images/loadimg.jpg&apos;   //这是占位用的,一般是无用的
+    });
+});
+</code></pre><h3 id="设置临界点"><a href="#设置临界点" class="headerlink" title="设置临界点"></a>设置临界点</h3><p>如果你想提前的加载图片,需要设置threshold选项</p>
+<pre><code>如: threshold:200  在距离屏幕200px的位置提前加在图片
+
+$(&quot;img.lazy&quot;).lazyload({
+    threshold : 200
+});
+</code></pre><h3 id="设置图片出现的动画效果"><a href="#设置图片出现的动画效果" class="headerlink" title="设置图片出现的动画效果"></a>设置图片出现的动画效果</h3><pre><code>$(&quot;img.lazy&quot;).lazyload({
+    effect : &quot;fadeIn&quot;
+});
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/20/jQuery-lazyload-js实现图片懒加载功能/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/20/jQuery-lazyload-js实现图片懒加载功能/" title="jQuery.lazyload.js实现图片懒加载功能(基本使用)">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/06/vue-loader/">
+    		vue-loader
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-06T02:36:53.000Z">2017-04-06</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>vue-loader基于webpack</p>
+<pre><code>需要通过webpack编译成能够读懂的正常的代码
+</code></pre><h3 id="各个文件的用处"><a href="#各个文件的用处" class="headerlink" title="各个文件的用处"></a>各个文件的用处</h3><p>.vue文件</p>
+<pre><code>放置的是vue的组件代码
+
+&lt;template&gt;
+    放置的是HTML结构标签
+&lt;template&gt;
+
+&lt;style&gt;
+    放置的是CSS样式表
+&lt;/style&gt;
+
+&lt;script&gt;
+    放置的是JS的业务逻辑代码 (ES6)
+    babel-loader:主要是把ES6的代码编译成ES5的代码
+&lt;/script&gt;
+</code></pre><h3 id="搭建vue-loader脚手架"><a href="#搭建vue-loader脚手架" class="headerlink" title="搭建vue-loader脚手架"></a>搭建vue-loader脚手架</h3><pre><code>|-index.html
+|-main.js             //入口文件
+|-App.vue             //vue.js
+|-package.json        //项目依赖、名称、配置
+|-webpack.config.js   //webpack配置文件
+</code></pre><h3 id="webpack的准备工作"><a href="#webpack的准备工作" class="headerlink" title="webpack的准备工作"></a>webpack的准备工作</h3><pre><code>下载: npm install webpack webpack-dev-server
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/06/vue-loader/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/06/vue-loader/" title="vue-loader">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/6.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/05/Vue-中的router/">
+    		Vue 中的router
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-05T08:55:30.000Z">2017-04-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><pre><code>&lt;script src=&quot;libs/vue.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;libs/vue-router.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p><img src="/img/articleImg/vue27.png"></p>
+<h3 id="多层路由嵌套"><a href="#多层路由嵌套" class="headerlink" title="多层路由嵌套"></a>多层路由嵌套</h3><p><img src="/img/articleImg/vue28.png"></p>
+<h3 id="路由的其他信息-通过参数获取信息"><a href="#路由的其他信息-通过参数获取信息" class="headerlink" title="路由的其他信息(通过参数获取信息)"></a>路由的其他信息(通过参数获取信息)</h3><pre><code>{{$route.params | json}}    &lt;!-- 当前的参数 --&gt;
+
+{{$route.path}}              &lt;!--  /news/detail/002 --&gt;
+
+{{$route.query | json}}     &lt;!--  数据 --&gt;
+</code></pre><p><img src="/img/articleImg/vue29.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/05/Vue-中的router/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/05/Vue-中的router/" title="Vue 中的router">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/05/Vue中的组件/">
+    		Vue中的组件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-05T05:39:42.000Z">2017-04-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>就是一个大的对象,组件可以扩展HTML元素，封装可重用的HTML代码，我们可以将组件看作自定义的HTML元素。</p>
+<h3 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h3><p>1、第一种定义组件方式<br><img src="/img/articleImg/vue13.png"></p>
+<p>2、第二种定义组件方式</p>
+<p><img src="/img/articleImg/vue14.png"></p>
+<h3 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h3><p>1、第一种定义组件方式</p>
+<p><img src="/img/articleImg/vue16.png"></p>
+<p>2、第二种定义组件方式</p>
+<p><img src="/img/articleImg/vue17.png"></p>
+<h3 id="组件中放置数据"><a href="#组件中放置数据" class="headerlink" title="组件中放置数据"></a>组件中放置数据</h3><p><strong>data必须是函数的形式,函数必须返回一个对象(json)</strong></p>
+<p><img src="/img/articleImg/vue15.png"></p>
+<h3 id="template配合模板引擎"><a href="#template配合模板引擎" class="headerlink" title="template配合模板引擎"></a>template配合模板引擎</h3><p>1、模板使用的第一种方式</p>
+<p><img src="/img/articleImg/vue18.png"></p>
+<p>2、模板使用的第二种方式</p>
+<p><img src="/img/articleImg/vue19.png"></p>
+<h3 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h3><p><img src="/img/articleImg/vue20.png"></p>
+<p>效果图：（点击按钮切换内容，tab栏）</p>
+<p><img src="/img/articleImg/vue21.png"></p>
+<p><img src="/img/articleImg/vue22.png"></p>
+<h3 id="父子组件"><a href="#父子组件" class="headerlink" title="父子组件"></a>父子组件</h3><p><img src="/img/articleImg/vue23.png"></p>
+<p>效果图：</p>
+<p><img src="/img/articleImg/vue24.png"></p>
+<pre><code>由上图可以得出结论：
+
+Vue默认情况下，父组件和子组件之间的数据，是不能够共享的，子组件无法去访问父组件的数据
+</code></pre><h3 id="组件之间的数据的传递"><a href="#组件之间的数据的传递" class="headerlink" title="组件之间的数据的传递"></a>组件之间的数据的传递</h3><p>1、子组件获取父组件的数据 :props属性绑定</p>
+<p><img src="/img/articleImg/vue25.png"></p>
+<p>2、父组件获取子组件的数据</p>
+<pre><code>就是子组件把数据发送给父组件
+
+App.$emit（事件名，数据）
+</code></pre><p><img src="/img/articleImg/vue26.png"></p>
+<h3 id="slot占位"><a href="#slot占位" class="headerlink" title="slot占位"></a>slot占位</h3><p>在模板中slot占位,可以显示更多的内容</p>
+<pre><code>&lt;template id=&quot;temp&quot;&gt;
+    &lt;h3&gt;111111111&lt;/h3&gt;
+    &lt;slot name=&quot;ul-slot&quot;&gt; 占位 &lt;/slot&gt;
+&lt;/template&gt;
+
+slot占位之后这个ul标签也可以显示在页面中了
+&lt;temp&gt;
+    &lt;ul slot=&quot;ul-slot&quot;&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/temp&gt;
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/05/Vue中的组件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/05/Vue中的组件/" title="Vue中的组件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/05/Vue中的动画/">
+    		Vue中的动画
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-05T05:03:54.000Z">2017-04-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="最简单的动画"><a href="#最简单的动画" class="headerlink" title="最简单的动画"></a>最简单的动画</h3><pre><code>&lt;style&gt;
+    .box{width: 100px;height: 100px;background-color:red;}
+    /*动画的时间*/
+    .fade-transition{transition:all 2s ease;}
+    /*进入*/
+    .fade-enter{opacity:0;}
+    /*离开*/
+    .fade-leave{opacity:0;transform:translateX(200px);}
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;script&gt;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                start: false
+            },
+            methods:{
+                toggle(){
+                    this.start = !this.start;    //控制.box的显示隐藏
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;按钮&quot; @click=&quot;toggle&quot;&gt;
+        &lt;div class=&quot;box&quot; v-show=&quot;start&quot; transition=&quot;fade&quot;&gt;&lt;/div&gt;       //transition=&quot;fade&quot;定义动画
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="利用animate-css定义动画"><a href="#利用animate-css定义动画" class="headerlink" title="利用animate.css定义动画"></a>利用animate.css定义动画</h3><pre><code>代码:
+
+&lt;script src=&quot;./libs/vue.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;./libs/animate.css&quot;&gt;
+&lt;title&gt;vue动画&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    .container{width: 100px;margin:100px auto;}
+    .box{width: 100px;height: 100px;background-color:red;}
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;script&gt;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                start: false
+            },
+            methods:{
+                toggle(){
+                    this.start = !this.start;
+                }
+            },
+            // 定义所有的动画
+            transitions:{
+                fadeCartoon:{
+                    enterClass:&apos;zoomInLeft&apos;,  //进入,这个就是animate.css中定义的那些类名
+                    leaveClass:&apos;zoomOutRight&apos;  //离开    
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;按钮&quot; @click=&quot;toggle&quot;&gt;
+        &lt;div v-show=&quot;start&quot; class=&quot;box animated&quot; transition=&quot;fadeCartoon&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p><img src="/img/articleImg/vue12.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/05/Vue中的动画/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/05/Vue中的动画/" title="Vue中的动画">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/01/Vue的生命周期/">
+    		Vue的生命周期
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-01T03:36:48.000Z">2017-04-01</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="vue-1-0"><a href="#vue-1-0" class="headerlink" title="vue 1.0"></a>vue 1.0</h3><p>钩子函数</p>
+<p>created:实例已经创建的时候执行</p>
+<p>beforeCompile:编译之前执行</p>
+<p>compiled:编译之后执行</p>
+<p>ready:插入到文档中</p>
+<p>beforeDestroy:销毁之前</p>
+<p>destroyed:销毁之后</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/01/Vue的生命周期/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/01/Vue的生命周期/" title="Vue的生命周期">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

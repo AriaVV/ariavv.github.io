@@ -1,12 +1,626 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`Flex布局`分类下的文章 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/categories/Flex布局/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/categories/Flex布局/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/categories/Flex布局/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/categories/Flex布局/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `Flex布局`分类下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Flex布局/">Flex布局</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/15/Flex布局/">
+    		Flex布局
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-15T05:31:36.000Z">2017-03-15</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/flex布局/" title="flex布局">flex布局</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="felx布局"><a href="#felx布局" class="headerlink" title="felx布局"></a>felx布局</h2><p>从左到右是主轴</p>
+<p>从上到下是交叉轴</p>
+<pre><code>wxml结构：
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      1
+  &lt;/view&gt;
+  &lt;view class=&quot;item itemText&quot;&gt;
+      2
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      3
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      4
+  &lt;/view&gt;
+&lt;/view&gt;
+
+
+wxss样式：
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: lightyellow;
+    padding-top:50rpx;
+}
+.item {
+    width: 100rpx;
+    height: 100rpx;
+    background-color:pink;
+    text-align:center;
+    line-height:100rpx;
+    margin:10rpx;
+}
+</code></pre><p>那么他的默认的item的显示方式是：<br><img src="/img/articleImg/flex01.png"></p>
+<p>用flex布局,只需要给他的父容器类名为container,加上display:flex;的样式<br>再加上这个样式之后,默认是按照排列<br><img src="/img/articleImg/flex02.png"></p>
+<h2 id="flex容器的属性-给容器添加"><a href="#flex容器的属性-给容器添加" class="headerlink" title="flex容器的属性(给容器添加)"></a>flex容器的属性(给容器添加)</h2><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>决定元素的排列方向,也就是决定是主轴还是交叉轴</p>
+<pre><code>flex-direction:row; 默认方向,水平,主轴方向水平方向
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>flex-direction:column;竖着排列主轴方向是竖着的
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>决定元素如何换行,当元素超过一行,决定他如何换行</p>
+<p>我们多添加几个元素,现在元素共有10个,他的排列方式<br>每一个item的大小是变形的<br><img src="/img/articleImg/flex03.png"></p>
+<pre><code>我们可以在一行排列不下时,设置他的排列方式
+flex-wrap:nowrap;  不换行
+</code></pre><p><img src="/img/articleImg/flex03.png"></p>
+<pre><code>flex-wrap:wrap;  换行
+</code></pre><p><img src="/img/articleImg/flex04.png"></p>
+<pre><code>flex-wrap:wrap-reverse;  反转
+</code></pre><p><img src="/img/articleImg/flex05.png"></p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>是flex-direction和flex-wrap的简写</p>
+<pre><code>flex-flow: row wrap; 代表每一个item水平排列并且元素超过一行,换行
+</code></pre><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>元素在主轴上的对齐方式</p>
+<pre><code>justify-content:flex-start;默认值,从左边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>justify-content:flex-end;从右边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex08.png"></p>
+<pre><code>justify-content:center;  元素在主轴上居中对齐
+</code></pre><p><img src="/img/articleImg/flex06.png"></p>
+<pre><code>justify-content:space-around;元素两边的距离是一样的
+</code></pre><p><img src="/img/articleImg/flex10.png"></p>
+<pre><code>justify-content:space-between;两边对齐,中间的元素间隔是一样的
+</code></pre><p><img src="/img/articleImg/flex12.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-start;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-end;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex09.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:center;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex07.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-around;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex11.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-between;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex13.png"></p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>元素在交叉轴的对齐方式</p>
+<pre><code>align-items:flex-start;在交叉轴上的头部
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>align-items:flex-end;在交叉轴上的尾部
+</code></pre><p><img src="/img/articleImg/flex14.png"></p>
+<pre><code>align-items:center;在交叉轴上的中间
+</code></pre><p><img src="/img/articleImg/flex15.png"></p>
+<pre><code>align-items:stretch;
+
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+</code></pre><p><img src="/img/articleImg/flex16.png"></p>
+<pre><code>align-items:baseline;让元素以元素中的文字的基线对齐
+
+给第二个元素设置样式.itemText {line-height:150rpx;}
+</code></pre><p><img src="/img/articleImg/flex17.png"></p>
+<pre><code>然后给父容器设置align-items:baseline;样式
+</code></pre><p><img src="/img/articleImg/flex18.png"></p>
+<h2 id="flex元素的属性-无法用在容器-只用于元素中"><a href="#flex元素的属性-无法用在容器-只用于元素中" class="headerlink" title="flex元素的属性(无法用在容器,只用于元素中)"></a>flex元素的属性(无法用在容器,只用于元素中)</h2><h3 id="flex-grow-相当于栅格系统-默认值是0"><a href="#flex-grow-相当于栅格系统-默认值是0" class="headerlink" title="flex-grow  (相当于栅格系统,默认值是0)"></a>flex-grow  (相当于栅格系统,默认值是0)</h3><p>当容器有多余空间时,元素的放大比例</p>
+<pre><code>flex-grow:0; 默认值是0,当容器有多余的空间,元素不放大
+
+flex-grow:1;当容器有多余的空间,容器放大1倍
+
+现设置每一个 .item{flex-grow:1;},第二个元素: .itemText {flex-grow:3;}
+</code></pre><p><img src="/img/articleImg/flex19.png"></p>
+<h3 id="flex-shrink-默认值是1-不缩小"><a href="#flex-shrink-默认值是1-不缩小" class="headerlink" title="flex-shrink(默认值是1,不缩小)"></a>flex-shrink(默认值是1,不缩小)</h3><p>当容器空间不足时,元素的缩小比例</p>
+<p>flex-shrink:1;当空间不足时,默认等比缩小</p>
+<pre><code>.itemText {flex-shrink:10;}当空间不足时,等比缩小10倍
+</code></pre><p><img src="/img/articleImg/flex20.png"></p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><pre><code>flex-basis的单位不能用rpx
+
+.itemText {flex-basis:200px;}
+</code></pre><p><img src="/img/articleImg/flex21.png"></p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>是grow、shrink、basis三个的简写</p>
+<pre><code>.itemText {flex: 1 1.5 200px;}
+
+第一个1代表flex-grow:1;当容器有多余的空间,容器放大1倍
+第二个1.5代表flex-shrink:1;当空间不足时,默认等比缩小,
+第三个200px代表flex-basis:200px; 元素在主轴上占据的空间是200px
+</code></pre><p><img src="/img/articleImg/flex22.png"></p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>定义元素的排列顺序</p>
+<pre><code>我们给 .item{order:4;}
+再给 .itemText {order:3;}
+</code></pre><p><img src="/img/articleImg/flex23.png"></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>定义元素自身的对齐方式<br>这个属性可以覆盖掉 justify-content、align-items的效果</p>
+<pre><code>align-self:flex-start;在交叉轴上的头部
+
+align-self:flex-end;在交叉轴上的尾部
+
+align-self:flex-center;在交叉轴上的中间
+
+align-self:stretch;
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+
+
+align-self:baseline;让元素以元素中的文字的基线对齐
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/15/Flex布局/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/15/Flex布局/" title="Flex布局">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Flex布局/">Flex布局</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/15/弹性盒模型 - 老版/">
+    		弹性盒模型 (老版)
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-15T05:31:36.000Z">2017-03-15</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/flex布局/" title="flex布局">flex布局</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="felx布局"><a href="#felx布局" class="headerlink" title="felx布局"></a>felx布局</h2><p>从左到右是主轴</p>
+<p>从上到下是交叉轴</p>
+<pre><code>wxml结构：
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      1
+  &lt;/view&gt;
+  &lt;view class=&quot;item itemText&quot;&gt;
+      2
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      3
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      4
+  &lt;/view&gt;
+&lt;/view&gt;
+
+
+wxss样式：
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: lightyellow;
+    padding-top:50rpx;
+}
+.item {
+    width: 100rpx;
+    height: 100rpx;
+    background-color:pink;
+    text-align:center;
+    line-height:100rpx;
+    margin:10rpx;
+}
+</code></pre><p>那么他的默认的item的显示方式是：<br><img src="/img/articleImg/flex01.png"></p>
+<p>用flex布局,只需要给他的父容器类名为container,加上display:-webkit-box;的样式<br>再加上这个样式之后,默认是按照排列<br><img src="/img/articleImg/flex02.png"></p>
+<h2 id="flex容器的属性-给容器添加"><a href="#flex容器的属性-给容器添加" class="headerlink" title="flex容器的属性(给容器添加)"></a>flex容器的属性(给容器添加)</h2><h3 id="webkit-box-orient"><a href="#webkit-box-orient" class="headerlink" title="-webkit-box-orient"></a>-webkit-box-orient</h3><p>决定元素的排列方向,也就是决定是主轴还是交叉轴</p>
+<pre><code>-webkit-box-orient:horizontal; 默认方向,水平,主轴方向水平方向
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>-webkit-box-orient:vertical;竖着排列主轴方向是竖着的
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<h3 id="webkit-box-direction"><a href="#webkit-box-direction" class="headerlink" title="-webkit-box-direction"></a>-webkit-box-direction</h3><p>决定元素如何换行,当元素超过一行,决定他如何换行</p>
+<p>我们多添加几个元素,现在元素共有10个,他的排列方式<br>每一个item的大小是变形的<br><img src="/img/articleImg/flex03.png"></p>
+<pre><code>我们可以在一行排列不下时,设置他的排列方式
+flex-wrap:nowrap;  不换行
+</code></pre><p><img src="/img/articleImg/flex03.png"></p>
+<pre><code>flex-wrap:wrap;  换行
+</code></pre><p><img src="/img/articleImg/flex04.png"></p>
+<pre><code>-webkit-box-direction:reverse;  反转
+</code></pre><p><img src="/img/articleImg/flex05.png"></p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>是flex-direction和flex-wrap的简写</p>
+<pre><code>flex-flow: row wrap; 代表每一个item水平排列并且元素超过一行,换行
+</code></pre><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>元素在主轴上的对齐方式</p>
+<pre><code>justify-content:flex-start;默认值,从左边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>justify-content:flex-end;从右边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex08.png"></p>
+<pre><code>justify-content:center;  元素在主轴上居中对齐
+</code></pre><p><img src="/img/articleImg/flex06.png"></p>
+<pre><code>justify-content:space-around;元素两边的距离是一样的
+</code></pre><p><img src="/img/articleImg/flex10.png"></p>
+<pre><code>justify-content:space-between;两边对齐,中间的元素间隔是一样的
+</code></pre><p><img src="/img/articleImg/flex12.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-start;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-end;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex09.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:center;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex07.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-around;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex11.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-between;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex13.png"></p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>元素在交叉轴的对齐方式</p>
+<pre><code>align-items:flex-start;在交叉轴上的头部
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>align-items:flex-end;在交叉轴上的尾部
+</code></pre><p><img src="/img/articleImg/flex14.png"></p>
+<pre><code>align-items:center;在交叉轴上的中间
+</code></pre><p><img src="/img/articleImg/flex15.png"></p>
+<pre><code>align-items:stretch;
+
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+</code></pre><p><img src="/img/articleImg/flex16.png"></p>
+<pre><code>align-items:baseline;让元素以元素中的文字的基线对齐
+
+给第二个元素设置样式.itemText {line-height:150rpx;}
+</code></pre><p><img src="/img/articleImg/flex17.png"></p>
+<pre><code>然后给父容器设置align-items:baseline;样式
+</code></pre><p><img src="/img/articleImg/flex18.png"></p>
+<h2 id="flex元素的属性-无法用在容器-只用于元素中"><a href="#flex元素的属性-无法用在容器-只用于元素中" class="headerlink" title="flex元素的属性(无法用在容器,只用于元素中)"></a>flex元素的属性(无法用在容器,只用于元素中)</h2><h3 id="flex-grow-相当于栅格系统-默认值是0"><a href="#flex-grow-相当于栅格系统-默认值是0" class="headerlink" title="flex-grow  (相当于栅格系统,默认值是0)"></a>flex-grow  (相当于栅格系统,默认值是0)</h3><p>当容器有多余空间时,元素的放大比例</p>
+<pre><code>flex-grow:0; 默认值是0,当容器有多余的空间,元素不放大
+
+flex-grow:1;当容器有多余的空间,容器放大1倍
+
+现设置每一个 .item{flex-grow:1;},第二个元素: .itemText {flex-grow:3;}
+</code></pre><p><img src="/img/articleImg/flex19.png"></p>
+<h3 id="flex-shrink-默认值是1-不缩小"><a href="#flex-shrink-默认值是1-不缩小" class="headerlink" title="flex-shrink(默认值是1,不缩小)"></a>flex-shrink(默认值是1,不缩小)</h3><p>当容器空间不足时,元素的缩小比例</p>
+<p>flex-shrink:1;当空间不足时,默认等比缩小</p>
+<pre><code>.itemText {flex-shrink:10;}当空间不足时,等比缩小10倍
+</code></pre><p><img src="/img/articleImg/flex20.png"></p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><pre><code>flex-basis的单位不能用rpx
+
+.itemText {flex-basis:200px;}
+</code></pre><p><img src="/img/articleImg/flex21.png"></p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>是grow、shrink、basis三个的简写</p>
+<pre><code>.itemText {flex: 1 1.5 200px;}
+
+第一个1代表flex-grow:1;当容器有多余的空间,容器放大1倍
+第二个1.5代表flex-shrink:1;当空间不足时,默认等比缩小,
+第三个200px代表flex-basis:200px; 元素在主轴上占据的空间是200px
+</code></pre><p><img src="/img/articleImg/flex22.png"></p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>定义元素的排列顺序</p>
+<pre><code>我们给 .item{order:4;}
+再给 .itemText {order:3;}
+</code></pre><p><img src="/img/articleImg/flex23.png"></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>定义元素自身的对齐方式<br>这个属性可以覆盖掉 justify-content、align-items的效果</p>
+<pre><code>align-self:flex-start;在交叉轴上的头部
+
+align-self:flex-end;在交叉轴上的尾部
+
+align-self:flex-center;在交叉轴上的中间
+
+align-self:stretch;
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+
+
+align-self:baseline;让元素以元素中的文字的基线对齐
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/15/弹性盒模型 - 老版/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/15/弹性盒模型 - 老版/" title="弹性盒模型 (老版)">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

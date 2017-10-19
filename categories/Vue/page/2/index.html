@@ -1,12 +1,363 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`Vue`分类下的文章 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/categories/Vue/page/2/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/categories/Vue/page/2/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/categories/Vue/page/2/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/categories/Vue/page/2/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `Vue`分类下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/Vue开发环境配置/">
+    		Vue开发环境配置
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T06:54:18.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/开发环境/" title="开发环境">开发环境</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="一-首先必须安装node"><a href="#一-首先必须安装node" class="headerlink" title="一.首先必须安装node"></a>一.首先必须安装node</h3><ol>
+<li><p>在安装node时,注意安装绿色版本,因为绿色版包含了npm,这样你就不用再次安装npm</p>
+</li>
+<li><p>node安装好,你需要去进行配置环境变量,不然可能是会报错的</p>
+</li>
+<li><p>node和npm的版本不能太低</p>
+</li>
+</ol>
+<hr>   
+
+<h3 id="二-首先需要安装全局的vue"><a href="#二-首先需要安装全局的vue" class="headerlink" title="二.首先需要安装全局的vue"></a>二.首先需要安装全局的vue</h3><pre><code>`$ npm install -g vue-cli`
+</code></pre><ol>
+<li><p>当然npm在下载vue时,速度可能会非常慢,所以你可以选择安装淘宝的镜像源</p>
+<p> <code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+</li>
+<li><p>安装好cnpm之后,你就可以使用淘宝镜像进行下载安装了 </p>
+<p> <code>$ cnpm install -g vue-cli</code></p>
+</li>
+<li><p>安装好之后vue的命令就可以使用了</p>
+</li>
+</ol>
+<hr>
+
+<h3 id="三-搭建项目结构"><a href="#三-搭建项目结构" class="headerlink" title="三.搭建项目结构"></a>三.搭建项目结构</h3><ol>
+<li><p>vue使用webpack快速搭建结构</p>
+<p> <code>vue init webpack projectName</code></p>
+</li>
+<li><p>在搭建结构的时候,命令行会提示需要你填入的信息,直接写入就好</p>
+<p> <img src="/img/articleImg/vue_pro.png"></p>
+</li>
+</ol>
+<ol>
+<li><p>进入到当前的文件夹</p>
+<p> <code>cd  projectName</code></p>
+<p> <img src="/img/articleImg/vue_catalog.png"></p>
+</li>
+</ol>
+<ol>
+<li><p>下载好了结构,还不算完成,如果想要这个项目可以跑起来,你就得在当前目录下载他的依赖</p>
+<p> <code>cnpm install</code> 下载依赖(<strong>依赖文件在package.json文件中都有体现</strong>)</p>
+</li>
+<li><p>项目运行</p>
+<p> <code>npm run dev</code></p>
+<ul>
+<li><p>打开页面如果出现下图就证明结构创建成功了,快开启你的Vue之旅吧</p>
+<p><img src="/img/articleImg/vue_success.png"></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/Vue开发环境配置/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/Vue开发环境配置/" title="Vue开发环境配置">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <a class="extend prev" rel="prev" href="/categories/Vue/">前一页</a><a class="page-number" href="/categories/Vue/">1</a><span class="page-number current">2</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,12 +1,542 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`JavaScript`分类下的文章 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/categories/JavaScript/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/categories/JavaScript/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/categories/JavaScript/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/categories/JavaScript/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `JavaScript`分类下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/JavaScript/">JavaScript</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/06/02/原生JS-字符串方法/">
+    		原生JS-字符串的常用方法总结
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-06-02T01:27:36.000Z">2017-06-02</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="返回指定位置的字符-charAt"><a href="#返回指定位置的字符-charAt" class="headerlink" title="返回指定位置的字符 charAt()"></a>返回指定位置的字符 charAt()</h3><p>charAt() 方法可返回指定位置的字符。返回的字符是长度为 1 的字符串。</p>
+<pre><code>语法:
+stringObject.charAt(index)        
+
+注意：
+1.字符串中第一个字符的下标是 0。最后一个字符的下标为字符串长度减一（string.length-1）。
+2.如果参数 index 不在 0 与 string.length-1 之间，该方法将返回一个空字符串。
+3.一个空格也算一个字符。
+</code></pre><h3 id="返回指定的字符串首次出现的位置-indexOf"><a href="#返回指定的字符串首次出现的位置-indexOf" class="headerlink" title="返回指定的字符串首次出现的位置 indexOf()"></a>返回指定的字符串首次出现的位置 indexOf()</h3><p>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置(返回的是索引值)。</p>
+<pre><code>语法
+stringObject.indexOf(substring, startpos)
+
+substring 必须的参数,是你需要检索的字符串值
+startpos  可选的整数参数,规定在字符串中开始检索的位置,它的取值是 0 - stringObject.length-1;如果省略该参数,则从字符串的开始位置进行检索。
+
+
+说明：
+1.该方法将从头到尾地检索字符串 stringObject，看它是否含有子串 substring。
+2.可选参数，从stringObject的startpos位置开始查找substring，如果没有此参数将从stringObject的开始位置查找。
+3.如果找到一个 substring，则返回 substring 的第一次出现的位置。stringObject 中的字符位置是从 0 开始的。
+
+
+注意：
+1.indexOf() 方法区分大小写。
+2.如果要检索的字符串值没有出现，则该方法返回 -1。
+</code></pre><h3 id="字符串分割-split"><a href="#字符串分割-split" class="headerlink" title="字符串分割 split()"></a>字符串分割 split()</h3><p>split() 方法将字符串分割为字符串数组，并返回此数组。</p>
+<pre><code>语法：
+stringObject.split(separator,limit)
+
+separator 必须的参数,从该参数指定的地方进行分割
+limit 可选参数,分割的次数,如果设置该参数,返回的子串不会多于这个参数指定的数组,如果无此参数为不限制次数
+
+注意：
+如果把空字符串 (&quot;&quot;) 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
+</code></pre><p>###　提取字符串substring()<br>substring() 方法用于提取字符串中介于两个指定下标之间的字符。</p>
+<pre><code>语法:
+stringObject.substring(startPos,stopPos) 
+
+startPos　必须的参数，一个非负的整数，开始位置．
+stopPos　　可选的参数，一个非负的整数，结束位置，如果省略该参数，那么返回的的字符串一直到字符串的结尾．
+
+
+注意：
+1. 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start。
+2. 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。
+3. 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数。
+4. 一个空格也算一个字符。
+</code></pre><p>###　提取指定数目的字符substr()<br>substr() 方法从字符串中提取从 startPos位置开始的指定数目的字符串。</p>
+<pre><code>语法:
+stringObject.substr(startPos,length)
+
+startPos　必须参数，提取字符串的起始位置，必须是数值
+length　可选参数，提取字符串的长度，如果省略，返回的是字符串的startPos开始位置到结尾的字符
+
+
+注意：
+如果参数startPos是负数，从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。    
+如果startPos为负数且绝对值大于字符串长度，startPos为0。
+</code></pre><h3 id="从已有的数组中返回选定的元素-slice"><a href="#从已有的数组中返回选定的元素-slice" class="headerlink" title="从已有的数组中返回选定的元素 slice()"></a>从已有的数组中返回选定的元素 slice()</h3><p>slice 方法用于截取字符串中的一部分并返回该部分字符串</p>
+<pre><code>语法
+arrayObject.slice(start,end)
+
+start 必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。
+end    可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。
+
+返回值
+返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。
+
+说明
+请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。
+</code></pre><h3 id="替换-replace"><a href="#替换-replace" class="headerlink" title="替换 replace()"></a>替换 replace()</h3><p>replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
+<pre><code>语法
+stringObject.replace(regexp/substr,replacement)
+
+regexp/substr 必需。规定子字符串或要替换的模式的 RegExp 对象。
+请注意，如果该值是一个字符串，则将它作为要检索的直接量文本模式，而不是首先被转换为 RegExp 对象。
+replacement    必需。一个字符串值。规定了替换文本或生成替换文本的函数。    
+
+返回值
+一个新的字符串，是用 replacement 替换了 regexp 的第一次匹配或所有匹配之后得到的。
+</code></pre><p>【end】
+　</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/06/02/原生JS-字符串方法/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/06/02/原生JS-字符串方法/" title="原生JS-字符串的常用方法总结">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/JavaScript/">JavaScript</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/06/02/原生JS-数组方法/">
+    		原生JS-数组的常用方法总结
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-06-02T01:22:36.000Z">2017-06-02</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="删除元素，并向数组添加新元素-slice"><a href="#删除元素，并向数组添加新元素-slice" class="headerlink" title="删除元素，并向数组添加新元素 slice()"></a>删除元素，并向数组添加新元素 slice()</h3><p>splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
+<p>注释：该方法会改变原始数组。</p>
+<pre><code>语法
+arrayObject.splice(index,howmany,item1,.....,itemX)
+
+index    必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+howmany    必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+item1, ..., itemX    可选。向数组添加的新项目。
+</code></pre><p>说明</p>
+<pre><code>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。
+
+如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。
+</code></pre><h3 id="连接两个或更多的数组，并返回结果-concat"><a href="#连接两个或更多的数组，并返回结果-concat" class="headerlink" title="连接两个或更多的数组，并返回结果 concat()"></a>连接两个或更多的数组，并返回结果 concat()</h3><p>concat() 方法用于连接两个或多个数组。</p>
+<p>该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。</p>
+<pre><code>语法
+arrayObject.concat(arrayX,arrayX,......,arrayX)
+
+arrayX    必需。该参数可以是具体的值，也可以是数组对象。可以是任意多个。
+</code></pre><p>返回值</p>
+<pre><code>返回一个新的数组。该数组是通过把所有 arrayX 参数添加到 arrayObject 中生成的。如果要进行 concat() 操作的参数是数组，那么添加的是数组中的元素，而不是数组。
+</code></pre><h3 id="把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔-join"><a href="#把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔-join" class="headerlink" title="把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔 join()"></a>把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔 join()</h3><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
+<p>元素是通过指定的分隔符进行分隔的。</p>
+<pre><code>语法
+arrayObject.join(separator)
+
+separator    可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。
+</code></pre><p>返回值</p>
+<pre><code>返回一个字符串。该字符串是通过把 arrayObject 的每个元素转换为字符串，然后把这些字符串连接起来，在两个元素之间插入 separator 字符串而生成的。
+</code></pre><h3 id="颠倒数组中元素的顺序-reverse"><a href="#颠倒数组中元素的顺序-reverse" class="headerlink" title="颠倒数组中元素的顺序 reverse()"></a>颠倒数组中元素的顺序 reverse()</h3><p>reverse() 方法用于颠倒数组中元素的顺序。</p>
+<pre><code>语法
+arrayObject.reverse()
+
+该方法会改变原来的数组，而不会创建新的数组。
+</code></pre><h3 id="向数组的末尾添加一个或更多元素，并返回新的长度-push"><a href="#向数组的末尾添加一个或更多元素，并返回新的长度-push" class="headerlink" title="向数组的末尾添加一个或更多元素，并返回新的长度 push()"></a>向数组的末尾添加一个或更多元素，并返回新的长度 push()</h3><p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
+<pre><code>语法
+arrayObject.push(newelement1,newelement2,....,newelementX)
+</code></pre><p>说明</p>
+<pre><code>push() 方法可把它的参数顺序添加到 arrayObject 的尾部。它直接修改 arrayObject，而不是创建一个新的数组。push() 方法和 pop() 方法使用数组提供的先进后出栈的功能。
+</code></pre><h3 id="向数组的开头添加一个或更多元素，并返回新的长度-unshift"><a href="#向数组的开头添加一个或更多元素，并返回新的长度-unshift" class="headerlink" title="向数组的开头添加一个或更多元素，并返回新的长度 unshift()"></a>向数组的开头添加一个或更多元素，并返回新的长度 unshift()</h3><p>unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。</p>
+<pre><code>语法
+arrayObject.unshift(newelement1,newelement2,....,newelementX)
+</code></pre><p>说明</p>
+<pre><code>unshift() 方法将把它的参数插入 arrayObject 的头部，并将已经存在的元素顺次地移到较高的下标处，以便留出空间。该方法的第一个参数将成为数组的新元素 0，如果还有第二个参数，它将成为新的元素 1，以此类推。
+
+请注意，unshift() 方法不创建新的创建，而是直接修改原有的数组。
+</code></pre><h3 id="删除并返回数组的最后一个元素-pop"><a href="#删除并返回数组的最后一个元素-pop" class="headerlink" title="删除并返回数组的最后一个元素 pop()"></a>删除并返回数组的最后一个元素 pop()</h3><p>pop() 方法用于删除并返回数组的最后一个元素。</p>
+<pre><code>语法
+arrayObject.pop()
+</code></pre><p>说明</p>
+<pre><code>pop() 方法将删除 arrayObject 的最后一个元素，把数组长度减 1，并且返回它删除的元素的值。如果数组已经为空，则 pop() 不改变数组，并返回 undefined 值。
+</code></pre><h3 id="删除并返回数组的第一个元素-shift"><a href="#删除并返回数组的第一个元素-shift" class="headerlink" title="删除并返回数组的第一个元素 shift()"></a>删除并返回数组的第一个元素 shift()</h3><p>shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。</p>
+<pre><code>语法
+arrayObject.shift()
+</code></pre><p>返回值</p>
+<pre><code>数组原来的第一个元素的值。
+</code></pre><p>说明</p>
+<pre><code>如果数组是空的，那么 shift() 方法将不进行任何操作，返回 undefined 值。请注意，该方法不创建新数组，而是直接修改原有的 arrayObject。
+</code></pre><h3 id="对数组的元素进行排序-sort"><a href="#对数组的元素进行排序-sort" class="headerlink" title="对数组的元素进行排序 sort()"></a>对数组的元素进行排序 sort()</h3><p>sort() 方法用于对数组的元素进行排序。</p>
+<pre><code>语法
+arrayObject.sort(sortby)
+
+sortby    可选。规定排序顺序。必须是函数。
+</code></pre><p>返回值</p>
+<pre><code>对数组的引用。请注意，数组在原数组上进行排序，不生成副本。
+</code></pre><p>说明</p>
+<pre><code>如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。
+
+如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
+
+若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+
+若 a 等于 b，则返回 0。
+
+若 a 大于 b，则返回一个大于 0 的值。
+</code></pre><p>例子</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function sortNumber(a,b){
+        return a - b
+    }
+
+    var arr = new Array(6)
+    arr[0] = &quot;10&quot;
+    arr[1] = &quot;5&quot;
+    arr[2] = &quot;40&quot;
+    arr[3] = &quot;25&quot;
+    arr[4] = &quot;1000&quot;
+    arr[5] = &quot;1&quot;
+    document.write(arr.sort(sortNumber))
+&lt;/script&gt;
+
+输出结果: 1,5,10,25,40,1000
+</code></pre><p>###　方法可把数组转换为字符串，并返回结果　toString()<br>toString() 方法可把数组转换为字符串，并返回结果。</p>
+<pre><code>语法
+arrayObject.toString() 
+</code></pre><p>返回值</p>
+<pre><code>arrayObject 的字符串表示。返回值与没有参数的 join() 方法返回的字符串相同。
+</code></pre><p>说明</p>
+<pre><code>当数组用于字符串环境时，JavaScript 会调用这一方法将数组自动转换成字符串。但是在某些情况下，需要显式地调用该方法。
+</code></pre><p>【end】
+　</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/06/02/原生JS-数组方法/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/06/02/原生JS-数组方法/" title="原生JS-数组的常用方法总结">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

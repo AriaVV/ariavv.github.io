@@ -1,48 +1,257 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>about | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    div#post-container
-        include mixins/post
-        +post(page)
-        include partial/comment
-
-    //- Comment
-    if theme.duoshuo
-        script.
-            var duoshuoQuery = {short_name:"#{theme.duoshuo}"};
-            (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0] 
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-            })();
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
 
-    if theme.disqus
-        script.
-            var disqus_shortname = '#{theme.disqus}';
-            var disqus_identifier = '#{page.path}';
-            var disqus_title = '#{page.title}';
-            var disqus_url = '#{config.url}/#{page.path}';
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        script(id='dsq-count-scr' src='//#{theme.disqus}.disqus.com/count.js' async)
+</head>
 
-block pagination
-    include mixins/paginator
-    +post()
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
 
-block copyright
-    include partial/copyright
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/about/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/about/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/about/index.html" class="item current">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/about/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 独立页面 -->
+<article class="post article">
+    <header class="text-center">
+        <h4 class="post-title"><a href="javascript: void(0);">about</a></h4>
+    </header>
+    <div class="post-content">
+        
+            <p>一个人要穿过沼泽地，因为没有路，便试探着走。虽很艰险，左跨右跳，<br>竟也能找出一段路来，可好境不长，未走多远，不小心一脚踏进烂泥里，沉了下去。<br>又有一个人要穿过沼泽地，看到前人的脚印，便想：这一定是有人走过，沿着别人的脚印走一定不会有错。用脚试着踏去，果然实实在在，于是便放心走下去。最后也一脚踏空沉入了烂泥。 </p>
+<p>又有一个人要穿过沼泽地，看着前面两人的脚印，想都未想便沿着走了下去，他的命运也是可想而知的。<br> …… </p>
+<p>又有一个人要穿过沼泽地，看着前面众人的脚印，心想：这必定是-条通往沼泽地彼端的大道，看，已有这么多人走了过去，沿此走下去我也一定能走到沼泽的彼端。于是大踏步地走去，最后他也沉入了烂泥。 </p>
+<p>世上的路不是走的人越多了越平坦越顺利，沿着别人的脚印走，不仅走不出新意，有时还可能会跌进陷阱。</p>
+
+        
+    </div>
+</article>
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

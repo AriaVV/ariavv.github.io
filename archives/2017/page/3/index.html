@@ -1,12 +1,1371 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>文章归档: 2017 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/archives/2017/page/3/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/archives/2017/page/3/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/archives/2017/page/3/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/archives/2017/page/3/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章归档 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                文章归档
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Flex布局/">Flex布局</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/15/弹性盒模型 - 老版/">
+    		弹性盒模型 (老版)
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-15T05:31:36.000Z">2017-03-15</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/flex布局/" title="flex布局">flex布局</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="felx布局"><a href="#felx布局" class="headerlink" title="felx布局"></a>felx布局</h2><p>从左到右是主轴</p>
+<p>从上到下是交叉轴</p>
+<pre><code>wxml结构：
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      1
+  &lt;/view&gt;
+  &lt;view class=&quot;item itemText&quot;&gt;
+      2
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      3
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      4
+  &lt;/view&gt;
+&lt;/view&gt;
+
+
+wxss样式：
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: lightyellow;
+    padding-top:50rpx;
+}
+.item {
+    width: 100rpx;
+    height: 100rpx;
+    background-color:pink;
+    text-align:center;
+    line-height:100rpx;
+    margin:10rpx;
+}
+</code></pre><p>那么他的默认的item的显示方式是：<br><img src="/img/articleImg/flex01.png"></p>
+<p>用flex布局,只需要给他的父容器类名为container,加上display:-webkit-box;的样式<br>再加上这个样式之后,默认是按照排列<br><img src="/img/articleImg/flex02.png"></p>
+<h2 id="flex容器的属性-给容器添加"><a href="#flex容器的属性-给容器添加" class="headerlink" title="flex容器的属性(给容器添加)"></a>flex容器的属性(给容器添加)</h2><h3 id="webkit-box-orient"><a href="#webkit-box-orient" class="headerlink" title="-webkit-box-orient"></a>-webkit-box-orient</h3><p>决定元素的排列方向,也就是决定是主轴还是交叉轴</p>
+<pre><code>-webkit-box-orient:horizontal; 默认方向,水平,主轴方向水平方向
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>-webkit-box-orient:vertical;竖着排列主轴方向是竖着的
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<h3 id="webkit-box-direction"><a href="#webkit-box-direction" class="headerlink" title="-webkit-box-direction"></a>-webkit-box-direction</h3><p>决定元素如何换行,当元素超过一行,决定他如何换行</p>
+<p>我们多添加几个元素,现在元素共有10个,他的排列方式<br>每一个item的大小是变形的<br><img src="/img/articleImg/flex03.png"></p>
+<pre><code>我们可以在一行排列不下时,设置他的排列方式
+flex-wrap:nowrap;  不换行
+</code></pre><p><img src="/img/articleImg/flex03.png"></p>
+<pre><code>flex-wrap:wrap;  换行
+</code></pre><p><img src="/img/articleImg/flex04.png"></p>
+<pre><code>-webkit-box-direction:reverse;  反转
+</code></pre><p><img src="/img/articleImg/flex05.png"></p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>是flex-direction和flex-wrap的简写</p>
+<pre><code>flex-flow: row wrap; 代表每一个item水平排列并且元素超过一行,换行
+</code></pre><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>元素在主轴上的对齐方式</p>
+<pre><code>justify-content:flex-start;默认值,从左边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>justify-content:flex-end;从右边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex08.png"></p>
+<pre><code>justify-content:center;  元素在主轴上居中对齐
+</code></pre><p><img src="/img/articleImg/flex06.png"></p>
+<pre><code>justify-content:space-around;元素两边的距离是一样的
+</code></pre><p><img src="/img/articleImg/flex10.png"></p>
+<pre><code>justify-content:space-between;两边对齐,中间的元素间隔是一样的
+</code></pre><p><img src="/img/articleImg/flex12.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-start;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-end;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex09.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:center;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex07.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-around;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex11.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-between;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex13.png"></p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>元素在交叉轴的对齐方式</p>
+<pre><code>align-items:flex-start;在交叉轴上的头部
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>align-items:flex-end;在交叉轴上的尾部
+</code></pre><p><img src="/img/articleImg/flex14.png"></p>
+<pre><code>align-items:center;在交叉轴上的中间
+</code></pre><p><img src="/img/articleImg/flex15.png"></p>
+<pre><code>align-items:stretch;
+
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+</code></pre><p><img src="/img/articleImg/flex16.png"></p>
+<pre><code>align-items:baseline;让元素以元素中的文字的基线对齐
+
+给第二个元素设置样式.itemText {line-height:150rpx;}
+</code></pre><p><img src="/img/articleImg/flex17.png"></p>
+<pre><code>然后给父容器设置align-items:baseline;样式
+</code></pre><p><img src="/img/articleImg/flex18.png"></p>
+<h2 id="flex元素的属性-无法用在容器-只用于元素中"><a href="#flex元素的属性-无法用在容器-只用于元素中" class="headerlink" title="flex元素的属性(无法用在容器,只用于元素中)"></a>flex元素的属性(无法用在容器,只用于元素中)</h2><h3 id="flex-grow-相当于栅格系统-默认值是0"><a href="#flex-grow-相当于栅格系统-默认值是0" class="headerlink" title="flex-grow  (相当于栅格系统,默认值是0)"></a>flex-grow  (相当于栅格系统,默认值是0)</h3><p>当容器有多余空间时,元素的放大比例</p>
+<pre><code>flex-grow:0; 默认值是0,当容器有多余的空间,元素不放大
+
+flex-grow:1;当容器有多余的空间,容器放大1倍
+
+现设置每一个 .item{flex-grow:1;},第二个元素: .itemText {flex-grow:3;}
+</code></pre><p><img src="/img/articleImg/flex19.png"></p>
+<h3 id="flex-shrink-默认值是1-不缩小"><a href="#flex-shrink-默认值是1-不缩小" class="headerlink" title="flex-shrink(默认值是1,不缩小)"></a>flex-shrink(默认值是1,不缩小)</h3><p>当容器空间不足时,元素的缩小比例</p>
+<p>flex-shrink:1;当空间不足时,默认等比缩小</p>
+<pre><code>.itemText {flex-shrink:10;}当空间不足时,等比缩小10倍
+</code></pre><p><img src="/img/articleImg/flex20.png"></p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><pre><code>flex-basis的单位不能用rpx
+
+.itemText {flex-basis:200px;}
+</code></pre><p><img src="/img/articleImg/flex21.png"></p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>是grow、shrink、basis三个的简写</p>
+<pre><code>.itemText {flex: 1 1.5 200px;}
+
+第一个1代表flex-grow:1;当容器有多余的空间,容器放大1倍
+第二个1.5代表flex-shrink:1;当空间不足时,默认等比缩小,
+第三个200px代表flex-basis:200px; 元素在主轴上占据的空间是200px
+</code></pre><p><img src="/img/articleImg/flex22.png"></p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>定义元素的排列顺序</p>
+<pre><code>我们给 .item{order:4;}
+再给 .itemText {order:3;}
+</code></pre><p><img src="/img/articleImg/flex23.png"></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>定义元素自身的对齐方式<br>这个属性可以覆盖掉 justify-content、align-items的效果</p>
+<pre><code>align-self:flex-start;在交叉轴上的头部
+
+align-self:flex-end;在交叉轴上的尾部
+
+align-self:flex-center;在交叉轴上的中间
+
+align-self:stretch;
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+
+
+align-self:baseline;让元素以元素中的文字的基线对齐
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/15/弹性盒模型 - 老版/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/15/弹性盒模型 - 老版/" title="弹性盒模型 (老版)">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Flex布局/">Flex布局</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/15/Flex布局/">
+    		Flex布局
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-15T05:31:36.000Z">2017-03-15</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/flex布局/" title="flex布局">flex布局</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="felx布局"><a href="#felx布局" class="headerlink" title="felx布局"></a>felx布局</h2><p>从左到右是主轴</p>
+<p>从上到下是交叉轴</p>
+<pre><code>wxml结构：
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      1
+  &lt;/view&gt;
+  &lt;view class=&quot;item itemText&quot;&gt;
+      2
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      3
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot;&gt;
+      4
+  &lt;/view&gt;
+&lt;/view&gt;
+
+
+wxss样式：
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: lightyellow;
+    padding-top:50rpx;
+}
+.item {
+    width: 100rpx;
+    height: 100rpx;
+    background-color:pink;
+    text-align:center;
+    line-height:100rpx;
+    margin:10rpx;
+}
+</code></pre><p>那么他的默认的item的显示方式是：<br><img src="/img/articleImg/flex01.png"></p>
+<p>用flex布局,只需要给他的父容器类名为container,加上display:flex;的样式<br>再加上这个样式之后,默认是按照排列<br><img src="/img/articleImg/flex02.png"></p>
+<h2 id="flex容器的属性-给容器添加"><a href="#flex容器的属性-给容器添加" class="headerlink" title="flex容器的属性(给容器添加)"></a>flex容器的属性(给容器添加)</h2><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>决定元素的排列方向,也就是决定是主轴还是交叉轴</p>
+<pre><code>flex-direction:row; 默认方向,水平,主轴方向水平方向
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>flex-direction:column;竖着排列主轴方向是竖着的
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>决定元素如何换行,当元素超过一行,决定他如何换行</p>
+<p>我们多添加几个元素,现在元素共有10个,他的排列方式<br>每一个item的大小是变形的<br><img src="/img/articleImg/flex03.png"></p>
+<pre><code>我们可以在一行排列不下时,设置他的排列方式
+flex-wrap:nowrap;  不换行
+</code></pre><p><img src="/img/articleImg/flex03.png"></p>
+<pre><code>flex-wrap:wrap;  换行
+</code></pre><p><img src="/img/articleImg/flex04.png"></p>
+<pre><code>flex-wrap:wrap-reverse;  反转
+</code></pre><p><img src="/img/articleImg/flex05.png"></p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>是flex-direction和flex-wrap的简写</p>
+<pre><code>flex-flow: row wrap; 代表每一个item水平排列并且元素超过一行,换行
+</code></pre><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>元素在主轴上的对齐方式</p>
+<pre><code>justify-content:flex-start;默认值,从左边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>justify-content:flex-end;从右边开始进行对齐
+</code></pre><p><img src="/img/articleImg/flex08.png"></p>
+<pre><code>justify-content:center;  元素在主轴上居中对齐
+</code></pre><p><img src="/img/articleImg/flex06.png"></p>
+<pre><code>justify-content:space-around;元素两边的距离是一样的
+</code></pre><p><img src="/img/articleImg/flex10.png"></p>
+<pre><code>justify-content:space-between;两边对齐,中间的元素间隔是一样的
+</code></pre><p><img src="/img/articleImg/flex12.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-start;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex01.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:flex-end;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex09.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:center;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex07.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-around;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex11.png"></p>
+<pre><code>如果容器的主轴方向设置是flex-direction:column;那么在容器设置了justify-content:space-between;样式时,元素的排列方式:
+</code></pre><p><img src="/img/articleImg/flex13.png"></p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>元素在交叉轴的对齐方式</p>
+<pre><code>align-items:flex-start;在交叉轴上的头部
+</code></pre><p><img src="/img/articleImg/flex02.png"></p>
+<pre><code>align-items:flex-end;在交叉轴上的尾部
+</code></pre><p><img src="/img/articleImg/flex14.png"></p>
+<pre><code>align-items:center;在交叉轴上的中间
+</code></pre><p><img src="/img/articleImg/flex15.png"></p>
+<pre><code>align-items:stretch;
+
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+</code></pre><p><img src="/img/articleImg/flex16.png"></p>
+<pre><code>align-items:baseline;让元素以元素中的文字的基线对齐
+
+给第二个元素设置样式.itemText {line-height:150rpx;}
+</code></pre><p><img src="/img/articleImg/flex17.png"></p>
+<pre><code>然后给父容器设置align-items:baseline;样式
+</code></pre><p><img src="/img/articleImg/flex18.png"></p>
+<h2 id="flex元素的属性-无法用在容器-只用于元素中"><a href="#flex元素的属性-无法用在容器-只用于元素中" class="headerlink" title="flex元素的属性(无法用在容器,只用于元素中)"></a>flex元素的属性(无法用在容器,只用于元素中)</h2><h3 id="flex-grow-相当于栅格系统-默认值是0"><a href="#flex-grow-相当于栅格系统-默认值是0" class="headerlink" title="flex-grow  (相当于栅格系统,默认值是0)"></a>flex-grow  (相当于栅格系统,默认值是0)</h3><p>当容器有多余空间时,元素的放大比例</p>
+<pre><code>flex-grow:0; 默认值是0,当容器有多余的空间,元素不放大
+
+flex-grow:1;当容器有多余的空间,容器放大1倍
+
+现设置每一个 .item{flex-grow:1;},第二个元素: .itemText {flex-grow:3;}
+</code></pre><p><img src="/img/articleImg/flex19.png"></p>
+<h3 id="flex-shrink-默认值是1-不缩小"><a href="#flex-shrink-默认值是1-不缩小" class="headerlink" title="flex-shrink(默认值是1,不缩小)"></a>flex-shrink(默认值是1,不缩小)</h3><p>当容器空间不足时,元素的缩小比例</p>
+<p>flex-shrink:1;当空间不足时,默认等比缩小</p>
+<pre><code>.itemText {flex-shrink:10;}当空间不足时,等比缩小10倍
+</code></pre><p><img src="/img/articleImg/flex20.png"></p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><pre><code>flex-basis的单位不能用rpx
+
+.itemText {flex-basis:200px;}
+</code></pre><p><img src="/img/articleImg/flex21.png"></p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>是grow、shrink、basis三个的简写</p>
+<pre><code>.itemText {flex: 1 1.5 200px;}
+
+第一个1代表flex-grow:1;当容器有多余的空间,容器放大1倍
+第二个1.5代表flex-shrink:1;当空间不足时,默认等比缩小,
+第三个200px代表flex-basis:200px; 元素在主轴上占据的空间是200px
+</code></pre><p><img src="/img/articleImg/flex22.png"></p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>定义元素的排列顺序</p>
+<pre><code>我们给 .item{order:4;}
+再给 .itemText {order:3;}
+</code></pre><p><img src="/img/articleImg/flex23.png"></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>定义元素自身的对齐方式<br>这个属性可以覆盖掉 justify-content、align-items的效果</p>
+<pre><code>align-self:flex-start;在交叉轴上的头部
+
+align-self:flex-end;在交叉轴上的尾部
+
+align-self:flex-center;在交叉轴上的中间
+
+align-self:stretch;
+在item设置高度时候,显示方式跟   align-items:flex-start一样
+当每一个item元素不设置的高度的时候,高度会占满整个容易
+
+
+align-self:baseline;让元素以元素中的文字的基线对齐
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/15/Flex布局/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/15/Flex布局/" title="Flex布局">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/14/微信小程序基本配置和使用/">
+    		微信小程序开发基本配置和使用
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-14T09:15:56.000Z">2017-03-14</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="微信小程序的文件"><a href="#微信小程序的文件" class="headerlink" title="微信小程序的文件"></a>微信小程序的文件</h3><p>在微信小程序中,我们把所有的页面都放在一个统一的文件夹下,以单个文件夹存在,每个页面下又分别由三个页面组成,分别是 js、wxml、wxss</p>
+<pre><code>js、wxml、wxss 这三个文件就构成了一个完整的页面
+</code></pre><h3 id="三个文件的作用"><a href="#三个文件的作用" class="headerlink" title="三个文件的作用"></a>三个文件的作用</h3><p>js ：定义页面的逻辑</p>
+<pre><code>调用了一个page方法，是一个全局函数，用来创建页面对象
+
+onLoad方法页面加载时触发
+</code></pre><p>wxml ：定义页面的结构 语法是XML语法(Wei Xin Markup Language)</p>
+<p>wxss ：定义页面的样式 遵循是css语法(Wei Xin Style Sheet)</p>
+<h3 id="index-json的配置"><a href="#index-json的配置" class="headerlink" title="index.json的配置"></a>index.json的配置</h3><p>在页面的json文件主要是为了覆盖app.json中window 配置项的内容</p>
+<h3 id="wxml标签"><a href="#wxml标签" class="headerlink" title="wxml标签"></a>wxml标签</h3><pre><code>view相当于html中的div
+
+text标签定义文本
+
+image图片标签
+
+block专门在做一些循环的时候,又不想在循环的时候在外层新加一些标签,block在循环完成后不会显示
+</code></pre><h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h3><p>在app.json文件中定义了一个pages的属性,这个属性定义了我们的应用程序可用的所有的页面(所以pages中的页面必须与app.json建立关联)</p>
+<pre><code>&quot;pages&quot;:[
+    &quot;pages/index/index&quot;,  //代表初始页面
+    &quot;pages/logs/logs&quot;
+  ]
+</code></pre><h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h3><p>有一个全局函数是 App,作用是用来指定生命周期</p>
+<pre><code>App({
+    onLaunch(){  //在App这个对象中定义了一个onLaunch方法
+        console.log(&apos;msg&apos;)    
+    },
+    foo(){   //定义一个额外方法
+        return &apos;bar&apos;
+    }
+})
+</code></pre><p>在页面的js文件中 引入 const app=getApp(),那么在页面中就可以调用app.js中定义的方法了</p>
+<pre><code>var app = getApp()
+
+Page({
+    onLoad(){
+        app.foo();  
+    }
+})
+</code></pre><h3 id="app-wsxx"><a href="#app-wsxx" class="headerlink" title="app.wsxx"></a>app.wsxx</h3><p>整个程序共享的样式(公共样式)</p>
+<h3 id="数据加载到页面"><a href="#数据加载到页面" class="headerlink" title="数据加载到页面"></a>数据加载到页面</h3><p>小程序提供了一个属性:page,这个属性可以是一个对象:这个对象中的所有的成员都可以在界面上直接被访问到</p>
+<pre><code>在index.js中
+
+Page({
+    data:{
+        message:&apos;hello world&apos;
+    },
+    onLoad(){
+        //页面加载就把数据呈现在页面
+        this.setData({
+            message:Date.now() //获取当前时间
+        })  
+    }
+})
+</code></pre><p>在页面上显示时</p>
+<pre><code>在index.wxml中
+&lt;text&gt;{{message}}&lt;text&gt;
+</code></pre><h3 id="访问网络资源"><a href="#访问网络资源" class="headerlink" title="访问网络资源"></a>访问网络资源</h3><p><strong> 微信开发者工具在更新到最新版的时候,发现请求时会报错</strong></p>
+<pre><code>错误信息:GET https://api.douban.com/v2/movie/in_theaters 400 (Bad Request)          asdebug.js:1 
+
+百度了一下解决方案 : 
+
+ header: {
+    // &apos;content-type&apos;: &apos;application/json&apos;
+    &apos;Content-Type&apos;: &apos;json&apos;
+}
+</code></pre><p>微信官方提供了API,不存在跨域的问题</p>
+<pre><code>wx.request({
+  url: &apos;test.php&apos;, //仅为示例，并非真实的接口地址
+  data: {
+     x: &apos;&apos; ,
+     y: &apos;&apos;
+  },
+  header: {
+      &apos;content-type&apos;: &apos;application/json&apos;
+  },
+  success: function(res) {
+    console.log(res.data)
+  }
+})
+</code></pre><p>把访问外部链接获取的数据放到list当中</p>
+<pre><code>Page({
+    data:{
+        message:&apos;hello world!&apos;,
+        list:[]
+    },
+    onLoad(){
+        const _this = this
+        //页面加载时候执行
+        wx.request({
+          url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+          data: {},
+          header: {
+              &apos;Content-Type&apos;:&apos;json&apos;
+          },
+          success: function(res) {
+              console.log(res.data)
+            _this.setData({
+                list: res.data.subjects
+            })
+          }
+        })
+    }
+})
+</code></pre><p>在页面上显示的时候</p>
+<pre><code>&lt;view&gt;
+  &lt;view class=&quot;item&quot; wx:for=&quot;{{ list }}&quot;&gt;
+    &lt;image src=&quot;{{ item.images.small }}&quot;&gt;&lt;/image&gt;
+    &lt;text&gt;{{ item.title }}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><h3 id="topBar的配置"><a href="#topBar的配置" class="headerlink" title="topBar的配置"></a>topBar的配置</h3><p>tabBar 是一个数组，只能配置最少2个、最多5个 tab，tab 按数组的顺序排序。</p>
+<pre><code>{
+  &quot;pages&quot;: [
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/index&quot;
+  ],
+  &quot;window&quot;: {
+    &quot;navigationBarTitleText&quot;: &quot;Demo&quot;
+  },
+  &quot;tabBar&quot;: {
+    &quot;list&quot;: [{
+      &quot;pagePath&quot;: &quot;pages/index/index&quot;,     //第一个必须是我们的首页
+      &quot;text&quot;: &quot;首页&quot;
+    }, {
+      &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,
+      &quot;text&quot;: &quot;日志&quot;
+    }]
+  },
+  &quot;networkTimeout&quot;: {
+    &quot;request&quot;: 10000,
+    &quot;downloadFile&quot;: 10000
+  },
+  &quot;debug&quot;: true
+}
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/14/微信小程序基本配置和使用/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/14/微信小程序基本配置和使用/" title="微信小程序开发基本配置和使用">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/4.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/微信小程序模板的使用/">
+    		微信小程序模板的使用
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T09:20:56.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们在应用程序开发的过程当中,很说时候会有一些共用的代码,我们不可能说每次使用的时候,都去复制粘贴一下</p>
+<p>这就需要模板来方便我们的开发 </p>
+<h3 id="模板的建立"><a href="#模板的建立" class="headerlink" title="模板的建立"></a>模板的建立</h3><p>你需要在Pages文件夹下新建一个名为template的文件夹作为模板的目录</p>
+<p>这是第一种方式:</p>
+<pre><code>在template文件夹下,新建一个header.wxml文件,文件内容是
+&lt;view&gt;这是头部&lt;/view&gt;
+
+然后在你使用到模板的页面下引入&lt;include src=&quot;../template/header&quot;/&gt;
+</code></pre><p>第二种方式我们在template文件夹下新建一个footer.wxml文件,文件内容为:</p>
+<pre><code>&lt;template name=&quot;footer&quot;&gt;这是底部内容&lt;/template&gt;
+
+使用&lt;import src=&quot;../template/footer&quot;/&gt;方式导入要使用的文件
+在这里可能我们会定义了很多的模板,所以在引入时候我们要声明使用的是哪个模板
+&lt;template is=&quot;footer&quot;&gt; 这个is属性跟template的name属性一致
+</code></pre><p>我们也可以给第二种方式动态设置数据</p>
+<pre><code>&lt;template name=&quot;footer&quot;&gt;这是底部内容 {{text}} &lt;/template&gt;
+
+&lt;template is=&quot;footer&quot; data=&quot; {{ text:"动态的数据" }}&quot;&gt; 
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/微信小程序模板的使用/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/微信小程序模板的使用/" title="微信小程序模板的使用">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/微信小程序swiper组件/">
+    		微信小程序swiper组件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T09:19:56.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="swiper组件"><a href="#swiper组件" class="headerlink" title="swiper组件"></a>swiper组件</h3><p>swiper</p>
+<p>滑块视图容器。</p>
+<pre><code>属性名                      类型                   默认值                   说明
+
+indicator-dots              Boolean               false                   是否显示面板指示点
+indicator-color              Color                   rgba(0, 0, 0, .3)       指示点颜色（这个属性目前暂未启用）
+indicator-active-color      Color                   #000000                   当前选中的指示点颜色 （这个属性目前暂未启用）
+autoplay                  Boolean               false                   是否自动切换
+current                      Number               0                       当前所在页面的 index
+interval                  Number               5000                       自动切换时间间隔
+duration                  Number               500                       滑动动画时长
+circular                  Boolean               false                   是否采用衔接滑动
+bindchange                  EventHandle                            current 改变时会触发 change 事件，event.detail = {current: current}
+</code></pre><p>swiper-item<br>仅可放置在<swiper>组件中，宽高自动设置为100%。</swiper></p>
+<pre><code>示例代码：
+
+&lt;swiper indicator-dots=&quot;{{indicatorDots}}&quot;
+  autoplay=&quot;{{autoplay}}&quot; interval=&quot;{{interval}}&quot; duration=&quot;{{duration}}&quot;&gt;
+  &lt;block wx:for=&quot;{{imgUrls}}&quot;&gt;
+    &lt;swiper-item&gt;
+      &lt;image src=&quot;{{item}}&quot; class=&quot;slide-image&quot; width=&quot;355&quot; height=&quot;150&quot;/&gt;
+    &lt;/swiper-item&gt;
+  &lt;/block&gt;
+&lt;/swiper&gt;
+&lt;button bindtap=&quot;changeIndicatorDots&quot;&gt; indicator-dots &lt;/button&gt;
+&lt;button bindtap=&quot;changeAutoplay&quot;&gt; autoplay &lt;/button&gt;
+&lt;slider bindchange=&quot;intervalChange&quot; show-value min=&quot;500&quot; max=&quot;2000&quot;/&gt; interval
+&lt;slider bindchange=&quot;durationChange&quot; show-value min=&quot;1000&quot; max=&quot;10000&quot;/&gt; duration
+</code></pre><p>示例代码属性解读:</p>
+<pre><code>indicator-dots : 轮播图的点盒子,可以直接设置为true
+autoplay:是否自动播放,也可以把值设为 true
+interval:自动播放的时间间隔,也可以把时间写死,如:8000(单位是毫秒)
+duration:每次轮播的速度,可以固定,默认1000,代表1s
+</code></pre><p>js中的配置</p>
+<pre><code>Page({
+  data: {
+    imgUrls: [
+      &apos;http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg&apos;,
+      &apos;http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg&apos;,
+      &apos;http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg&apos;
+    ],
+    indicatorDots: false,    //可以在wxml文件中定义
+    autoplay: false,
+    interval: 5000,
+    duration: 1000
+  },
+  changeIndicatorDots: function(e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function(e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function(e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function(e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  }
+})
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/微信小程序swiper组件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/微信小程序swiper组件/" title="微信小程序swiper组件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/微信小程序loading组件/">
+    		微信小程序loading组件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T09:18:56.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="loading组件"><a href="#loading组件" class="headerlink" title="loading组件"></a>loading组件</h3><p>wxml代码</p>
+<pre><code>&lt;view class=&quot;container&quot;&gt;
+  &lt;loading hidden=&quot;{{ !loading }}&quot;&gt;
+    加载中...
+  &lt;/loading&gt;
+
+&lt;view class=&quot;board&quot;&gt;
+    &lt;navigator url=&quot;../list/list?type=in_theaters&amp;name=正在热映&quot; hover-class=&quot;none&quot;&gt;
+      &lt;view class=&quot;board-item&quot;&gt;
+        &lt;text&gt;正在热映&lt;/text&gt;
+      &lt;/view&gt;
+    &lt;/navigator&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><p>js代码</p>
+<pre><code>Pages({
+    data:{
+        loading:true
+        title:loading...
+    },
+    onLoad(params){
+        const apiUrl = &apos;https://api.douban.com/v2/movie/&apos;+ params.type
+        const _this = this
+        //页面加载时候执行
+        wx.request({
+          url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+          data: {},
+          header: {
+              &apos;Content-Type&apos;:&apos;json&apos;
+          },
+          success: function(res) {
+              console.log(res.data)
+            _this.setData({
+                list: res.data.subjects,
+                title:res.data.title,
+                loading:false          //重要的
+            })
+          }
+        })
+    }
+})
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/微信小程序loading组件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/微信小程序loading组件/" title="微信小程序loading组件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/微信小程序小技巧/">
+    		微信小程序小技巧
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T09:16:56.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="对项目进行配置"><a href="#对项目进行配置" class="headerlink" title="对项目进行配置"></a>对项目进行配置</h3><p>在pages/下创建所需要的页面–js文件、wxml文件、wxss文件，并与app.json建立关联</p>
+<h3 id="点击高亮小技巧"><a href="#点击高亮小技巧" class="headerlink" title="点击高亮小技巧"></a>点击高亮小技巧</h3><p>如果需要点击时候高亮,可以给元素加上coursor:pointer;</p>
+<h3 id="页面跳转之间的传值问题"><a href="#页面跳转之间的传值问题" class="headerlink" title="页面跳转之间的传值问题"></a>页面跳转之间的传值问题</h3><p>页面与页面之间跳转(官方文档-&gt;组件-&gt;navigator标签)</p>
+<pre><code>navigator元素在点击的时候自动有高亮 
+
+去掉原有的高亮样式 hover-class=&quot;none&quot;
+
+在url中写页面链接时,不需要写扩展名: ../pages/list/list
+</code></pre><p>在点击的时候你要标注一下点击的是谁,通过 ?参数 来确定</p>
+<pre><code>&lt;view class=&quot;btn-area&quot;&gt;
+  &lt;navigator url=&quot;navigate?title=navigate&quot; hover-class=&quot;navigator-hover&quot;&gt;跳转到新页面&lt;/navigator&gt;
+  &lt;navigator url=&quot;redirect?title=redirect&amp;type=insert&quot; open-type=&quot;redirect&quot; hover-class=&quot;other-navigator-hover&quot;&gt;在当前页打开&lt;/navigator&gt;
+&lt;/view&gt;
+</code></pre><p>那么这个标识在另一个页面怎么拿到呢</p>
+<pre><code>跳转到的页面通过onLoad的参数去取
+Page({
+    onLoad(params){
+        console.log(params)
+    }
+})
+
+这个params参数跟navigator中的?后面的参数相对应,这个参数可以使一个或多个
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/微信小程序小技巧/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/微信小程序小技巧/" title="微信小程序小技巧">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/微信小程序开发准备工作及项目构建/">
+    		微信小程序开发准备工作
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T09:15:56.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/准备工作/" title="准备工作">准备工作</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="微信小程序最基本的知识储备"><a href="#微信小程序最基本的知识储备" class="headerlink" title="微信小程序最基本的知识储备"></a>微信小程序最基本的知识储备</h3><pre><code>HTML + Css + Javascript (最基础)
+</code></pre><h3 id="开发工具下载"><a href="#开发工具下载" class="headerlink" title="开发工具下载"></a>开发工具下载</h3><pre><code>小程序官方提供了微信web开发工具的下载,直接下载安装就可以了
+</code></pre><p>   下载地址: <a herf="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank">点击下载</a></p>
+<h3 id="首次登陆"><a href="#首次登陆" class="headerlink" title="首次登陆"></a>首次登陆</h3><pre><code>开发者工具安装完成后,打开进行扫码登陆
+</code></pre><p><img src="/img/articleImg/webC01.png"></p>
+<pre><code>微信扫码进入到登陆页,选择添加项目
+</code></pre><p><img src="/img/articleImg/webC02.png"></p>
+<pre><code>根据提示填写信息,完成项目构建
+</code></pre><p><img src="/img/articleImg/webC03.png"></p>
+<pre><code>进入到项目
+</code></pre><p><img src="/img/articleImg/webC04.png"></p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/微信小程序开发准备工作及项目构建/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/微信小程序开发准备工作及项目构建/" title="微信小程序开发准备工作">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/微信小程序的事件/">
+    		微信小程序事件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T09:12:58.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="微信小程序事件"><a href="#微信小程序事件" class="headerlink" title="微信小程序事件"></a>微信小程序事件</h2><h3 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h3><pre><code>事件是用户的一种行为
+</code></pre><h3 id="事件的分类"><a href="#事件的分类" class="headerlink" title="事件的分类"></a>事件的分类</h3><p>事件分为冒泡事件和非冒泡事件：</p>
+<p>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。<br>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。</p>
+<pre><code>   类型                      触发条件
+   touchstart              手指触摸动作开始
+touchmove              手指触摸后移动
+touchcancel              手指触摸动作被打断，如来电提醒，弹窗
+touchend              手指触摸动作结束
+tap                      手指触摸后马上离开
+longtap                  手指触摸后，超过350ms再离开
+</code></pre><p>非冒泡事件：除上表之外的其他组件自定义事件如无特殊申明都是非冒泡事件，如<form>的submit事件，input标签的input事件，<scroll-view>的scroll事件，(详见各个组件)</scroll-view></form></p>
+<h3 id="bind和catch的分别"><a href="#bind和catch的分别" class="headerlink" title="bind和catch的分别"></a>bind和catch的分别</h3><p>catch绑定的事件会阻止冒泡</p>
+<p>bind绑定事件会进行冒泡</p>
+<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>currentTarget 绑定的这个组件</p>
+<p>target 触发事件源控件</p>
+<p>dataset 方便给view添加上我们自己的自定义属性  data-title=”hello”</p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/微信小程序的事件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/微信小程序的事件/" title="微信小程序事件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/13/Vue开发环境配置/">
+    		Vue开发环境配置
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-13T06:54:18.000Z">2017-03-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/开发环境/" title="开发环境">开发环境</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="一-首先必须安装node"><a href="#一-首先必须安装node" class="headerlink" title="一.首先必须安装node"></a>一.首先必须安装node</h3><ol>
+<li><p>在安装node时,注意安装绿色版本,因为绿色版包含了npm,这样你就不用再次安装npm</p>
+</li>
+<li><p>node安装好,你需要去进行配置环境变量,不然可能是会报错的</p>
+</li>
+<li><p>node和npm的版本不能太低</p>
+</li>
+</ol>
+<hr>   
+
+<h3 id="二-首先需要安装全局的vue"><a href="#二-首先需要安装全局的vue" class="headerlink" title="二.首先需要安装全局的vue"></a>二.首先需要安装全局的vue</h3><pre><code>`$ npm install -g vue-cli`
+</code></pre><ol>
+<li><p>当然npm在下载vue时,速度可能会非常慢,所以你可以选择安装淘宝的镜像源</p>
+<p> <code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+</li>
+<li><p>安装好cnpm之后,你就可以使用淘宝镜像进行下载安装了 </p>
+<p> <code>$ cnpm install -g vue-cli</code></p>
+</li>
+<li><p>安装好之后vue的命令就可以使用了</p>
+</li>
+</ol>
+<hr>
+
+<h3 id="三-搭建项目结构"><a href="#三-搭建项目结构" class="headerlink" title="三.搭建项目结构"></a>三.搭建项目结构</h3><ol>
+<li><p>vue使用webpack快速搭建结构</p>
+<p> <code>vue init webpack projectName</code></p>
+</li>
+<li><p>在搭建结构的时候,命令行会提示需要你填入的信息,直接写入就好</p>
+<p> <img src="/img/articleImg/vue_pro.png"></p>
+</li>
+</ol>
+<ol>
+<li><p>进入到当前的文件夹</p>
+<p> <code>cd  projectName</code></p>
+<p> <img src="/img/articleImg/vue_catalog.png"></p>
+</li>
+</ol>
+<ol>
+<li><p>下载好了结构,还不算完成,如果想要这个项目可以跑起来,你就得在当前目录下载他的依赖</p>
+<p> <code>cnpm install</code> 下载依赖(<strong>依赖文件在package.json文件中都有体现</strong>)</p>
+</li>
+<li><p>项目运行</p>
+<p> <code>npm run dev</code></p>
+<ul>
+<li><p>打开页面如果出现下图就证明结构创建成功了,快开启你的Vue之旅吧</p>
+<p><img src="/img/articleImg/vue_success.png"></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/13/Vue开发环境配置/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/13/Vue开发环境配置/" title="Vue开发环境配置">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <a class="extend prev" rel="prev" href="/archives/2017/page/2/">前一页</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2017/page/4/">4</a><a class="extend next" rel="next" href="/archives/2017/page/4/">后一页</a>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,12 +1,423 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`首屏动画 点击箭头调到下一屏 fullPage`标签下的文章 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/tags/首屏动画-点击箭头调到下一屏-fullPage/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/tags/首屏动画-点击箭头调到下一屏-fullPage/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/tags/首屏动画-点击箭头调到下一屏-fullPage/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/tags/首屏动画-点击箭头调到下一屏-fullPage/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 按标签分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `首屏动画 点击箭头调到下一屏 fullPage`标签下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery插件/">jQuery插件</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">
+    		jQuery全屏滚动插件fullPage使用中出现的小问题总结
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-17T03:52:03.000Z">2017-03-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在做一个全屏滚动并且带有动画效果的页面,使用的是jQuery的全屏滚动插件–fullPage</p>
+<p>在实现功能的时候,出现了一些小问题,现在记录一下解决的方法</p>
+<h3 id="fullPage的使用方法"><a href="#fullPage的使用方法" class="headerlink" title="fullPage的使用方法"></a>fullPage的使用方法</h3><p>引入文件</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.fullPage.css&quot;&gt;
+
+&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery.slimscroll.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery.fullPage.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>HTML文件</p>
+<pre><code>&lt;div id=&quot;fullpage&quot; class=&quot;fullpage&quot;&gt;
+    &lt;div id=&quot;part1&quot; class=&quot;section&quot;&gt;第一屏&lt;/div&gt;
+    &lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;第二屏&lt;/div&gt;
+    &lt;div id=&quot;part3&quot; class=&quot;section&quot;&gt;第三屏&lt;/div&gt;
+    &lt;div id=&quot;part4&quot; class=&quot;section&quot;&gt;第四屏&lt;/div&gt;
+&lt;/div&gt;    
+</code></pre><p>JS文件</p>
+<pre><code>$(function(){
+    $(&apos;#fullpage&apos;).fullpage();
+});
+</code></pre><h3 id="想要fullPage插件可以达到预期的效果-需要进行配置"><a href="#想要fullPage插件可以达到预期的效果-需要进行配置" class="headerlink" title="想要fullPage插件可以达到预期的效果,需要进行配置"></a>想要fullPage插件可以达到预期的效果,需要进行配置</h3><p>这是我自己的配置:</p>
+<pre><code>$(function(){
+    if( $(&apos;#fullpage&apos;).length&gt;0){
+        $(&apos;#fullpage&apos;).fullpage({
+            resize: true,           //字体是否随着窗口缩放而缩放        
+            verticalCentered: false,   //内容是否垂直居中
+            scrollOverflow: false,     //内容过多是否显示滚动条
+            menu:true,      //绑定菜单
+            navigation: true,      //是否显示导航条
+            anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+
+
+            //滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数。
+            //anchorLink 是锚链接的名称
+            //index 是section的索引，从1开始计算   
+            afterLoad: function (anchorLink, index) {
+                $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                setTimeout(function () {
+                    $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                }, 100);
+            },
+
+            //在配置完上面之后发现,首屏的Css3动画没有效果,所以配置了下面就好了
+            //这个回调函数只是在生成页面结构的时候调用,用来初始化首屏
+            afterRender: function(){
+                $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+            }
+
+        })
+
+    }
+})
+</code></pre><h3 id="每一屏中点击按钮跳到下一屏"><a href="#每一屏中点击按钮跳到下一屏" class="headerlink" title="每一屏中点击按钮跳到下一屏"></a>每一屏中点击按钮跳到下一屏</h3><p>只需要在每一屏设置一a链接,href属性的值是下一屏的#id值</p>
+<pre><code>&lt;div id=&quot;part1&quot; class=&quot;section&quot;&gt;第一屏
+    &lt;a href=&quot;#part2&quot;&gt;跳到下一屏&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;第三屏
+    &lt;a href=&quot;#part3&quot;&gt;跳到下一屏&lt;/a&gt;
+&lt;/div&gt;
+</code></pre><h3 id="每屏的导航器设置不同的颜色"><a href="#每屏的导航器设置不同的颜色" class="headerlink" title="每屏的导航器设置不同的颜色"></a>每屏的导航器设置不同的颜色</h3><p>在设置之前,导航器是有不同的颜色的,如下图:</p>
+<p><img src="/img/articleImg/fullpage01.png"></p>
+<p>现在设计图的要求是更改,如下图,并且第一屏和第三屏颜色一样,第二屏和第四屏颜色一样:<br><img src="/img/articleImg/fullpage02.png"></p>
+<h3 id="配置每个圆点的大小"><a href="#配置每个圆点的大小" class="headerlink" title="配置每个圆点的大小"></a>配置每个圆点的大小</h3><pre><code>#fp-nav span,
+.fp-slidesNavspan{width: 16px; height: 16px;}
+</code></pre><h3 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a>JS文件</h3><p>那么我们如果修改fullpage.css中的样式,那么每屏的颜色还是一样,所以我用JS来控制了他的颜色</p>
+<pre><code>$(&apos;#fullpage&apos;).fullpage({
+            resize: true,
+            verticalCentered: false,
+            scrollOverflow: false,
+            menu:true,
+            navigation: true,
+            anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+            afterLoad: function (anchorLink, index) {
+                $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                setTimeout(function () {
+                    $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                }, 0);
+                //如果是第一屏和第三瓶配置一种颜色
+                if(index == 1 || index == 3){
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#fff&apos;);
+                    })
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                        $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                    })
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;+background&apos;,&apos;url(../images/y1.jpg)&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;+background&apos;,&apos;url(../images/y2.jpg)&apos;);
+                //如果是第二屏和第四瓶配置一种颜色
+                }else if(index == 2 || index ==4){
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    })
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                        $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    })
+                }
+            },
+            afterRender: function(){
+                $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+            }
+        });
+</code></pre><p>这样就配置好了,真的好麻烦,但是我还没有找到简单的方法</p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/" title="jQuery全屏滚动插件fullPage使用中出现的小问题总结">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

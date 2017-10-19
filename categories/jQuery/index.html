@@ -1,12 +1,529 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`jQuery`分类下的文章 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/categories/jQuery/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/categories/jQuery/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/categories/jQuery/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/categories/jQuery/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `jQuery`分类下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery/">jQuery</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/05/05/jQuery制作动态进度条/">
+    		jQuery制作动态进度条
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-05-05T05:11:48.000Z">2017-05-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近用到根据文件的加载情况来制作动态进度条</p>
+<h3 id="源码下载地址"><a href="#源码下载地址" class="headerlink" title="源码下载地址"></a>源码下载地址</h3><p><a href="https://github.com/AriaVV/doProgressBarLoading.github.io" target="_blank" rel="external">点击下载源码</a></p>
+<h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><pre><code>&lt;div id=&quot;ProgressBarID&quot;&gt;
+    &lt;div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="CSS样式"><a href="#CSS样式" class="headerlink" title="CSS样式"></a>CSS样式</h3><pre><code>&lt;style&gt;
+    #ProgressBarID {
+        width: 80px;
+        height: 15px;
+        margin-top: 15px;
+        border: 1px solid #efefef;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #ProgressBarID &gt; div {
+        width: 10%;
+        height: 15px;
+        text-align: center;
+        background-color: #00A0E9;
+    }
+&lt;/style&gt;
+</code></pre><h3 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h3><pre><code>&lt;script src=&quot;jquery-1.12.2.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    /* -- 模拟的数据 -- */
+    var num = [10, 20, 60, 70, 80, 90]
+    /* -- 使用闭包让函数一直执行 -- */    
+    for (var i = 0; i &lt; num.length; i++) {
+        (function (i) {
+            doProgressBarLoading(num[i]);
+        })(i)
+    };
+
+    /* --进度条-- */
+    function doProgressBarLoading(progress) {
+        if (progress &gt; 100) {
+            progress = 100;
+        }
+        if (progress &lt;= 100) {
+            $(&quot;#ProgressBarID &gt; div&quot;).animate({
+                width: progress + &apos;%&apos;
+            }, 1000);
+        }
+    };
+&lt;/script&gt;
+</code></pre><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/img/articleImg/doProgressBarLoading.gif"></p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/05/05/jQuery制作动态进度条/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/05/05/jQuery制作动态进度条/" title="jQuery制作动态进度条">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery/">jQuery</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/29/点击按钮加载更多数据/">
+    		点击按钮加载更多数据
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-29T05:48:37.000Z">2017-03-29</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="代码下载地址"><a href="#代码下载地址" class="headerlink" title="代码下载地址"></a>代码下载地址</h3><p><a href="https://github.com/AriaVV/clickToLoadMore.github.io" target="_blank" rel="external">点击下载代码</a></p>
+<h3 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h3><pre><code>jQuery
+
+artTemplate模板引擎
+</code></pre><h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/common.css&quot;&gt;    //这是样式的初始化
+&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/main.css&quot;&gt;      //这是css样式
+
+&lt;script src=&quot;./libs/jquery.js&quot;&gt;&lt;/script&gt;           //jQuery
+&lt;script src=&quot;./libs/template-native.js&quot;&gt;&lt;/script&gt;  //模板引擎
+&lt;script src=&quot;./js/main.js&quot;&gt;&lt;/script&gt;               //我们自己的逻辑代码 
+</code></pre><h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><p>在写页面的时候,可以先布置好页面的结构,把结构和css写好之后,在进行渲染,这样省的你老是调样式了</p>
+<pre><code>&lt;div class=&quot;movie clearfix&quot;&gt;
+    &lt;div class=&quot;com clearfix&quot;&gt;
+        &lt;div class=&quot;clsDetail&quot;&gt;
+            &lt;div class=&quot;tit&quot;&gt;正在热映...... &lt;a href=&quot;javascript:;&quot;&gt;(更多)&lt;/a&gt; &lt;/div&gt;
+            &lt;div class=&quot;listItem&quot; id=&quot;in_theaters&quot;&gt;
+                //这里我们利用模板引擎渲染数据
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>最终效果图<br> <img src="/img/articleImg/clickMore01.png"></p>
+<h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><p>css样式初始化</p>
+<pre><code>body,button,h2,h3,h4,h5,h6,input,li,p,ul{margin:0;padding:0}
+body,button,input,select,textarea{padding-left:5px;font:16px/1 &quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,&quot;Microsoft JhengHei&quot;,&quot;STHeiti,MingLiu&quot;;outline:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+li,ul{list-style:none}
+a{text-decoration:none;font-size:14px;color:#4677aa;}
+a:focus,a:hover{text-decoration:none;color:#4677aa;}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+html{overflow-y:scroll}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:&quot; &quot;;clear:both;height:0}
+.clearfix{display:inline-table}
+* html .clearfix{height:1%}
+.clearfix{display:block}
+i{font-style: normal;}
+.fl{float:left}
+.fr{float:right}
+body::-webkit-scrollbar{width:0;height:0}
+button{outline:0 none;border:none;cursor: pointer;}
+div,ul,li,p,img,a,input{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.com{width: 950px;height:100%;margin:0 auto;}
+</code></pre><p>index.html样式</p>
+<pre><code>.movie{padding-top:50px;padding-bottom:40px;width: 100%;background-color:#f7f7f7;}
+.movie .classify1{float:left;width: 120px;}
+.movie .title{font-size:18px;color:#0089af;font-weight:900;}
+.movie .con{margin-top:15px;}
+.movie .con li{height:30px;line-height:30px;}
+.movie .con li a{color:#2297cc;}
+.movie .clsDetail{float:left;width: 535px;}
+.clsDetail .tit,.classify2 .tit{height: 1px;line-height:1px;margin-bottom:20px;}
+.listItem{display:inline-block;width: 100%;padding-left:10px;}
+.listItem img{width: 100px;height: 145px;}
+.listItem .item{margin:20px 12px;display:inline-block;width: 100px;text-align:center;font-size:14px;}
+.listItem .name{margin-bottom:10px;margin-top:10px;color:#333;}
+.listItem .score{color:#ffac2d;}
+/*按钮的样式*/
+.in_more{display:block;margin:0 auto; width: 220px;height: 40px;line-height:40px;text-align:center;background-color:#1c8bd0;color:#fff;margin-top:30px;}
+.in_more i{vertical-align:middle;display: inline-block;margin-right:20px;width: 25px;height: 25px;background: url(../images/main/loading.gif) no-repeat;background-size:contain;}
+</code></pre><h3 id="JS业务逻辑"><a href="#JS业务逻辑" class="headerlink" title="JS业务逻辑"></a>JS业务逻辑</h3><pre><code>$(function(){
+    in_theaters();
+})
+
+//电影正在热映获取数据
+function in_theaters(){
+    var count = 8;       //规定初始的显示数据条数
+    var total =8;        //总共的数据条数
+    $.ajax({
+        url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,    //豆瓣api
+        type: &apos;GET&apos;,
+        dataType: &apos;jsonp&apos;,
+        data: {
+            count:count,
+            total:total
+        },
+        success:function(data){
+            //如果地址请求成功把数据渲染在页面上,这里使用artTemplate模板引擎
+            $(&apos;#in_theaters&apos;).html(template(&apos;template&apos;,{model:data.subjects}));
+            //在这里,如果把按钮直接放在页面上,那么如果数据渲染的很慢,那么按钮就会很明显,所以让它和数据一块渲染
+            $(&apos;.clsDetail&apos;).append(&apos;&lt;button class=&quot;in_more&quot;&gt;点击加载更多&lt;/button&gt;&apos;);
+        }
+    });
+    //在点击按钮的时候加载更多数据,因为按钮是动态渲染到页面的,所以需要用到**事件委托**
+    $(&apos;.clsDetail&apos;).on(&apos;click&apos;,&apos;.in_more&apos;,function(){
+        //在没有点击按钮之前我们已经渲染了8条数据了,这里让每次点击按钮的时候显示在页面的数据增加8条
+        count += 8;  
+        //点击按钮的时候禁用按钮,并且继续发起请求获取数据  
+        $(this).html(&apos;&lt;i&gt;&lt;/i&gt;正在努力的加载中...&apos;).attr(&apos;disabled&apos;,&apos;true&apos;).css(&apos;backgroundColor&apos;,&apos;#ccc&apos;);
+        $.ajax({
+            url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+            type: &apos;GET&apos;,
+            dataType: &apos;jsonp&apos;,
+            data: {
+                count:count,
+                total:total
+            },
+            success:function(data){
+                //获取到更多的数据之后继续在页面渲染数据
+                $(&apos;#in_theaters&apos;).html(template(&apos;template&apos;,{model:data.subjects}));
+                //并且启用按钮的点击功能
+                $(&apos;.in_more&apos;).html(&apos;点击加载更多&apos;).css(&apos;backgroundColor&apos;,&apos;#1c8bd0&apos;).removeAttr(&apos;disabled&apos;);
+                //这里的data.total是我们发起请求后获取到的数据的总条数
+                //如果count&gt;data.total,那么就说明没有更多的数据了,我们就给用户一个提示&quot;没有更多数据了&quot;,并且把按钮禁用掉
+                if(count&gt;data.total){
+                    $(&apos;.in_more&apos;).html(&apos;没有更多了&apos;).attr(&apos;disabled&apos;,&apos;true&apos;).css(&apos;backgroundColor&apos;,&apos;#ccc&apos;);
+                }
+            }
+        })
+    });
+}
+</code></pre><h3 id="html页面的模板使用"><a href="#html页面的模板使用" class="headerlink" title="html页面的模板使用"></a>html页面的模板使用</h3><p><strong>模板一定要放在jQuery和artTemplate引入包的前面,不然会报错</strong></p>
+<pre><code>这个id=&quot;template&quot;和JS文件中保持一致
+&lt;script type=&quot;text/html&quot; id=&quot;template&quot;&gt;
+    &lt;% for(var i = 0 ; i &lt; model.length ; i++) {  %&gt;
+        &lt;% var item = model[i]; %&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;img src=&quot;&lt;%=item.images.small %&gt;&quot; /&gt;
+            &lt;p class=&quot;name&quot;&gt;&lt;%=item.title%&gt;&lt;/p&gt;
+            &lt;p class=&quot;score&quot;&gt;&lt;%=item.rating.average%&gt;&lt;/p&gt;
+            &lt;a class=&quot;buyBtn&quot; href=&quot;javascript:;&quot;&gt;选座购票&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;%  }  %&gt;
+&lt;/script&gt;
+</code></pre><h3 id="完整的html结构"><a href="#完整的html结构" class="headerlink" title="完整的html结构"></a>完整的html结构</h3><p><img src="/img/articleImg/clickMore02.png"></p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/29/点击按钮加载更多数据/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/29/点击按钮加载更多数据/" title="点击按钮加载更多数据">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/9.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

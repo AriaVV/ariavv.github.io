@@ -1,12 +1,1536 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`Vue`分类下的文章 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/categories/Vue/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/categories/Vue/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/categories/Vue/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/categories/Vue/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `Vue`分类下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/06/vue-loader/">
+    		vue-loader
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-06T02:36:53.000Z">2017-04-06</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>vue-loader基于webpack</p>
+<pre><code>需要通过webpack编译成能够读懂的正常的代码
+</code></pre><h3 id="各个文件的用处"><a href="#各个文件的用处" class="headerlink" title="各个文件的用处"></a>各个文件的用处</h3><p>.vue文件</p>
+<pre><code>放置的是vue的组件代码
+
+&lt;template&gt;
+    放置的是HTML结构标签
+&lt;template&gt;
+
+&lt;style&gt;
+    放置的是CSS样式表
+&lt;/style&gt;
+
+&lt;script&gt;
+    放置的是JS的业务逻辑代码 (ES6)
+    babel-loader:主要是把ES6的代码编译成ES5的代码
+&lt;/script&gt;
+</code></pre><h3 id="搭建vue-loader脚手架"><a href="#搭建vue-loader脚手架" class="headerlink" title="搭建vue-loader脚手架"></a>搭建vue-loader脚手架</h3><pre><code>|-index.html
+|-main.js             //入口文件
+|-App.vue             //vue.js
+|-package.json        //项目依赖、名称、配置
+|-webpack.config.js   //webpack配置文件
+</code></pre><h3 id="webpack的准备工作"><a href="#webpack的准备工作" class="headerlink" title="webpack的准备工作"></a>webpack的准备工作</h3><pre><code>下载: npm install webpack webpack-dev-server
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/06/vue-loader/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/06/vue-loader/" title="vue-loader">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/6.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/05/Vue-中的router/">
+    		Vue 中的router
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-05T08:55:30.000Z">2017-04-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><pre><code>&lt;script src=&quot;libs/vue.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;libs/vue-router.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p><img src="/img/articleImg/vue27.png"></p>
+<h3 id="多层路由嵌套"><a href="#多层路由嵌套" class="headerlink" title="多层路由嵌套"></a>多层路由嵌套</h3><p><img src="/img/articleImg/vue28.png"></p>
+<h3 id="路由的其他信息-通过参数获取信息"><a href="#路由的其他信息-通过参数获取信息" class="headerlink" title="路由的其他信息(通过参数获取信息)"></a>路由的其他信息(通过参数获取信息)</h3><pre><code>{{$route.params | json}}    &lt;!-- 当前的参数 --&gt;
+
+{{$route.path}}              &lt;!--  /news/detail/002 --&gt;
+
+{{$route.query | json}}     &lt;!--  数据 --&gt;
+</code></pre><p><img src="/img/articleImg/vue29.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/05/Vue-中的router/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/05/Vue-中的router/" title="Vue 中的router">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/05/Vue中的组件/">
+    		Vue中的组件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-05T05:39:42.000Z">2017-04-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>就是一个大的对象,组件可以扩展HTML元素，封装可重用的HTML代码，我们可以将组件看作自定义的HTML元素。</p>
+<h3 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h3><p>1、第一种定义组件方式<br><img src="/img/articleImg/vue13.png"></p>
+<p>2、第二种定义组件方式</p>
+<p><img src="/img/articleImg/vue14.png"></p>
+<h3 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h3><p>1、第一种定义组件方式</p>
+<p><img src="/img/articleImg/vue16.png"></p>
+<p>2、第二种定义组件方式</p>
+<p><img src="/img/articleImg/vue17.png"></p>
+<h3 id="组件中放置数据"><a href="#组件中放置数据" class="headerlink" title="组件中放置数据"></a>组件中放置数据</h3><p><strong>data必须是函数的形式,函数必须返回一个对象(json)</strong></p>
+<p><img src="/img/articleImg/vue15.png"></p>
+<h3 id="template配合模板引擎"><a href="#template配合模板引擎" class="headerlink" title="template配合模板引擎"></a>template配合模板引擎</h3><p>1、模板使用的第一种方式</p>
+<p><img src="/img/articleImg/vue18.png"></p>
+<p>2、模板使用的第二种方式</p>
+<p><img src="/img/articleImg/vue19.png"></p>
+<h3 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h3><p><img src="/img/articleImg/vue20.png"></p>
+<p>效果图：（点击按钮切换内容，tab栏）</p>
+<p><img src="/img/articleImg/vue21.png"></p>
+<p><img src="/img/articleImg/vue22.png"></p>
+<h3 id="父子组件"><a href="#父子组件" class="headerlink" title="父子组件"></a>父子组件</h3><p><img src="/img/articleImg/vue23.png"></p>
+<p>效果图：</p>
+<p><img src="/img/articleImg/vue24.png"></p>
+<pre><code>由上图可以得出结论：
+
+Vue默认情况下，父组件和子组件之间的数据，是不能够共享的，子组件无法去访问父组件的数据
+</code></pre><h3 id="组件之间的数据的传递"><a href="#组件之间的数据的传递" class="headerlink" title="组件之间的数据的传递"></a>组件之间的数据的传递</h3><p>1、子组件获取父组件的数据 :props属性绑定</p>
+<p><img src="/img/articleImg/vue25.png"></p>
+<p>2、父组件获取子组件的数据</p>
+<pre><code>就是子组件把数据发送给父组件
+
+App.$emit（事件名，数据）
+</code></pre><p><img src="/img/articleImg/vue26.png"></p>
+<h3 id="slot占位"><a href="#slot占位" class="headerlink" title="slot占位"></a>slot占位</h3><p>在模板中slot占位,可以显示更多的内容</p>
+<pre><code>&lt;template id=&quot;temp&quot;&gt;
+    &lt;h3&gt;111111111&lt;/h3&gt;
+    &lt;slot name=&quot;ul-slot&quot;&gt; 占位 &lt;/slot&gt;
+&lt;/template&gt;
+
+slot占位之后这个ul标签也可以显示在页面中了
+&lt;temp&gt;
+    &lt;ul slot=&quot;ul-slot&quot;&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/temp&gt;
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/05/Vue中的组件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/05/Vue中的组件/" title="Vue中的组件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/05/Vue中的动画/">
+    		Vue中的动画
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-05T05:03:54.000Z">2017-04-05</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="最简单的动画"><a href="#最简单的动画" class="headerlink" title="最简单的动画"></a>最简单的动画</h3><pre><code>&lt;style&gt;
+    .box{width: 100px;height: 100px;background-color:red;}
+    /*动画的时间*/
+    .fade-transition{transition:all 2s ease;}
+    /*进入*/
+    .fade-enter{opacity:0;}
+    /*离开*/
+    .fade-leave{opacity:0;transform:translateX(200px);}
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;script&gt;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                start: false
+            },
+            methods:{
+                toggle(){
+                    this.start = !this.start;    //控制.box的显示隐藏
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;按钮&quot; @click=&quot;toggle&quot;&gt;
+        &lt;div class=&quot;box&quot; v-show=&quot;start&quot; transition=&quot;fade&quot;&gt;&lt;/div&gt;       //transition=&quot;fade&quot;定义动画
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="利用animate-css定义动画"><a href="#利用animate-css定义动画" class="headerlink" title="利用animate.css定义动画"></a>利用animate.css定义动画</h3><pre><code>代码:
+
+&lt;script src=&quot;./libs/vue.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;./libs/animate.css&quot;&gt;
+&lt;title&gt;vue动画&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    .container{width: 100px;margin:100px auto;}
+    .box{width: 100px;height: 100px;background-color:red;}
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;script&gt;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                start: false
+            },
+            methods:{
+                toggle(){
+                    this.start = !this.start;
+                }
+            },
+            // 定义所有的动画
+            transitions:{
+                fadeCartoon:{
+                    enterClass:&apos;zoomInLeft&apos;,  //进入,这个就是animate.css中定义的那些类名
+                    leaveClass:&apos;zoomOutRight&apos;  //离开    
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;按钮&quot; @click=&quot;toggle&quot;&gt;
+        &lt;div v-show=&quot;start&quot; class=&quot;box animated&quot; transition=&quot;fadeCartoon&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p><img src="/img/articleImg/vue12.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/05/Vue中的动画/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/05/Vue中的动画/" title="Vue中的动画">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/04/01/Vue的生命周期/">
+    		Vue的生命周期
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-04-01T03:36:48.000Z">2017-04-01</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="vue-1-0"><a href="#vue-1-0" class="headerlink" title="vue 1.0"></a>vue 1.0</h3><p>钩子函数</p>
+<p>created:实例已经创建的时候执行</p>
+<p>beforeCompile:编译之前执行</p>
+<p>compiled:编译之后执行</p>
+<p>ready:插入到文档中</p>
+<p>beforeDestroy:销毁之前</p>
+<p>destroyed:销毁之后</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/04/01/Vue的生命周期/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/04/01/Vue的生命周期/" title="Vue的生命周期">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue交互/">
+    		Vue交互
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T08:15:21.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>###引包<br>Vue本身是不支持交互,如果想要交互,需要引入库 vue-resouce</p>
+<pre><code>&lt;script src=&quot;./libs/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;./libs/vue-resource.js&quot;&gt;&lt;/script&gt;   //交互
+</code></pre><h3 id="get方式进行交互-开启服务器"><a href="#get方式进行交互-开启服务器" class="headerlink" title="get方式进行交互(开启服务器)"></a>get方式进行交互(开启服务器)</h3><pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data:{
+                  msg:&apos;hello world!....&apos;
+              },
+              methods:{
+                  getData:function(){
+                      this.$http.get(&apos;get.php&apos;,{a:1,b:2}).then(function(res){
+                        //成功
+                          console.log(res.data);
+                      },function(res){
+                        失败
+                        console.log(res.data);
+                      })
+                  }
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;点击按钮&quot; @click=&quot;getData()&quot; /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="post方式进行交互-开启服务器"><a href="#post方式进行交互-开启服务器" class="headerlink" title="post方式进行交互(开启服务器)"></a>post方式进行交互(开启服务器)</h3><p>post方式请求数据必须加 <code>emulateJSON:true</code></p>
+<pre><code>    &lt;body&gt;
+      &lt;script&gt;
+        window.onload=function(){
+            new Vue({
+                el:&apos;body&apos;,
+                data:{
+
+                },
+                methods:{
+                    getData:function(){
+                        this.$http.post(&apos;post.php&apos;,{
+                            a:1,
+                            b:2
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res.data);
+                        },function(res){
+                            console.log(res.data);
+                        });
+                    }
+                }
+            });
+        };
+    &lt;/script&gt;
+    &lt;input type=&quot;button&quot; value=&quot;按钮&quot; @click=&quot;getData()&quot;&gt;
+&lt;/body&gt;
+</code></pre><h3 id="jsonp-跨域"><a href="#jsonp-跨域" class="headerlink" title="jsonp(跨域)"></a>jsonp(跨域)</h3><p>需要定义callback的指向  jsonp:’cb’     //定义callback的名称,默认是 callback</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function() {
+            var app = new Vue({
+                el: &apos;#box&apos;,
+                data: {
+                    msg: &apos;hello world!....&apos;
+                },
+                methods: {
+                    getData: function() {
+                        //请求地址:&quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=abc&quot;
+                        this.$http.jsonp(&apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&apos;, {
+                            wd:&apos;a&apos;
+                        }, {
+                            jsonp:&apos;cb&apos;     //定义callback的名称
+                        }).then(function(res) {
+                            console.log(res.data.s);
+                        }, function(res) {
+                            console.log(res.data);
+                        });
+                    }
+                }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;点击按钮&quot; @click=&quot;getData()&quot; /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>输出结果</p>
+<p> <img src="/img/articleImg/vue09.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue交互/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue交互/" title="Vue交互">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue中常用的简单过滤器/">
+    		Vue中常用的简单过滤器
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T07:53:33.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>过滤器用来过滤模板中的数据</p>
+<h3 id="常用简单过滤器"><a href="#常用简单过滤器" class="headerlink" title="常用简单过滤器"></a>常用简单过滤器</h3><pre><code>语法：{{msg|filterA|filterB}}
+传参语法：{{msg|filterA '参数'}}   这个参数就是你想要的参数
+</code></pre><p>1、|uppercase  小写转大写</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello world&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        {{ msg | uppercase}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue08.png"></p>
+<p>2、|lowercase 大写转小写</p>
+<p>3、|capitalize 首字母大写</p>
+<p>4、|currency  美元</p>
+<p>5、|currency ‘￥’   传参，人民币</p>
+<p>6、|debounce 2000 延迟执行    一般配合事件使用</p>
+<pre><code>&lt;input type=&quot;text&quot; @keyup=&quot;show() | debounce 2000&quot; /&gt;
+</code></pre><p>7、|limitBy 2   取2条数据,跟数据配合来使用</p>
+<pre><code>&lt;li v-for=&quot;val in arr | linitBy 2&quot;&gt;&lt;/li&gt;
+</code></pre><p>8、|limitBy 2 1  从索引为1的开始，取2条数据,跟数据配合来使用</p>
+<p>9、|filterBy ‘a’ 获取包含’a’的数据</p>
+<pre><code>&lt;li v-for=&quot;val in arr | filterBy &apos;a&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>10、|orderBy ‘a’  排序</p>
+<pre><code>&lt;li v-for=&quot;val in arr | orderBy &apos;a&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>11、|orderBy ‘1’  正序排列</p>
+<pre><code>&lt;li v-for=&quot;val in arr | orderBy &apos;1&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>12、|orderBy ‘-1’  倒叙排列</p>
+<pre><code>&lt;li v-for=&quot;val in arr | orderBy &apos;-1&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>13、自定义过滤器</p>
+<pre><code>Vue.filter(名称,function(){})
+</code></pre><p>例子:如果数据小于10,就在前面加上0(自定义一个名称叫做:digit的过滤器)</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function() {
+
+            Vue.filter(&apos;digit&apos;,function(num){
+                return num&lt;10?&apos;0&apos;+num:&apos;&apos;+num;
+            })
+            var app = new Vue({
+                data: {
+                    msg: &apos;7&apos;
+                }
+            }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        {{msg | digit}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>14、自定义过滤器(时间戳)</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function() {
+        Vue.filter(&apos;time&apos;,
+            function(date) {
+                var date = new Date(date);
+                Y = date.getFullYear(),
+                    m = date.getMonth() + 1,
+                    d = date.getDate(),
+                    H = date.getHours(),
+                    i = date.getMinutes(),
+                    s = date.getSeconds();
+                if (m &lt; 10) {
+                    m = &apos;0&apos; + m;
+                }
+                if (d &lt; 10) {
+                    d = &apos;0&apos; + d;
+                }
+                if (H &lt; 10) {
+                    H = &apos;0&apos; + H;
+                }
+                if (i &lt; 10) {
+                    i = &apos;0&apos; + i;
+                }
+                if (s &lt; 10) {
+                    s = &apos;0&apos; + s;
+                }
+                var t = Y + &apos;-&apos; + m + &apos;-&apos; + d +  + H + &apos;:&apos; + i + &apos;:&apos; + s;
+                return t;
+            });
+
+        var app = new Vue({
+            data: {
+                msg: Date.now()
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        {{msg | time}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue10.png"></p>
+<p>15、|json<br> 相当于 json.stringfy()</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue中常用的简单过滤器/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue中常用的简单过滤器/" title="Vue中常用的简单过滤器">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue模板的使用/">
+    		Vue模板的使用
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T06:22:47.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><p>当我们使用v-model的时候,就把页面上的所有的msg绑定在了一起<br>当输入框的msg的值发生改变,页面上其他的msg的值也会发生变化</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;/br&gt;
+        {{ msg }}
+        &lt;/br&gt;
+        {{ msg }}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue05.png"></p>
+<h3 id="只把输入框与第二个绑定-最后一个不变"><a href="#只把输入框与第二个绑定-最后一个不变" class="headerlink" title="只把输入框与第二个绑定,最后一个不变"></a>只把输入框与第二个绑定,最后一个不变</h3><pre><code>只需要在第三个中加上* ,如: `{{*msg}}`,这个表示数据只绑定一次
+
+&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;    //数据更新
+        &lt;/br&gt;
+        {{msg}}                             //数据更新
+        &lt;/br&gt;
+        {{*msg}}                            //数据不更新
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue06.png"></p>
+<h3 id="数据更新是的html标签有样式在页面"><a href="#数据更新是的html标签有样式在页面" class="headerlink" title="数据更新是的html标签有样式在页面"></a>数据更新是的html标签有样式在页面</h3><p>//三个{}的时候,可以把html标签转义输出在页面</p>
+<pre><code>在用户更新的数据是html标签的时候,我们使得这个更新的内容作为一个标签显示在页面,而不是字符串,可以使用: {{{msg}}}
+
+&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;/br&gt;
+        {{ msg }}
+        &lt;/br&gt;
+        {{{msg}}}                          //三个{}的时候,可以把html标签转义输出在页面
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue07.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue模板的使用/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue模板的使用/" title="Vue模板的使用">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue事件/">
+    		Vue事件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T06:13:32.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h5 id="v-on-click-”函数”-基础事件"><a href="#v-on-click-”函数”-基础事件" class="headerlink" title="v-on:click=”函数”    基础事件"></a>v-on:click=”函数”    基础事件</h5><pre><code>v-on可以简写成 @
+例如:v-on:click=&quot;函数&quot; ,可以写成@click=&quot;函数&quot;
+
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {        //data里面放着数据
+                msg: true
+              },
+              methods: {    //方法定义在这里
+                  click:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;input type=&quot;button&quot; value=&quot;点击&quot; v-on:click=&quot;click()&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="事件对象-event"><a href="#事件对象-event" class="headerlink" title="事件对象 $event"></a>事件对象 $event</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                //在html结构中点击事件传入 $event才可以使用事件对象,不然是没有效果的
+                  show:function(event){
+                      console.log(event)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;button @click=&quot;show($event)&quot; id=&quot;box&quot;&gt;    
+        点击按钮
+    &lt;/button&gt;
+&lt;/body&gt;
+</code></pre><p><img src="/img/articleImg/vue04.png"></p>
+<h3 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h3><p>1、event.cancelBubble = true</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(event){
+                      alert(1)
+                      event.cancelBubble = true    //阻止冒泡
+                  },
+                  show2:function(event){
+                      alert(2)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div @click=&quot;show2()&quot;  id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot;  @click=&quot;show($event)&quot;  value=&quot;点击按钮&quot;/&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>2、@click.stop=”show()”</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  },
+                  show2:function(){
+                      alert(2)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div @click=&quot;show2()&quot;  id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot;  @click.stop=&quot;show()&quot;  value=&quot;点击按钮&quot;/&gt;     //这里阻止冒泡
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h3><p>点击鼠标右键,弹出弹出框,并且鼠标右键的默认原有的功能给他禁用掉<br>1、 e.preventDefault();</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(e){
+                      alert(1)
+                      e.preventDefault();
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot;  @contextmenu=&quot;show($event)&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>2、 @contextmenu.prevent=”show()”</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot;  @contextmenu.prevent=&quot;show()&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><h3 id="keyCode的使用"><a href="#keyCode的使用" class="headerlink" title="keyCode的使用"></a>keyCode的使用</h3><p>在Vue中,我们可以直接使用键盘码来控制行为</p>
+<p>1、@keydown.13=”show()”<br>回车的键盘码是什么，按下回车键执行函数，这样我们就可以不用使用事件对象了</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot;  @keydown.13=&quot;show()&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>2、@keydown.enter=”show()”<br>按下回车键执行函数</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot;  @keydown.enter =&quot;show()&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>@keydown.up=”show()”      按上键执行函数<br>@keydown.down=”show()”      按下键执行函数<br>@keydown.left=”show()”      按左键执行函数<br>@keydown.right=”show()”      按右键执行函数  等等,还有很多</p>
+<h3 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h3><pre><code>在绑定属性的时候最好用v-bind
+写法:&lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
+简写:&lt;img :src=&quot;url&quot; alt=&quot;&quot;&gt;
+</code></pre><p><strong> 除了class和style所有的属性都可以  :src=””  这种形式绑定</strong><br>class在使用时候,可以:class=”[red,blue]”  这里的red是data中定义的数据;<br>class还可以:class=”{red:true,blue:false}”,这种指的不是data的数据,直接指向类名;<br>class还可以:class=”json”,json可以在data中定义<br>style和class的使用方式基本一致</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                url: &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue事件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue事件/" title="Vue事件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/30/Vue的基本使用/">
+    		vue的基本使用
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-30T01:38:17.000Z">2017-03-30</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>Vue不兼容低版本的IE</p>
+<h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><p>使用vue的时候,首先需要进行引包</p>
+<p>我们可以使用npm下载  </p>
+<pre><code>`npm install vue`
+</code></pre><p>也可以直接链接</p>
+<pre><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>我们在使用的时候首先定义HTML</p>
+<pre><code>&lt;div id=&quot;box&quot;&gt; {{ msg }} &lt;/div&gt;   //在这里{{ }}是用来渲染数据的
+</code></pre><p>在进行声明式渲染</p>
+<pre><code>&lt;script&gt;
+    window.onload = function(){
+        var app = new Vue({        //定义一个vue实例,变量名字可以随便起
+          el: &apos;#box&apos;,              //这里是选择器(id选择器、标签、类名等),我们使用的是id选择器
+          data: {
+            msg: &apos;Hello Vue!&apos;，  //这里是数据（可以放String、Number、Boolean、数组、对象等等）
+            arr：[&apos;苹果&apos;,&apos;桃子&apos;,&apos;菠萝&apos;,&apos;香蕉&apos;]
+          }
+        })
+    }
+&lt;/script&gt;
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue01.png"></p>
+<h3 id="vue的常见指令"><a href="#vue的常见指令" class="headerlink" title="vue的常见指令"></a>vue的常见指令</h3><p><strong>指令:扩展了html标签的属性和功能</strong></p>
+<h5 id="v-model-一般用在表单元素上-用于双向数据绑定"><a href="#v-model-一般用在表单元素上-用于双向数据绑定" class="headerlink" title="v-model 一般用在表单元素上,用于双向数据绑定"></a>v-model 一般用在表单元素上,用于双向数据绑定</h5><pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;welcome vue&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h5 id="v-for-循环"><a href="#v-for-循环" class="headerlink" title="v-for 循环"></a>v-for 循环</h5><p>1、数组语法 (value, index) in arr</p>
+<pre><code>value是循环的每一项的值
+index是每一项的索引
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                arr:[&apos;苹果&apos;,&apos;桃子&apos;,&apos;菠萝&apos;,&apos;香蕉&apos;]
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,$index) in arr&quot;&gt;{{ item }}-{{ $index }}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue02.png"></p>
+<pre><code>如果有重复数据是添加不上的,我们可以通过track-by=&quot;$index&quot;添加:
+&lt;li v-for=&quot;(item,$index) in arr&quot; track-by=&quot;$index&quot;&gt;{{ item }}-{{ $index }}&lt;/li&gt;
+</code></pre><p>2、对象语法 (value, key, index) in object</p>
+<pre><code>value是循环的每一项的值
+key是每一项的键
+index是每一项的索引
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                obj:{a:&apos;苹果&apos;,b:&apos;桃子&apos;,c:&apos;菠萝&apos;,d:&apos;香蕉&apos;}
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,$key,$index) in obj&quot;&gt;{{ item }}-{{ $key }}-{{ $index }}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+在对象语法中可以直接使用{{ $key }}表示键,使用{{ $index }}表示索引 `&lt;li v-for=&quot;item in obj&quot;&gt;{{ $key }}-{{ $index }}&lt;/li&gt;`
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue03.png"></p>
+<h5 id="v-if-条件"><a href="#v-if-条件" class="headerlink" title="v-if  条件"></a>v-if  条件</h5><pre><code>&lt;script&gt;
+    window.onload = function(){
+        var app = new Vue({
+          el: &apos;#box&apos;,
+          data: {
+            msg: true
+          }
+        })
+    }
+&lt;/script&gt;
+
+&lt;div id=&quot;box&quot;&gt; 
+    &lt;div v-if=&quot;msg&quot;&gt;如果是true,就显示&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h5 id="v-show-”true-false”-显示隐藏切换"><a href="#v-show-”true-false”-显示隐藏切换" class="headerlink" title="v-show=”true/false”    显示隐藏切换"></a>v-show=”true/false”    显示隐藏切换</h5><h3 id="防止闪烁"><a href="#防止闪烁" class="headerlink" title="防止闪烁"></a>防止闪烁</h3><p>v-text=””</p>
+<p>v-html=””</p>
+<p>v-cloak  然后在style中添加   [v-clock]{display:none;}</p>
+<h3 id="自定义指令-属性"><a href="#自定义指令-属性" class="headerlink" title="自定义指令(属性)"></a>自定义指令(属性)</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义指令
+    Vue.directive(&apos;red&apos;,function(color){
+        this.el.style.background=color;
+    });
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;,
+                a:&apos;red&apos;
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;span v-red=&quot;a&quot;&gt;11111111&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图:</p>
+<p><img src="/img/articleImg/vue11.png"></p>
+<h3 id="自定义元素指令-不推荐使用"><a href="#自定义元素指令-不推荐使用" class="headerlink" title="自定义元素指令(不推荐使用)"></a>自定义元素指令(不推荐使用)</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义元素指令
+    Vue.elementDirective(&apos;span-red&apos;,{
+        bind:function(){
+            this.el.style.backgroundColor=&apos;red&apos;;
+        }
+    });
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;,
+                a:&apos;red&apos;
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;span-red&gt;&lt;/span-red&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="自定义键盘信息"><a href="#自定义键盘信息" class="headerlink" title="自定义键盘信息"></a>自定义键盘信息</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义绑定ctrl键,ctrl的键盘码是17
+    Vue.directive(&apos;on&apos;).keyCodes.ctrl=17;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;
+            },
+            methods:{
+                show:function(){
+                    alert(1)
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;text&quot; @keyup.ctrl=&quot;show()&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/30/Vue的基本使用/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/30/Vue的基本使用/" title="vue的基本使用">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span><a class="page-number" href="/categories/Vue/page/2/">2</a><a class="extend next" rel="next" href="/categories/Vue/page/2/">后一页</a>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

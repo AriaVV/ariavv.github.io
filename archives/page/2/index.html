@@ -1,12 +1,1889 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>文章归档 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block container
-    include mixins/post
-    +postList()
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
-block pagination
-    include mixins/paginator
-    +home()
 
-block copyright
-    include partial/copyright
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/archives/page/2/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/archives/page/2/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/archives/page/2/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/archives/page/2/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章归档 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                文章归档
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue中常用的简单过滤器/">
+    		Vue中常用的简单过滤器
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T07:53:33.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>过滤器用来过滤模板中的数据</p>
+<h3 id="常用简单过滤器"><a href="#常用简单过滤器" class="headerlink" title="常用简单过滤器"></a>常用简单过滤器</h3><pre><code>语法：{{msg|filterA|filterB}}
+传参语法：{{msg|filterA '参数'}}   这个参数就是你想要的参数
+</code></pre><p>1、|uppercase  小写转大写</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello world&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        {{ msg | uppercase}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue08.png"></p>
+<p>2、|lowercase 大写转小写</p>
+<p>3、|capitalize 首字母大写</p>
+<p>4、|currency  美元</p>
+<p>5、|currency ‘￥’   传参，人民币</p>
+<p>6、|debounce 2000 延迟执行    一般配合事件使用</p>
+<pre><code>&lt;input type=&quot;text&quot; @keyup=&quot;show() | debounce 2000&quot; /&gt;
+</code></pre><p>7、|limitBy 2   取2条数据,跟数据配合来使用</p>
+<pre><code>&lt;li v-for=&quot;val in arr | linitBy 2&quot;&gt;&lt;/li&gt;
+</code></pre><p>8、|limitBy 2 1  从索引为1的开始，取2条数据,跟数据配合来使用</p>
+<p>9、|filterBy ‘a’ 获取包含’a’的数据</p>
+<pre><code>&lt;li v-for=&quot;val in arr | filterBy &apos;a&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>10、|orderBy ‘a’  排序</p>
+<pre><code>&lt;li v-for=&quot;val in arr | orderBy &apos;a&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>11、|orderBy ‘1’  正序排列</p>
+<pre><code>&lt;li v-for=&quot;val in arr | orderBy &apos;1&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>12、|orderBy ‘-1’  倒叙排列</p>
+<pre><code>&lt;li v-for=&quot;val in arr | orderBy &apos;-1&apos; &quot;&gt;&lt;/li&gt;
+</code></pre><p>13、自定义过滤器</p>
+<pre><code>Vue.filter(名称,function(){})
+</code></pre><p>例子:如果数据小于10,就在前面加上0(自定义一个名称叫做:digit的过滤器)</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function() {
+
+            Vue.filter(&apos;digit&apos;,function(num){
+                return num&lt;10?&apos;0&apos;+num:&apos;&apos;+num;
+            })
+            var app = new Vue({
+                data: {
+                    msg: &apos;7&apos;
+                }
+            }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        {{msg | digit}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>14、自定义过滤器(时间戳)</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function() {
+        Vue.filter(&apos;time&apos;,
+            function(date) {
+                var date = new Date(date);
+                Y = date.getFullYear(),
+                    m = date.getMonth() + 1,
+                    d = date.getDate(),
+                    H = date.getHours(),
+                    i = date.getMinutes(),
+                    s = date.getSeconds();
+                if (m &lt; 10) {
+                    m = &apos;0&apos; + m;
+                }
+                if (d &lt; 10) {
+                    d = &apos;0&apos; + d;
+                }
+                if (H &lt; 10) {
+                    H = &apos;0&apos; + H;
+                }
+                if (i &lt; 10) {
+                    i = &apos;0&apos; + i;
+                }
+                if (s &lt; 10) {
+                    s = &apos;0&apos; + s;
+                }
+                var t = Y + &apos;-&apos; + m + &apos;-&apos; + d +  + H + &apos;:&apos; + i + &apos;:&apos; + s;
+                return t;
+            });
+
+        var app = new Vue({
+            data: {
+                msg: Date.now()
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        {{msg | time}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue10.png"></p>
+<p>15、|json<br> 相当于 json.stringfy()</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue中常用的简单过滤器/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue中常用的简单过滤器/" title="Vue中常用的简单过滤器">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue模板的使用/">
+    		Vue模板的使用
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T06:22:47.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><p>当我们使用v-model的时候,就把页面上的所有的msg绑定在了一起<br>当输入框的msg的值发生改变,页面上其他的msg的值也会发生变化</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;/br&gt;
+        {{ msg }}
+        &lt;/br&gt;
+        {{ msg }}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue05.png"></p>
+<h3 id="只把输入框与第二个绑定-最后一个不变"><a href="#只把输入框与第二个绑定-最后一个不变" class="headerlink" title="只把输入框与第二个绑定,最后一个不变"></a>只把输入框与第二个绑定,最后一个不变</h3><pre><code>只需要在第三个中加上* ,如: `{{*msg}}`,这个表示数据只绑定一次
+
+&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;    //数据更新
+        &lt;/br&gt;
+        {{msg}}                             //数据更新
+        &lt;/br&gt;
+        {{*msg}}                            //数据不更新
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue06.png"></p>
+<h3 id="数据更新是的html标签有样式在页面"><a href="#数据更新是的html标签有样式在页面" class="headerlink" title="数据更新是的html标签有样式在页面"></a>数据更新是的html标签有样式在页面</h3><p>//三个{}的时候,可以把html标签转义输出在页面</p>
+<pre><code>在用户更新的数据是html标签的时候,我们使得这个更新的内容作为一个标签显示在页面,而不是字符串,可以使用: {{{msg}}}
+
+&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg:&apos;hello&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;/br&gt;
+        {{ msg }}
+        &lt;/br&gt;
+        {{{msg}}}                          //三个{}的时候,可以把html标签转义输出在页面
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图</p>
+<p><img src="/img/articleImg/vue07.png"></p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue模板的使用/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue模板的使用/" title="Vue模板的使用">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/31/Vue事件/">
+    		Vue事件
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-31T06:13:32.000Z">2017-03-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h5 id="v-on-click-”函数”-基础事件"><a href="#v-on-click-”函数”-基础事件" class="headerlink" title="v-on:click=”函数”    基础事件"></a>v-on:click=”函数”    基础事件</h5><pre><code>v-on可以简写成 @
+例如:v-on:click=&quot;函数&quot; ,可以写成@click=&quot;函数&quot;
+
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {        //data里面放着数据
+                msg: true
+              },
+              methods: {    //方法定义在这里
+                  click:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;input type=&quot;button&quot; value=&quot;点击&quot; v-on:click=&quot;click()&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="事件对象-event"><a href="#事件对象-event" class="headerlink" title="事件对象 $event"></a>事件对象 $event</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                //在html结构中点击事件传入 $event才可以使用事件对象,不然是没有效果的
+                  show:function(event){
+                      console.log(event)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;button @click=&quot;show($event)&quot; id=&quot;box&quot;&gt;    
+        点击按钮
+    &lt;/button&gt;
+&lt;/body&gt;
+</code></pre><p><img src="/img/articleImg/vue04.png"></p>
+<h3 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h3><p>1、event.cancelBubble = true</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(event){
+                      alert(1)
+                      event.cancelBubble = true    //阻止冒泡
+                  },
+                  show2:function(event){
+                      alert(2)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div @click=&quot;show2()&quot;  id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot;  @click=&quot;show($event)&quot;  value=&quot;点击按钮&quot;/&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>2、@click.stop=”show()”</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  },
+                  show2:function(){
+                      alert(2)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;div @click=&quot;show2()&quot;  id=&quot;box&quot;&gt;
+        &lt;input type=&quot;button&quot;  @click.stop=&quot;show()&quot;  value=&quot;点击按钮&quot;/&gt;     //这里阻止冒泡
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h3><p>点击鼠标右键,弹出弹出框,并且鼠标右键的默认原有的功能给他禁用掉<br>1、 e.preventDefault();</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(e){
+                      alert(1)
+                      e.preventDefault();
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot;  @contextmenu=&quot;show($event)&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>2、 @contextmenu.prevent=”show()”</p>
+<pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot;  @contextmenu.prevent=&quot;show()&quot;  value=&quot;点击按钮&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><h3 id="keyCode的使用"><a href="#keyCode的使用" class="headerlink" title="keyCode的使用"></a>keyCode的使用</h3><p>在Vue中,我们可以直接使用键盘码来控制行为</p>
+<p>1、@keydown.13=”show()”<br>回车的键盘码是什么，按下回车键执行函数，这样我们就可以不用使用事件对象了</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot;  @keydown.13=&quot;show()&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>2、@keydown.enter=”show()”<br>按下回车键执行函数</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;Hello Vue!&apos;
+              },
+              methods:{
+                  show:function(){
+                      alert(1)
+                  }
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot;  @keydown.enter =&quot;show()&quot; id=&quot;box&quot;/&gt;
+&lt;/body&gt;
+</code></pre><p>@keydown.up=”show()”      按上键执行函数<br>@keydown.down=”show()”      按下键执行函数<br>@keydown.left=”show()”      按左键执行函数<br>@keydown.right=”show()”      按右键执行函数  等等,还有很多</p>
+<h3 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h3><pre><code>在绑定属性的时候最好用v-bind
+写法:&lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
+简写:&lt;img :src=&quot;url&quot; alt=&quot;&quot;&gt;
+</code></pre><p><strong> 除了class和style所有的属性都可以  :src=””  这种形式绑定</strong><br>class在使用时候,可以:class=”[red,blue]”  这里的red是data中定义的数据;<br>class还可以:class=”{red:true,blue:false}”,这种指的不是data的数据,直接指向类名;<br>class还可以:class=”json”,json可以在data中定义<br>style和class的使用方式基本一致</p>
+<pre><code>&lt;body&gt;    
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                url: &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;img v-bind:src=&quot;url&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/31/Vue事件/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/31/Vue事件/" title="Vue事件">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Vue/">Vue</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/30/Vue的基本使用/">
+    		vue的基本使用
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-30T01:38:17.000Z">2017-03-30</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>Vue不兼容低版本的IE</p>
+<h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><p>使用vue的时候,首先需要进行引包</p>
+<p>我们可以使用npm下载  </p>
+<pre><code>`npm install vue`
+</code></pre><p>也可以直接链接</p>
+<pre><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>我们在使用的时候首先定义HTML</p>
+<pre><code>&lt;div id=&quot;box&quot;&gt; {{ msg }} &lt;/div&gt;   //在这里{{ }}是用来渲染数据的
+</code></pre><p>在进行声明式渲染</p>
+<pre><code>&lt;script&gt;
+    window.onload = function(){
+        var app = new Vue({        //定义一个vue实例,变量名字可以随便起
+          el: &apos;#box&apos;,              //这里是选择器(id选择器、标签、类名等),我们使用的是id选择器
+          data: {
+            msg: &apos;Hello Vue!&apos;，  //这里是数据（可以放String、Number、Boolean、数组、对象等等）
+            arr：[&apos;苹果&apos;,&apos;桃子&apos;,&apos;菠萝&apos;,&apos;香蕉&apos;]
+          }
+        })
+    }
+&lt;/script&gt;
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue01.png"></p>
+<h3 id="vue的常见指令"><a href="#vue的常见指令" class="headerlink" title="vue的常见指令"></a>vue的常见指令</h3><p><strong>指令:扩展了html标签的属性和功能</strong></p>
+<h5 id="v-model-一般用在表单元素上-用于双向数据绑定"><a href="#v-model-一般用在表单元素上-用于双向数据绑定" class="headerlink" title="v-model 一般用在表单元素上,用于双向数据绑定"></a>v-model 一般用在表单元素上,用于双向数据绑定</h5><pre><code>&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                msg: &apos;welcome vue&apos;
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;msg&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h5 id="v-for-循环"><a href="#v-for-循环" class="headerlink" title="v-for 循环"></a>v-for 循环</h5><p>1、数组语法 (value, index) in arr</p>
+<pre><code>value是循环的每一项的值
+index是每一项的索引
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                arr:[&apos;苹果&apos;,&apos;桃子&apos;,&apos;菠萝&apos;,&apos;香蕉&apos;]
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,$index) in arr&quot;&gt;{{ item }}-{{ $index }}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue02.png"></p>
+<pre><code>如果有重复数据是添加不上的,我们可以通过track-by=&quot;$index&quot;添加:
+&lt;li v-for=&quot;(item,$index) in arr&quot; track-by=&quot;$index&quot;&gt;{{ item }}-{{ $index }}&lt;/li&gt;
+</code></pre><p>2、对象语法 (value, key, index) in object</p>
+<pre><code>value是循环的每一项的值
+key是每一项的键
+index是每一项的索引
+&lt;body&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var app = new Vue({
+              el: &apos;#box&apos;,
+              data: {
+                obj:{a:&apos;苹果&apos;,b:&apos;桃子&apos;,c:&apos;菠萝&apos;,d:&apos;香蕉&apos;}
+              }
+            })
+        }
+    &lt;/script&gt;
+
+    &lt;div id=&quot;box&quot;&gt; 
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,$key,$index) in obj&quot;&gt;{{ item }}-{{ $key }}-{{ $index }}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+在对象语法中可以直接使用{{ $key }}表示键,使用{{ $index }}表示索引 `&lt;li v-for=&quot;item in obj&quot;&gt;{{ $key }}-{{ $index }}&lt;/li&gt;`
+</code></pre><p>效果图：</p>
+<p><img src="/img/articleImg/vue03.png"></p>
+<h5 id="v-if-条件"><a href="#v-if-条件" class="headerlink" title="v-if  条件"></a>v-if  条件</h5><pre><code>&lt;script&gt;
+    window.onload = function(){
+        var app = new Vue({
+          el: &apos;#box&apos;,
+          data: {
+            msg: true
+          }
+        })
+    }
+&lt;/script&gt;
+
+&lt;div id=&quot;box&quot;&gt; 
+    &lt;div v-if=&quot;msg&quot;&gt;如果是true,就显示&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h5 id="v-show-”true-false”-显示隐藏切换"><a href="#v-show-”true-false”-显示隐藏切换" class="headerlink" title="v-show=”true/false”    显示隐藏切换"></a>v-show=”true/false”    显示隐藏切换</h5><h3 id="防止闪烁"><a href="#防止闪烁" class="headerlink" title="防止闪烁"></a>防止闪烁</h3><p>v-text=””</p>
+<p>v-html=””</p>
+<p>v-cloak  然后在style中添加   [v-clock]{display:none;}</p>
+<h3 id="自定义指令-属性"><a href="#自定义指令-属性" class="headerlink" title="自定义指令(属性)"></a>自定义指令(属性)</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义指令
+    Vue.directive(&apos;red&apos;,function(color){
+        this.el.style.background=color;
+    });
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;,
+                a:&apos;red&apos;
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;span v-red=&quot;a&quot;&gt;11111111&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>效果图:</p>
+<p><img src="/img/articleImg/vue11.png"></p>
+<h3 id="自定义元素指令-不推荐使用"><a href="#自定义元素指令-不推荐使用" class="headerlink" title="自定义元素指令(不推荐使用)"></a>自定义元素指令(不推荐使用)</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义元素指令
+    Vue.elementDirective(&apos;span-red&apos;,{
+        bind:function(){
+            this.el.style.backgroundColor=&apos;red&apos;;
+        }
+    });
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;,
+                a:&apos;red&apos;
+            }
+        }).$mount(&apos;.container&apos;);
+
+        };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;span-red&gt;&lt;/span-red&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="自定义键盘信息"><a href="#自定义键盘信息" class="headerlink" title="自定义键盘信息"></a>自定义键盘信息</h3><pre><code>&lt;body&gt;
+    &lt;script&gt;
+    // 自定义绑定ctrl键,ctrl的键盘码是17
+    Vue.directive(&apos;on&apos;).keyCodes.ctrl=17;
+    window.onload = function() {
+        var app = new Vue({
+            data: {
+                msg: &apos;welcome&apos;
+            },
+            methods:{
+                show:function(){
+                    alert(1)
+                }
+            }
+        }).$mount(&apos;.container&apos;);
+
+    };
+    &lt;/script&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input type=&quot;text&quot; @keyup.ctrl=&quot;show()&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/30/Vue的基本使用/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/30/Vue的基本使用/" title="vue的基本使用">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery/">jQuery</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/29/点击按钮加载更多数据/">
+    		点击按钮加载更多数据
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-29T05:48:37.000Z">2017-03-29</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="代码下载地址"><a href="#代码下载地址" class="headerlink" title="代码下载地址"></a>代码下载地址</h3><p><a href="https://github.com/AriaVV/clickToLoadMore.github.io" target="_blank" rel="external">点击下载代码</a></p>
+<h3 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h3><pre><code>jQuery
+
+artTemplate模板引擎
+</code></pre><h3 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h3><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/common.css&quot;&gt;    //这是样式的初始化
+&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/main.css&quot;&gt;      //这是css样式
+
+&lt;script src=&quot;./libs/jquery.js&quot;&gt;&lt;/script&gt;           //jQuery
+&lt;script src=&quot;./libs/template-native.js&quot;&gt;&lt;/script&gt;  //模板引擎
+&lt;script src=&quot;./js/main.js&quot;&gt;&lt;/script&gt;               //我们自己的逻辑代码 
+</code></pre><h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><p>在写页面的时候,可以先布置好页面的结构,把结构和css写好之后,在进行渲染,这样省的你老是调样式了</p>
+<pre><code>&lt;div class=&quot;movie clearfix&quot;&gt;
+    &lt;div class=&quot;com clearfix&quot;&gt;
+        &lt;div class=&quot;clsDetail&quot;&gt;
+            &lt;div class=&quot;tit&quot;&gt;正在热映...... &lt;a href=&quot;javascript:;&quot;&gt;(更多)&lt;/a&gt; &lt;/div&gt;
+            &lt;div class=&quot;listItem&quot; id=&quot;in_theaters&quot;&gt;
+                //这里我们利用模板引擎渲染数据
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>最终效果图<br> <img src="/img/articleImg/clickMore01.png"></p>
+<h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><p>css样式初始化</p>
+<pre><code>body,button,h2,h3,h4,h5,h6,input,li,p,ul{margin:0;padding:0}
+body,button,input,select,textarea{padding-left:5px;font:16px/1 &quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,&quot;Microsoft JhengHei&quot;,&quot;STHeiti,MingLiu&quot;;outline:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+li,ul{list-style:none}
+a{text-decoration:none;font-size:14px;color:#4677aa;}
+a:focus,a:hover{text-decoration:none;color:#4677aa;}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+html{overflow-y:scroll}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:&quot; &quot;;clear:both;height:0}
+.clearfix{display:inline-table}
+* html .clearfix{height:1%}
+.clearfix{display:block}
+i{font-style: normal;}
+.fl{float:left}
+.fr{float:right}
+body::-webkit-scrollbar{width:0;height:0}
+button{outline:0 none;border:none;cursor: pointer;}
+div,ul,li,p,img,a,input{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.com{width: 950px;height:100%;margin:0 auto;}
+</code></pre><p>index.html样式</p>
+<pre><code>.movie{padding-top:50px;padding-bottom:40px;width: 100%;background-color:#f7f7f7;}
+.movie .classify1{float:left;width: 120px;}
+.movie .title{font-size:18px;color:#0089af;font-weight:900;}
+.movie .con{margin-top:15px;}
+.movie .con li{height:30px;line-height:30px;}
+.movie .con li a{color:#2297cc;}
+.movie .clsDetail{float:left;width: 535px;}
+.clsDetail .tit,.classify2 .tit{height: 1px;line-height:1px;margin-bottom:20px;}
+.listItem{display:inline-block;width: 100%;padding-left:10px;}
+.listItem img{width: 100px;height: 145px;}
+.listItem .item{margin:20px 12px;display:inline-block;width: 100px;text-align:center;font-size:14px;}
+.listItem .name{margin-bottom:10px;margin-top:10px;color:#333;}
+.listItem .score{color:#ffac2d;}
+/*按钮的样式*/
+.in_more{display:block;margin:0 auto; width: 220px;height: 40px;line-height:40px;text-align:center;background-color:#1c8bd0;color:#fff;margin-top:30px;}
+.in_more i{vertical-align:middle;display: inline-block;margin-right:20px;width: 25px;height: 25px;background: url(../images/main/loading.gif) no-repeat;background-size:contain;}
+</code></pre><h3 id="JS业务逻辑"><a href="#JS业务逻辑" class="headerlink" title="JS业务逻辑"></a>JS业务逻辑</h3><pre><code>$(function(){
+    in_theaters();
+})
+
+//电影正在热映获取数据
+function in_theaters(){
+    var count = 8;       //规定初始的显示数据条数
+    var total =8;        //总共的数据条数
+    $.ajax({
+        url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,    //豆瓣api
+        type: &apos;GET&apos;,
+        dataType: &apos;jsonp&apos;,
+        data: {
+            count:count,
+            total:total
+        },
+        success:function(data){
+            //如果地址请求成功把数据渲染在页面上,这里使用artTemplate模板引擎
+            $(&apos;#in_theaters&apos;).html(template(&apos;template&apos;,{model:data.subjects}));
+            //在这里,如果把按钮直接放在页面上,那么如果数据渲染的很慢,那么按钮就会很明显,所以让它和数据一块渲染
+            $(&apos;.clsDetail&apos;).append(&apos;&lt;button class=&quot;in_more&quot;&gt;点击加载更多&lt;/button&gt;&apos;);
+        }
+    });
+    //在点击按钮的时候加载更多数据,因为按钮是动态渲染到页面的,所以需要用到**事件委托**
+    $(&apos;.clsDetail&apos;).on(&apos;click&apos;,&apos;.in_more&apos;,function(){
+        //在没有点击按钮之前我们已经渲染了8条数据了,这里让每次点击按钮的时候显示在页面的数据增加8条
+        count += 8;  
+        //点击按钮的时候禁用按钮,并且继续发起请求获取数据  
+        $(this).html(&apos;&lt;i&gt;&lt;/i&gt;正在努力的加载中...&apos;).attr(&apos;disabled&apos;,&apos;true&apos;).css(&apos;backgroundColor&apos;,&apos;#ccc&apos;);
+        $.ajax({
+            url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+            type: &apos;GET&apos;,
+            dataType: &apos;jsonp&apos;,
+            data: {
+                count:count,
+                total:total
+            },
+            success:function(data){
+                //获取到更多的数据之后继续在页面渲染数据
+                $(&apos;#in_theaters&apos;).html(template(&apos;template&apos;,{model:data.subjects}));
+                //并且启用按钮的点击功能
+                $(&apos;.in_more&apos;).html(&apos;点击加载更多&apos;).css(&apos;backgroundColor&apos;,&apos;#1c8bd0&apos;).removeAttr(&apos;disabled&apos;);
+                //这里的data.total是我们发起请求后获取到的数据的总条数
+                //如果count&gt;data.total,那么就说明没有更多的数据了,我们就给用户一个提示&quot;没有更多数据了&quot;,并且把按钮禁用掉
+                if(count&gt;data.total){
+                    $(&apos;.in_more&apos;).html(&apos;没有更多了&apos;).attr(&apos;disabled&apos;,&apos;true&apos;).css(&apos;backgroundColor&apos;,&apos;#ccc&apos;);
+                }
+            }
+        })
+    });
+}
+</code></pre><h3 id="html页面的模板使用"><a href="#html页面的模板使用" class="headerlink" title="html页面的模板使用"></a>html页面的模板使用</h3><p><strong>模板一定要放在jQuery和artTemplate引入包的前面,不然会报错</strong></p>
+<pre><code>这个id=&quot;template&quot;和JS文件中保持一致
+&lt;script type=&quot;text/html&quot; id=&quot;template&quot;&gt;
+    &lt;% for(var i = 0 ; i &lt; model.length ; i++) {  %&gt;
+        &lt;% var item = model[i]; %&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;img src=&quot;&lt;%=item.images.small %&gt;&quot; /&gt;
+            &lt;p class=&quot;name&quot;&gt;&lt;%=item.title%&gt;&lt;/p&gt;
+            &lt;p class=&quot;score&quot;&gt;&lt;%=item.rating.average%&gt;&lt;/p&gt;
+            &lt;a class=&quot;buyBtn&quot; href=&quot;javascript:;&quot;&gt;选座购票&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;%  }  %&gt;
+&lt;/script&gt;
+</code></pre><h3 id="完整的html结构"><a href="#完整的html结构" class="headerlink" title="完整的html结构"></a>完整的html结构</h3><p><img src="/img/articleImg/clickMore02.png"></p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/29/点击按钮加载更多数据/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/29/点击按钮加载更多数据/" title="点击按钮加载更多数据">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/9.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/24/微信小程序上拉加载和下拉刷新/">
+    		微信小程序上拉加载和下拉刷新
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-24T08:55:00.000Z">2017-03-24</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习微信小程序,想要实现在获取列表的时候可以上拉刷新和下拉加载,现在用豆瓣的API<br>总结了一下</p>
+<h3 id="完整项目地址"><a href="#完整项目地址" class="headerlink" title="完整项目地址"></a>完整项目地址</h3><p><a href="https://github.com/AriaVV/douban.github.io" target="_blank" rel="external"> 点击下载完整项目 </a></p>
+<h3 id="wxml结构"><a href="#wxml结构" class="headerlink" title="wxml结构"></a>wxml结构</h3><p><strong> 注意:在这里重要的就是scroll-view标签了 </strong></p>
+<p>scroll-view标签必须要有高度</p>
+<p>windowHeight 窗口高度</p>
+<p>scroll-y 允许纵向滚动</p>
+<p>upper-threshold 距顶部/左边多远时（单位px），触发 scrolltoupper 事件</p>
+<p>lower-threshold 距底部/右边多远时（单位px），触发 scrolltolower 事件</p>
+<p>bindscrolltoupper 滚动到顶部/左边，会触发 scrolltoupper 事件</p>
+<p>bindscrolltolower 滚动到底部/右边，会触发 scrolltolower 事件</p>
+<p>bindscroll 滚动时触发</p>
+<p>.data_more是在加载完所有的数据显示,刚开始设置隐藏</p>
+<p>.data_load是在每次下拉时候显示,刚开始设置隐藏</p>
+<pre><code>&lt;loading hidden=&quot;{{ !loading }}&quot;&gt;
+        拼了命的加载中...
+&lt;/loading&gt;
+
+&lt;scroll-view style=&quot;height:{{ windowHeight }}px&quot; scroll-y=&quot;true&quot; upper-threshold=&quot;0px&quot; lower-threshold=&quot;20px&quot; bindscrolltoupper=&quot;upper&quot; bindscrolltolower=&quot;lower&quot; bindscroll=&quot;scroll&quot;&gt;
+&lt;view class=&quot;data_pull {{ data_pull }}&quot;&gt;&lt;view&gt;&lt;/view&gt;刷新&lt;/view&gt;
+  &lt;view class=&quot;list_view&quot;&gt;
+    &lt;block wx:for=&quot;{{ list }}&quot; vx:key=&quot;index&quot;&gt;
+      &lt;navigator url=&quot;../item/item?type=in_theaters&amp;name=正在热映&amp;id={{  item.id  }}&quot;&gt;
+        &lt;view class=&quot;list_item&quot;&gt;
+          &lt;image src=&quot;{{item.images.small}}&quot;&gt;&lt;/image&gt;
+          &lt;view class=&quot;list_info&quot;&gt;
+            &lt;text class=&quot;title&quot;&gt;{{ item.title }}&lt;/text&gt;
+            &lt;text class=&quot;year&quot;&gt;{{ item.original_title}} ({{ item.year }})&lt;/text&gt;
+            &lt;text class=&quot;director&quot;&gt;导演：
+              &lt;block wx:for=&quot;{{ item.directors }}&quot; vx:key=&quot;index&quot;&gt; {{ item.name }}&lt;/block&gt;
+            &lt;/text&gt;
+          &lt;/view&gt;
+          &lt;view class=&quot;rating&quot;&gt;
+            &lt;text class=&quot;score&quot;&gt;{{ item.rating.average }}&lt;/text&gt;
+          &lt;/view&gt;
+        &lt;/view&gt;
+      &lt;/navigator&gt;
+    &lt;/block&gt;
+  &lt;/view&gt;
+  &lt;view class=&quot;data_more {{ data_view }}&quot;&gt;没有更多数据了&lt;/view&gt;
+   &lt;view class=&quot;data_load {{ data_load }}&quot;&gt;&lt;view&gt;&lt;/view&gt;正在加载更多数据&lt;/view&gt;
+&lt;/scroll-view&gt;
+</code></pre><h3 id="wxss样式"><a href="#wxss样式" class="headerlink" title="wxss样式"></a>wxss样式</h3><pre><code>.list_tit{display:block;padding:25rpx;text-align:center;font-size:30rpx;border-bottom: 1rpx solid #ccc;}
+.list_view{display:flex;flex:1;flex-direction: column;}
+.list_item{display: flex;padding: 20rpx;border-bottom: 1rpx solid #eee;}
+.list_item image {height: 200rpx;width: 140rpx;}
+.list_info {flex: 1;margin-left:50rpx;color: #777;font-size: 30rpx;}
+.list_info text{display:block;margin: 10rpx 0;}
+.score {display:inline-block;width: 60rpx;height: 40rpx;font-size: 30rpx;background-color: #c40;color: #fff;border-radius: 10rpx;text-align:center;line-height:40rpx ;}
+scroll-view {width: 100%;height: 1000 rpx;}
+.data_more,.data_load,.data_pull{display:block;width:100%;margin:40rpx 0;text-align:center;font-size:28rpx;color:#ccc;}
+.data_load view,.data_pull view{margin-top:20rpx;vertical-align:middle;display:inline-block;width:70rpx;height:70rpx;background:url(../../images/loading.gif)no-repeat top center;background-size:60%}
+.data_load text{background:url(../../images/loading.gif)no-repeat -216rpx -154rpx;}
+.data_none{display:none;}
+.data_block{display:block;}
+</code></pre><h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><pre><code>var app = getApp()
+var start = 0       //豆瓣API的参数
+var count = 6       //每次显示的数据条数
+var total = 10        //总数据条数,随便给的,因为会动态加载
+var apiUrl = &apos;https://api.douban.com/v2/movie/in_theaters&apos;;    // 请求链接
+Page({
+  data: {
+    list: [],                     //根据豆瓣api获取到的数据
+    title: &apos;Loading...&apos;,
+    loading: true,                //刚开始数据没加载完成时,显示正在加载,提高用户体验
+    windowHeight: 0,              //窗口高度
+    data_view: &apos;data_none&apos;,       //在用户下拉的时候,如果有数据则隐藏,没有数据了就显示
+    data_load: &apos;data_none&apos;,       //在用户下拉的时候,如果有更多数据就显示,没有数据了就隐藏
+    data_pull: &apos;data_none&apos;        //在用户上拉的时候,显示2秒
+  },
+  onLoad(params) {
+    const _this = this
+    //获取设备讯息
+    wx.getSystemInfo({
+      success: function (res) {
+        _this.setData({ windowHeight: res.windowHeight })
+      }
+    })
+    wx.request({
+      url: apiUrl,
+      data: { start: start, count: count, total: total },
+      header: {
+        &apos;Content-Type&apos;: &apos;json&apos;
+      },
+      success: function (res) {
+        console.log(res.data)
+        total = res.data.total
+        _this.setData({ list: res.data.subjects, title: res.data.title, loading: false, data_load: &apos;data_block&apos;, data_view: &apos;data_none&apos;, data_pull: &apos;data_none&apos; })
+
+      }
+    })
+  },
+//上拉刷新
+  upper: function (params) {
+    console.log(&apos;滑动到顶部&apos;)
+    count = 6
+    const _this = this
+    wx.request({
+      url: apiUrl,
+      data: { start: start, count: count, total: total },
+      header: {
+        &apos;Content-Type&apos;: &apos;json&apos;
+      },
+      success: function (res) {
+        total = res.data.total
+        _this.setData({ list: res.data.subjects, title: res.data.title, data_pull: &apos;data_block&apos; })
+        setTimeout(function () {
+          _this.setData({ list: res.data.subjects, title: res.data.title, data_pull: &apos;data_none&apos; })
+        }, 2000)
+      }
+    })
+  },
+//下拉加载更多
+  lower: function (e) {
+    console.log(&apos;滑动到底部&apos;)
+    const _this = this
+    if (count &lt;= total) {
+      count += 6
+      wx.request({
+        url: apiUrl,
+        data: { start: start, count: count, total: total },
+        header: {
+          &apos;Content-Type&apos;: &apos;json&apos;
+        },
+        success: function (res) {
+          total = res.data.total
+          _this.setData({ list: res.data.subjects, title: res.data.title, data_load: &apos;data_block&apos;, data_view: &apos;data_none&apos; })
+          // _this.setData({ list: _this.data.list.concat(res.data.subjects) })
+        }
+      })
+    } else if (count &gt; total) {
+      count = total
+      console.log(total)
+      _this.setData({ data_view: &apos;data_block&apos;, data_load: &apos;data_none&apos; })
+    }
+  },
+//滑动过程中
+  scroll: function (e) {
+    console.log(&apos;滑动过程中&apos;)
+  }
+})
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/24/微信小程序上拉加载和下拉刷新/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/24/微信小程序上拉加载和下拉刷新/" title="微信小程序上拉加载和下拉刷新">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/4.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/24/微信小程序页面与页面之间的传参问题/">
+    		微信小程序页面与页面之间的传参问题
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-24T08:44:24.000Z">2017-03-24</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h3 id="页面的跳转"><a href="#页面的跳转" class="headerlink" title="页面的跳转"></a>页面的跳转</h3><pre><code>使用navigator标签
+&lt;navigator src=&quot;&quot;&gt;&lt;/navigator&gt;
+</code></pre><h3 id="页面与页面之间建立关联"><a href="#页面与页面之间建立关联" class="headerlink" title="页面与页面之间建立关联"></a>页面与页面之间建立关联</h3><p>我们在点击navigator的时候,需要确定你点的是什么,这个就是需要参数了</p>
+<pre><code>&lt;navigator url=&quot;../item/item?type=in_theaters&amp;name=正在热映&amp;id={{  item.id  }}&quot;&gt;  &lt;/navigator&gt;
+</code></pre><p>我们在把另一个页面跟他建立联系的时候,可以使用</p>
+<pre><code>在需要跳转到的页面设置js文件
+在onLoad中从params中获取到参数,这样navigator标签和这个页面就建立联系了 
+Page({
+    data: {
+        list: [],
+        loading: true,
+    },
+    onLoad (params) {
+    const apiUrl = &apos;https://api.douban.com/v2/movie/subject/&apos; + params.id
+    const _this = this
+    wx.request({
+        url: apiUrl,
+        data: {},
+        header: {
+            &apos;Content-Type&apos;: &apos;json&apos;
+        },
+        success: function (res) {
+            _this.setData({ list: res.data,loading: false})
+        }
+    })
+}
+})
+</code></pre>
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/24/微信小程序页面与页面之间的传参问题/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/24/微信小程序页面与页面之间的传参问题/" title="微信小程序页面与页面之间的传参问题">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/4.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery插件/">jQuery插件</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/23/jQuery插件zclip实现复制功能/">
+    		jQuery插件zclip实现复制功能
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-23T09:05:01.000Z">2017-03-23</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/复制数据/" title="复制数据">复制数据</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司做的一个项目需要实现代码的复制功能,搜索好久发现jQuery有这么一款插件,现在分享一下使用心得</p>
+<h3 id="HTML代码"><a href="#HTML代码" class="headerlink" title="HTML代码"></a>HTML代码</h3><pre><code>&lt;div class=&quot;main_link&quot;&gt;
+    &lt;input class=&quot;text_copy&quot; placeholder=&quot;http://www.&quot;/&gt;
+    &lt;a class=&quot;btn_copy&quot; href=&quot;javascript:;&quot;&gt;复制&lt;/a&gt;
+&lt;/div&gt;
+</code></pre><h3 id="CSS代码"><a href="#CSS代码" class="headerlink" title="CSS代码"></a>CSS代码</h3><pre><code>.main_link input {
+    outline: none;
+    margin-left: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    padding-left: 10px;
+    width: 82%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #9b9b9b;
+    border: 1px solid #cccccc;
+}
+
+.main_link .btn_copy {
+    display: inline-block;
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #de3131;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: right;
+}
+
+.btn_copy.alcopy {
+    background: #ddd;
+    box-shadow: 0 3px 0 #aaa;
+}
+</code></pre><h3 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h3><p><img src="/img/articleImg/zclip01.png"></p>
+<h3 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h3><pre><code>&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.zclip.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h3><p><strong> 记得一定要把把ZeroClipboard.swf引入到项目中 </strong></p>
+<pre><code> if($(&apos;.main_link&apos;).length&gt;0){
+    $(&quot;.btn_copy&quot;).zclip({
+        path: &quot;js/ZeroClipboard.swf&quot;,
+        copy: function() {
+            return $(&quot;.text_copy&quot;).val();
+        },
+        afterCopy: function() {
+            $(this).addClass(&apos;alcopy&apos;).text(&apos;已复制&apos;);
+        }
+    });
+}
+</code></pre><h3 id="开启服务器"><a href="#开启服务器" class="headerlink" title="开启服务器"></a>开启服务器</h3><p>我发现在使用的时候,有时候会没有效果,需要你把服务器开起来,这样就可以放心的使用了</p>
+<p>你只需要在input中输入内容,点击复制按钮,就可以去粘贴了</p>
+<pre><code>这里推荐一种静态服务器开启办法:
+
+打开cmd,安装全局的anywhere 
+    - npm install --global anywhere
+安装好了全局,你就可以使用服务器了
+    - anywhere 端口号
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/23/jQuery插件zclip实现复制功能/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/23/jQuery插件zclip实现复制功能/" title="jQuery插件zclip实现复制功能">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery插件/">jQuery插件</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">
+    		fullPag在IE7中导航不显示圆解决方案-
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-21T06:01:48.000Z">2017-03-21</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用fullpage插件的时候,发现在IE7下,导航会变成方块,为解决这个问题,使用了一个非常笨的方法</p>
+<h3 id="为每一屏设置圆点"><a href="#为每一屏设置圆点" class="headerlink" title="为每一屏设置圆点"></a>为每一屏设置圆点</h3><pre><code>小圆点我是把它切成了图片
+因为我的每一屏的导航的颜色和选中颜色都不一样,所以我就在每一屏都添加了这个结构
+
+&lt;div id=&quot;part1&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;part3&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;part4&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="修改fullpage的css样式"><a href="#修改fullpage的css样式" class="headerlink" title="修改fullpage的css样式"></a>修改fullpage的css样式</h3><pre><code>在设置导航器在IE7下的透明度为0
+#fp-nav{+filter:alpha(opacity=0);}
+
+固定自己设置的圆点的位置,要和原来的导航器的位置重叠
+因为IE7下,是不支持点击锚点跳转的,所以只能利用导航器,这样你在点击的时候还可以跳转到下一屏
+并且自己写的这个原点现在隐藏掉,如果是在IE7浏览器的情况下才显示
+.circle{display:none;position: absolute;top: 50%;right:39px;margin-top: -76px; +display:block;}
+.circle li{margin: 15px 0;}
+</code></pre><h3 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a>JS文件</h3><p>因为我是设置了每屏的导航器颜色不一样,使用JS控制的,所以在这里控制JS优化一下,点击查看<br><a href="https://ariavv.github.io/2017/03/17/jQuery%E5%85%A8%E5%B1%8F%E6%BB%9A%E5%8A%A8%E6%8F%92%E4%BB%B6fullPage%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" target="_blank">点击查自定义导航器的颜色</a></p>
+<pre><code>$(function(){
+    if( $(&apos;#fullpage&apos;).length&gt;0){
+        //浏览器是IE7
+        if(navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE6.0&quot; || navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE7.0&quot; || navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE8.0&quot; || navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE9.0&quot;)
+        {$(&apos;#fullpage&apos;).fullpage({
+                resize: true,
+                verticalCentered: false,
+                scrollOverflow: false,
+                menu:true,
+                navigation: true,
+                anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+                afterLoad: function (anchorLink, index) {
+                    $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                    setTimeout(function () {
+                        $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                    }, 0);
+
+                },
+                afterRender: function(){
+                    $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+                }
+            });
+
+        }
+        //浏览器是不IE7的配置
+        else {$(&apos;#fullpage&apos;).fullpage({
+                resize: true,
+                verticalCentered: false,
+                scrollOverflow: false,
+                menu:true,
+                navigation: true,
+                anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+                afterLoad: function (anchorLink, index) {
+                    $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                    setTimeout(function () {
+                        $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                    }, 0);
+                    if(index == 1 || index == 3){
+                        $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                        $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#fff&apos;);
+                        })
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                            $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                        })
+                        $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;+background&apos;,&apos;url(../images/y1.jpg)&apos;);
+                        $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;+background&apos;,&apos;url(../images/y2.jpg)&apos;);
+
+                    }else if(index == 2 || index ==4){
+                        $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                        $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                        })
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                            $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                        })
+                    }
+                },
+                afterRender: function(){
+                    $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+                }
+            });
+        }
+})
+</code></pre><p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/" title="fullPag在IE7中导航不显示圆解决方案-">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/jQuery插件/">jQuery插件</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">
+    		jQuery全屏滚动插件fullPage使用中出现的小问题总结
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-03-17T03:52:03.000Z">2017-03-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在做一个全屏滚动并且带有动画效果的页面,使用的是jQuery的全屏滚动插件–fullPage</p>
+<p>在实现功能的时候,出现了一些小问题,现在记录一下解决的方法</p>
+<h3 id="fullPage的使用方法"><a href="#fullPage的使用方法" class="headerlink" title="fullPage的使用方法"></a>fullPage的使用方法</h3><p>引入文件</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.fullPage.css&quot;&gt;
+
+&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery.slimscroll.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/jquery.fullPage.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>HTML文件</p>
+<pre><code>&lt;div id=&quot;fullpage&quot; class=&quot;fullpage&quot;&gt;
+    &lt;div id=&quot;part1&quot; class=&quot;section&quot;&gt;第一屏&lt;/div&gt;
+    &lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;第二屏&lt;/div&gt;
+    &lt;div id=&quot;part3&quot; class=&quot;section&quot;&gt;第三屏&lt;/div&gt;
+    &lt;div id=&quot;part4&quot; class=&quot;section&quot;&gt;第四屏&lt;/div&gt;
+&lt;/div&gt;    
+</code></pre><p>JS文件</p>
+<pre><code>$(function(){
+    $(&apos;#fullpage&apos;).fullpage();
+});
+</code></pre><h3 id="想要fullPage插件可以达到预期的效果-需要进行配置"><a href="#想要fullPage插件可以达到预期的效果-需要进行配置" class="headerlink" title="想要fullPage插件可以达到预期的效果,需要进行配置"></a>想要fullPage插件可以达到预期的效果,需要进行配置</h3><p>这是我自己的配置:</p>
+<pre><code>$(function(){
+    if( $(&apos;#fullpage&apos;).length&gt;0){
+        $(&apos;#fullpage&apos;).fullpage({
+            resize: true,           //字体是否随着窗口缩放而缩放        
+            verticalCentered: false,   //内容是否垂直居中
+            scrollOverflow: false,     //内容过多是否显示滚动条
+            menu:true,      //绑定菜单
+            navigation: true,      //是否显示导航条
+            anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+
+
+            //滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数。
+            //anchorLink 是锚链接的名称
+            //index 是section的索引，从1开始计算   
+            afterLoad: function (anchorLink, index) {
+                $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                setTimeout(function () {
+                    $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                }, 100);
+            },
+
+            //在配置完上面之后发现,首屏的Css3动画没有效果,所以配置了下面就好了
+            //这个回调函数只是在生成页面结构的时候调用,用来初始化首屏
+            afterRender: function(){
+                $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+            }
+
+        })
+
+    }
+})
+</code></pre><h3 id="每一屏中点击按钮跳到下一屏"><a href="#每一屏中点击按钮跳到下一屏" class="headerlink" title="每一屏中点击按钮跳到下一屏"></a>每一屏中点击按钮跳到下一屏</h3><p>只需要在每一屏设置一a链接,href属性的值是下一屏的#id值</p>
+<pre><code>&lt;div id=&quot;part1&quot; class=&quot;section&quot;&gt;第一屏
+    &lt;a href=&quot;#part2&quot;&gt;跳到下一屏&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;第三屏
+    &lt;a href=&quot;#part3&quot;&gt;跳到下一屏&lt;/a&gt;
+&lt;/div&gt;
+</code></pre><h3 id="每屏的导航器设置不同的颜色"><a href="#每屏的导航器设置不同的颜色" class="headerlink" title="每屏的导航器设置不同的颜色"></a>每屏的导航器设置不同的颜色</h3><p>在设置之前,导航器是有不同的颜色的,如下图:</p>
+<p><img src="/img/articleImg/fullpage01.png"></p>
+<p>现在设计图的要求是更改,如下图,并且第一屏和第三屏颜色一样,第二屏和第四屏颜色一样:<br><img src="/img/articleImg/fullpage02.png"></p>
+<h3 id="配置每个圆点的大小"><a href="#配置每个圆点的大小" class="headerlink" title="配置每个圆点的大小"></a>配置每个圆点的大小</h3><pre><code>#fp-nav span,
+.fp-slidesNavspan{width: 16px; height: 16px;}
+</code></pre><h3 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a>JS文件</h3><p>那么我们如果修改fullpage.css中的样式,那么每屏的颜色还是一样,所以我用JS来控制了他的颜色</p>
+<pre><code>$(&apos;#fullpage&apos;).fullpage({
+            resize: true,
+            verticalCentered: false,
+            scrollOverflow: false,
+            menu:true,
+            navigation: true,
+            anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+            afterLoad: function (anchorLink, index) {
+                $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                setTimeout(function () {
+                    $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                }, 0);
+                //如果是第一屏和第三瓶配置一种颜色
+                if(index == 1 || index == 3){
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#fff&apos;);
+                    })
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                        $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                    })
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;+background&apos;,&apos;url(../images/y1.jpg)&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;+background&apos;,&apos;url(../images/y2.jpg)&apos;);
+                //如果是第二屏和第四瓶配置一种颜色
+                }else if(index == 2 || index ==4){
+                    $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                    $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    })
+                    $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                        $(this).children().css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                        $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                    })
+                }
+            },
+            afterRender: function(){
+                $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+            }
+        });
+</code></pre><p>这样就配置好了,真的好麻烦,但是我还没有找到简单的方法</p>
+<p>【end】</p>
+
+            
+            <p class="more">
+                <a href="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="http://yoursite.com/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/" title="jQuery全屏滚动插件fullPage使用中出现的小问题总结">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <a class="extend prev" rel="prev" href="/archives/">前一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/">后一页</a>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

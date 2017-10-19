@@ -1,48 +1,506 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>fullPag在IE7中导航不显示圆解决方案- | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    div#post-container
-        include mixins/post
-        +post(page)
-        include partial/comment
-
-    //- Comment
-    if theme.duoshuo
-        script.
-            var duoshuoQuery = {short_name:"#{theme.duoshuo}"};
-            (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0] 
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-            })();
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
 
-    if theme.disqus
-        script.
-            var disqus_shortname = '#{theme.disqus}';
-            var disqus_identifier = '#{page.path}';
-            var disqus_title = '#{page.title}';
-            var disqus_url = '#{config.url}/#{page.path}';
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        script(id='dsq-count-scr' src='//#{theme.disqus}.disqus.com/count.js' async)
+</head>
 
-block pagination
-    include mixins/paginator
-    +post()
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
 
-block copyright
-    include partial/copyright
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>fullPag在IE7中导航不显示圆解决方案-</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2017-03-21T06:01:48.000Z">2017-03-21</time>
+    </p>
+    <div class="post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用fullpage插件的时候,发现在IE7下,导航会变成方块,为解决这个问题,使用了一个非常笨的方法</p>
+<h3 id="为每一屏设置圆点"><a href="#为每一屏设置圆点" class="headerlink" title="为每一屏设置圆点"></a>为每一屏设置圆点</h3><pre><code>小圆点我是把它切成了图片
+因为我的每一屏的导航的颜色和选中颜色都不一样,所以我就在每一屏都添加了这个结构
+
+&lt;div id=&quot;part1&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;part2&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;part3&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;part4&quot; class=&quot;section&quot;&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+         &lt;ul id=&quot;circleList1&quot;&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c1&quot; id=&apos;c1&apos;&gt;&lt;a href=&quot;#page1&quot;&gt;&lt;img src=&quot;images/y1.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c2&quot; id=&apos;c2&apos;&gt;&lt;a href=&quot;#page2&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c3&quot; id=&apos;c3&apos;&gt;&lt;a href=&quot;#page3&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;layer&quot; class=&quot;c4&quot; id=&apos;c4&apos;&gt;&lt;a href=&quot;#page4&quot;&gt;&lt;img src=&quot;images/y2.jpg&quot;  alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="修改fullpage的css样式"><a href="#修改fullpage的css样式" class="headerlink" title="修改fullpage的css样式"></a>修改fullpage的css样式</h3><pre><code>在设置导航器在IE7下的透明度为0
+#fp-nav{+filter:alpha(opacity=0);}
+
+固定自己设置的圆点的位置,要和原来的导航器的位置重叠
+因为IE7下,是不支持点击锚点跳转的,所以只能利用导航器,这样你在点击的时候还可以跳转到下一屏
+并且自己写的这个原点现在隐藏掉,如果是在IE7浏览器的情况下才显示
+.circle{display:none;position: absolute;top: 50%;right:39px;margin-top: -76px; +display:block;}
+.circle li{margin: 15px 0;}
+</code></pre><h3 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a>JS文件</h3><p>因为我是设置了每屏的导航器颜色不一样,使用JS控制的,所以在这里控制JS优化一下,点击查看<br><a href="https://ariavv.github.io/2017/03/17/jQuery%E5%85%A8%E5%B1%8F%E6%BB%9A%E5%8A%A8%E6%8F%92%E4%BB%B6fullPage%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" target="_blank">点击查自定义导航器的颜色</a></p>
+<pre><code>$(function(){
+    if( $(&apos;#fullpage&apos;).length&gt;0){
+        //浏览器是IE7
+        if(navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE6.0&quot; || navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE7.0&quot; || navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE8.0&quot; || navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE9.0&quot;)
+        {$(&apos;#fullpage&apos;).fullpage({
+                resize: true,
+                verticalCentered: false,
+                scrollOverflow: false,
+                menu:true,
+                navigation: true,
+                anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+                afterLoad: function (anchorLink, index) {
+                    $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                    setTimeout(function () {
+                        $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                    }, 0);
+
+                },
+                afterRender: function(){
+                    $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+                }
+            });
+
+        }
+        //浏览器是不IE7的配置
+        else {$(&apos;#fullpage&apos;).fullpage({
+                resize: true,
+                verticalCentered: false,
+                scrollOverflow: false,
+                menu:true,
+                navigation: true,
+                anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+                afterLoad: function (anchorLink, index) {
+                    $(&apos;.section&apos;).removeClass(&apos;current&apos;);
+                    setTimeout(function () {
+                        $(&apos;.section&apos;).eq(index -1).addClass(&apos;current&apos;);
+                    }, 0);
+                    if(index == 1 || index == 3){
+                        $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                        $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#fff&apos;);
+                        })
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#87c2f8&apos;);
+                            $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#fff&apos;);
+                        })
+                        $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;+background&apos;,&apos;url(../images/y1.jpg)&apos;);
+                        $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;+background&apos;,&apos;url(../images/y2.jpg)&apos;);
+
+                    }else if(index == 2 || index ==4){
+                        $(&apos;#fp-nav span,.fp-slidesNavspan&apos;).css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                        $(&apos;#fp-nav li .active span,.fp-slidesNav.active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseenter&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                        })
+                        $(&apos;#fp-nav li a&apos;).on(&apos;mouseleave&apos;,function(){
+                            $(this).children().css(&apos;background&apos;,&apos;#bfdffc&apos;);
+                            $(&apos;#fp-nav li .active span&apos;).css(&apos;background&apos;,&apos;#47a2f5&apos;);
+                        })
+                    }
+                },
+                afterRender: function(){
+                    $(&apos;#part1&apos;).addClass(&apos;current&apos;)
+                }
+            });
+        }
+})
+</code></pre><p>【end】</p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/jQuery插件/">jQuery插件</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2017/03/23/jQuery插件zclip实现复制功能/">
+            
+                jQuery插件zclip实现复制功能
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2017/03/17/jQuery全屏滚动插件fullPage使用中出现的小问题总结/">
+            
+                jQuery全屏滚动插件fullPage使用中出现的小问题总结
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'fullPag.js在IE7中导航不显示圆解决方案' || '2017/03/21/fullPag.js在IE7中导航不显示圆解决方案/',
+    owner: 'jangdelong',
+    repo: 'blog_comments',
+    clientId: 'b08ed25e52c57993e69c',
+    clientSecret: '1cb9545488f0380904b87350e7c5a270ae03bab7'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,48 +1,519 @@
-extends partial/layout
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>微信小程序开发基本配置和使用 | xiaoLv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
 
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    div#post-container
-        include mixins/post
-        +post(page)
-        include partial/comment
-
-    //- Comment
-    if theme.duoshuo
-        script.
-            var duoshuoQuery = {short_name:"#{theme.duoshuo}"};
-            (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0] 
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-            })();
+    
+    <link rel="alternative" href="/atom.xml" title="xiaoLv" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
 
-    if theme.disqus
-        script.
-            var disqus_shortname = '#{theme.disqus}';
-            var disqus_identifier = '#{page.path}';
-            var disqus_title = '#{page.title}';
-            var disqus_url = '#{config.url}/#{page.path}';
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        script(id='dsq-count-scr' src='//#{theme.disqus}.disqus.com/count.js' async)
+</head>
 
-block pagination
-    include mixins/paginator
-    +post()
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
 
-block copyright
-    include partial/copyright
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">xiaoLv</span>
+                    <span class="description">记录学习的技能和遇到的问题</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2017/03/14/微信小程序基本配置和使用/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2017/03/14/微信小程序基本配置和使用/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2017/03/14/微信小程序基本配置和使用/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2017/03/14/微信小程序基本配置和使用/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>微信小程序开发基本配置和使用</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2017-03-14T09:15:56.000Z">2017-03-14</time>
+    </p>
+    <div class="post-content">
+        <h3 id="微信小程序的文件"><a href="#微信小程序的文件" class="headerlink" title="微信小程序的文件"></a>微信小程序的文件</h3><p>在微信小程序中,我们把所有的页面都放在一个统一的文件夹下,以单个文件夹存在,每个页面下又分别由三个页面组成,分别是 js、wxml、wxss</p>
+<pre><code>js、wxml、wxss 这三个文件就构成了一个完整的页面
+</code></pre><h3 id="三个文件的作用"><a href="#三个文件的作用" class="headerlink" title="三个文件的作用"></a>三个文件的作用</h3><p>js ：定义页面的逻辑</p>
+<pre><code>调用了一个page方法，是一个全局函数，用来创建页面对象
+
+onLoad方法页面加载时触发
+</code></pre><p>wxml ：定义页面的结构 语法是XML语法(Wei Xin Markup Language)</p>
+<p>wxss ：定义页面的样式 遵循是css语法(Wei Xin Style Sheet)</p>
+<h3 id="index-json的配置"><a href="#index-json的配置" class="headerlink" title="index.json的配置"></a>index.json的配置</h3><p>在页面的json文件主要是为了覆盖app.json中window 配置项的内容</p>
+<h3 id="wxml标签"><a href="#wxml标签" class="headerlink" title="wxml标签"></a>wxml标签</h3><pre><code>view相当于html中的div
+
+text标签定义文本
+
+image图片标签
+
+block专门在做一些循环的时候,又不想在循环的时候在外层新加一些标签,block在循环完成后不会显示
+</code></pre><h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h3><p>在app.json文件中定义了一个pages的属性,这个属性定义了我们的应用程序可用的所有的页面(所以pages中的页面必须与app.json建立关联)</p>
+<pre><code>&quot;pages&quot;:[
+    &quot;pages/index/index&quot;,  //代表初始页面
+    &quot;pages/logs/logs&quot;
+  ]
+</code></pre><h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h3><p>有一个全局函数是 App,作用是用来指定生命周期</p>
+<pre><code>App({
+    onLaunch(){  //在App这个对象中定义了一个onLaunch方法
+        console.log(&apos;msg&apos;)    
+    },
+    foo(){   //定义一个额外方法
+        return &apos;bar&apos;
+    }
+})
+</code></pre><p>在页面的js文件中 引入 const app=getApp(),那么在页面中就可以调用app.js中定义的方法了</p>
+<pre><code>var app = getApp()
+
+Page({
+    onLoad(){
+        app.foo();  
+    }
+})
+</code></pre><h3 id="app-wsxx"><a href="#app-wsxx" class="headerlink" title="app.wsxx"></a>app.wsxx</h3><p>整个程序共享的样式(公共样式)</p>
+<h3 id="数据加载到页面"><a href="#数据加载到页面" class="headerlink" title="数据加载到页面"></a>数据加载到页面</h3><p>小程序提供了一个属性:page,这个属性可以是一个对象:这个对象中的所有的成员都可以在界面上直接被访问到</p>
+<pre><code>在index.js中
+
+Page({
+    data:{
+        message:&apos;hello world&apos;
+    },
+    onLoad(){
+        //页面加载就把数据呈现在页面
+        this.setData({
+            message:Date.now() //获取当前时间
+        })  
+    }
+})
+</code></pre><p>在页面上显示时</p>
+<pre><code>在index.wxml中
+&lt;text&gt;{{message}}&lt;text&gt;
+</code></pre><h3 id="访问网络资源"><a href="#访问网络资源" class="headerlink" title="访问网络资源"></a>访问网络资源</h3><p><strong> 微信开发者工具在更新到最新版的时候,发现请求时会报错</strong></p>
+<pre><code>错误信息:GET https://api.douban.com/v2/movie/in_theaters 400 (Bad Request)          asdebug.js:1 
+
+百度了一下解决方案 : 
+
+ header: {
+    // &apos;content-type&apos;: &apos;application/json&apos;
+    &apos;Content-Type&apos;: &apos;json&apos;
+}
+</code></pre><p>微信官方提供了API,不存在跨域的问题</p>
+<pre><code>wx.request({
+  url: &apos;test.php&apos;, //仅为示例，并非真实的接口地址
+  data: {
+     x: &apos;&apos; ,
+     y: &apos;&apos;
+  },
+  header: {
+      &apos;content-type&apos;: &apos;application/json&apos;
+  },
+  success: function(res) {
+    console.log(res.data)
+  }
+})
+</code></pre><p>把访问外部链接获取的数据放到list当中</p>
+<pre><code>Page({
+    data:{
+        message:&apos;hello world!&apos;,
+        list:[]
+    },
+    onLoad(){
+        const _this = this
+        //页面加载时候执行
+        wx.request({
+          url: &apos;https://api.douban.com/v2/movie/in_theaters&apos;,
+          data: {},
+          header: {
+              &apos;Content-Type&apos;:&apos;json&apos;
+          },
+          success: function(res) {
+              console.log(res.data)
+            _this.setData({
+                list: res.data.subjects
+            })
+          }
+        })
+    }
+})
+</code></pre><p>在页面上显示的时候</p>
+<pre><code>&lt;view&gt;
+  &lt;view class=&quot;item&quot; wx:for=&quot;{{ list }}&quot;&gt;
+    &lt;image src=&quot;{{ item.images.small }}&quot;&gt;&lt;/image&gt;
+    &lt;text&gt;{{ item.title }}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><h3 id="topBar的配置"><a href="#topBar的配置" class="headerlink" title="topBar的配置"></a>topBar的配置</h3><p>tabBar 是一个数组，只能配置最少2个、最多5个 tab，tab 按数组的顺序排序。</p>
+<pre><code>{
+  &quot;pages&quot;: [
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/index&quot;
+  ],
+  &quot;window&quot;: {
+    &quot;navigationBarTitleText&quot;: &quot;Demo&quot;
+  },
+  &quot;tabBar&quot;: {
+    &quot;list&quot;: [{
+      &quot;pagePath&quot;: &quot;pages/index/index&quot;,     //第一个必须是我们的首页
+      &quot;text&quot;: &quot;首页&quot;
+    }, {
+      &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,
+      &quot;text&quot;: &quot;日志&quot;
+    }]
+  },
+  &quot;networkTimeout&quot;: {
+    &quot;request&quot;: 10000,
+    &quot;downloadFile&quot;: 10000
+  },
+  &quot;debug&quot;: true
+}
+</code></pre><p>【end】</p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/微信小程序/">微信小程序</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2017/03/15/Flex布局/">
+            
+                Flex布局
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2017/03/13/微信小程序模板的使用/">
+            
+                微信小程序模板的使用
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: '微信小程序基本配置和使用' || '2017/03/14/微信小程序基本配置和使用/',
+    owner: 'jangdelong',
+    repo: 'blog_comments',
+    clientId: 'b08ed25e52c57993e69c',
+    clientSecret: '1cb9545488f0380904b87350e7c5a270ae03bab7'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Flex布局/">Flex布局</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Vue/">Vue</a>
+        <span class="badge">(11)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery插件/">jQuery插件</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/hexo/">hexo</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/jQuery/">jQuery</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/JavaScript/">JavaScript</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/微信小程序/">微信小程序</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iframe/">iframe</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/flex布局/" title="flex布局">flex布局 (2)</a>
+  
+    <a class="tag-item" href="/tags/开发环境/" title="开发环境">开发环境 (1)</a>
+  
+    <a class="tag-item" href="/tags/头像设置/" title="头像设置">头像设置 (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo环境、部署、基本操作/" title="hexo环境、部署、基本操作">hexo环境、部署、基本操作 (1)</a>
+  
+    <a class="tag-item" href="/tags/首屏动画-点击箭头调到下一屏-fullPage/" title="首屏动画 点击箭头调到下一屏 fullPage">首屏动画 点击箭头调到下一屏 fullPage (1)</a>
+  
+    <a class="tag-item" href="/tags/复制数据/" title="复制数据">复制数据 (1)</a>
+  
+    <a class="tag-item" href="/tags/JavaScript/" title="JavaScript">JavaScript (2)</a>
+  
+    <a class="tag-item" href="/tags/iframe小结/" title="iframe小结">iframe小结 (1)</a>
+  
+    <a class="tag-item" href="/tags/准备工作/" title="准备工作">准备工作 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
